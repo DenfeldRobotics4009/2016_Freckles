@@ -14,7 +14,7 @@ class Drivetrain(Subsystem):
         self.robot = robot
 
     def initDefaultCommand(self):
-        self.setDefaultCommand(MecanumDriveWithJoystick(self.robot))
+        self.setDefaultCommand(PowerOfTheFriendship(self.robot))
 
     def log(self):
         pass
@@ -32,4 +32,4 @@ class Drivetrain(Subsystem):
 
     def driveManual(self, x, y, rotation):
         self.x, self.y, self.rotation = x, y, rotation
-        self.drive.mecanumDrive_Cartesian(x, y, rotation, 0)
+        self.drive.driveType(x, y, rotation, 0)
