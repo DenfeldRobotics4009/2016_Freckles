@@ -3,8 +3,9 @@ __author__ = 'nikolojedison'
 #May need more libraries in the future, esp. once everything else is properly implemented.
 import wpilib
 from networktables import NetworkTable
-from pov_button import POVButton
 from wpilib.buttons import JoystickButton, InternalButton
+from pov_button import POVButton
+
 
 class OI:
     """Button mapping goes here."""
