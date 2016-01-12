@@ -7,7 +7,7 @@ from wpilib.command import Scheduler
 from oi import OI
 
 class Freckles(wpilib.SampleRobot):
-    """Fluffy ears to scratch lost his tail, cute little paws, likes to play fetch."""
+    """Fluffy ears to scratch, lost his tail, cute little paws, likes to play fetch."""
 
     def robotInit(self):
         pass
