@@ -18,7 +18,7 @@ class PlayMacro(Command):
         try:
             #attempt to access the files required
             if self.robot.isReal():
-                self.f = open("/home/lvuser/py/"+self.name)
+                self.f = open("/home/lvuser/py/macros/"+self.name)
             else:
                 self.f = open(self.name)
             self.reader_iterator = csv.DictReader(self.f)
