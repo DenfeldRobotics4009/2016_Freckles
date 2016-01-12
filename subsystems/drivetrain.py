@@ -15,6 +15,10 @@ class Drivetrain(Subsystem):
         self.robot = robot
         #gonna use us some CANTalons.
 
+        self.x = 0
+        self.y = 0
+        self.rotation = 0
+
     def initDefaultCommand(self):
         self.setDefaultCommand(FrecklesDrive(self.robot))
 
@@ -34,4 +38,5 @@ class Drivetrain(Subsystem):
 
     def driveManual(self, x, y, rotation):
         self.x, self.y, self.rotation = x, y, rotation
+        #don't deploy or run until an actual drive class is used
         self.drive.driveType(x, y, rotation, 0)
