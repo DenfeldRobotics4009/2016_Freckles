@@ -5,7 +5,7 @@ from wpilib.command import command
 class FrecklesDrive(Command):
 
     def __init__(self, robot):
-        super().__init()
+        super().__init__()
 
         self.robot = robot
         self.requires(self.robot.drivetrain)
