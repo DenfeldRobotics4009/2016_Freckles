@@ -2,7 +2,7 @@ __author__ = 'nikolojedison'
 
 from wpilib.command import command
 
-class PowerOfTheFriendship(Command):
+class FrecklesDrive(Command):
 
     def __init__(self, robot):
         super().__init()

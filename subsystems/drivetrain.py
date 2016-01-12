@@ -4,6 +4,7 @@ import math
 
 import wpilib
 from wpilib.command import Subsystem
+from commands.manual.power_of_the_friendship import FrecklesDrive
 from drive_control import *
 from imu_simple import IMUSimple
 
@@ -14,7 +15,7 @@ class Drivetrain(Subsystem):
         self.robot = robot
 
     def initDefaultCommand(self):
-        self.setDefaultCommand(PowerOfTheFriendship(self.robot))
+        self.setDefaultCommand(FrecklesDrive(self.robot))
 
     def log(self):
         pass
