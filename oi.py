@@ -4,7 +4,7 @@ __author__ = 'nikolojedison'
 import wpilib
 from networktables import NetworkTable
 from wpilib.buttons import JoystickButton, InternalButton
-from pov_button import POVButton
+from utilities.pov_button import POVButton
 
 
 class OI:

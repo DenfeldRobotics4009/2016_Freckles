@@ -4,9 +4,9 @@ import math
 
 import wpilib
 from wpilib.command import Subsystem
-from commands.manual.power_of_the_friendship import FrecklesDrive
-from drive_control import *
-from imu_simple import IMUSimple
+from commands.manual.power_of_the_friendship import DriveWithJoystick
+from utilities.drive_control import *
+from utilities.imu_simple import IMUSimple
 
 class Drivetrain(Subsystem):
 
@@ -19,8 +19,13 @@ class Drivetrain(Subsystem):
         self.y = 0
         self.rotation = 0
 
+        self.zed = wpilib.Talon(0)
+        self.one = wpilib.Talon(1)
+
+        self.drive = wpilib.RobotDrive(self.zed, self.one)
+
     def initDefaultCommand(self):
-        self.setDefaultCommand(FrecklesDrive(self.robot))
+        self.setDefaultCommand(DriveWithJoystick(self.robot))
 
     def log(self):
         pass
@@ -38,5 +43,4 @@ class Drivetrain(Subsystem):
 
     def driveManual(self, x, y, rotation):
         self.x, self.y, self.rotation = x, y, rotation
-        #don't deploy or run until an actual drive class is used
-        self.drive.driveType(x, y, rotation, 0)
+        self.drive.arcadeDrive(x, y, rotation)

@@ -1,8 +1,8 @@
 __author__ = 'nikolojedison'
 
-from wpilib.command import command
+from wpilib.command import Command
 
-class FrecklesDrive(Command):
+class DriveWithJoystick(Command):
 
     def __init__(self, robot):
         super().__init__()

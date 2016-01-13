@@ -6,14 +6,20 @@ import networktables
 from wpilib.command import Scheduler
 from oi import OI
 
+from subsystems.drivetrain import Drivetrain
+
 class Freckles(wpilib.SampleRobot):
     """Fluffy ears to scratch, lost his tail, cute little paws, likes to play fetch."""
 
     def robotInit(self):
-        pass
+        self.drivetrain = Drivetrain(self)
+        self.oi = OI(self)
 
     def autonomous(self):
-        pass
+        while self.isAutonomous() and self.isEnabled():
+            Scheduler.getInstance().run()
+            self.log()
+            wpilib.Timer.delay(.005)
 
     def operatorControl(self):
         joystick = self.oi.getStick()
