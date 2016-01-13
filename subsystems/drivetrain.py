@@ -13,7 +13,6 @@ class Drivetrain(Subsystem):
     def __init__(self, robot):
         super().__init__()
         self.robot = robot
-        #gonna use us some CANTalons.
 
         self.x = 0
         self.y = 0
