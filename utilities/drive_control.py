@@ -1,5 +1,5 @@
 __author__ = 'nikolojedison & auxchar'
-#Code mostly copied from 2015_Lopez_Jr. Needs to be implemented.
+#Code copied from 2015_Lopez_Jr.
 import wpilib
 
 def precision_mode(controller_input, button_state):
@@ -15,15 +15,6 @@ def exponential_scaling(base, exponent):
     else:
         return -(abs(base)**exponent)
 
-def inverse_dead_zone(motor_output, dead_zone):
-    """This is the inverted dead zone code which is important for Talons."""
-    if abs(motor_output) < .00001: #floating point rounding error workaround.
-        return 0
-    elif motor_output > 0:
-        return (motor_output*(1-dead_zone))+dead_zone
-    else:
-        return (-motor_output*(dead_zone-1))-dead_zone
-
 def dead_zone(controller_input, dead_zone):
     """This is the dead zone code, essential for any 4009 'bot."""
     if controller_input <= dead_zone and controller_input >= -dead_zone:
@@ -35,6 +26,15 @@ def dead_zone(controller_input, dead_zone):
 
 def drive_control(controller_input, button_state):
     return precision_mode(exponential_scaling(dead_zone(controller_input, 0.1),2.3), button_state)
+
+def inverse_dead_zone(motor_output, dead_zone):
+    """This is the inverted dead zone code which is important for Talons."""
+    if abs(motor_output) < .00001: #floating point rounding error workaround.
+        return 0
+    elif motor_output > 0:
+        return (motor_output*(1-dead_zone))+dead_zone
+    else:
+        return (-motor_output*(dead_zone-1))-dead_zone
 
 class DriveMotor(wpilib.Talon):
     """A motor controller that overcomes static friction."""

@@ -17,8 +17,10 @@ class DriveWithJoystick(Command):
         return False
 
     def end(self):
+        #Set the drivetrain values to 0 so the robot stops:
         self.robot.drivetrain.driveManual(0,0,0)
         pass
 
     def interrupted(self):
+        #If interrupted:
         self.end()

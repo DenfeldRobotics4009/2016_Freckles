@@ -6,7 +6,6 @@ import wpilib
 from wpilib.command import Subsystem
 from commands.manual.power_of_the_friendship import DriveWithJoystick
 from utilities.drive_control import *
-from utilities.imu_simple import IMUSimple
 
 class Drivetrain(Subsystem):
 
