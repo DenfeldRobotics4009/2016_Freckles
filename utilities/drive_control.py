@@ -29,7 +29,7 @@ def drive_control(controller_input, button_state):
 
 def inverse_dead_zone(motor_output, dead_zone):
     """This is the inverted dead zone code which is important for Talons."""
-    if abs(motor_output) < .00001: #floating point rounding error workaround.
+    if abs(motor_output) < .00001: #Floating point rounding error workaround.
         return 0
     elif motor_output > 0:
         return (motor_output*(1-dead_zone))+dead_zone

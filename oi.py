@@ -10,9 +10,6 @@ from utilities.pov_button import POVButton
 class OI:
     """Button mapping goes here."""
 
-#If we use the weird drivestation keylistener, remember to port that into its
-#own class.
-
     def __init__(self, robot):
         """This is assuming that the joystick used is the Logitech Extreme 3D"""
         self.stick = wpilib.Joystick(0)
