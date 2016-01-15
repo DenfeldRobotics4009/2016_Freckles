@@ -28,6 +28,7 @@ class Drivetrain(Subsystem):
         self.firstSet = wpilib.RobotDrive(self.zed, self.one)
         self.secondSet = wpilib.RobotDrive(self.two, self.three)
         self.thirdSet = wpilib.RobotDrive(self.four, self.five)
+        #Tenative.
         self.fourthSet = wpilib.RobotDrive(self.six, self.seven)
 
     def initDefaultCommand(self):
@@ -52,4 +53,5 @@ class Drivetrain(Subsystem):
         self.firstSet.arcadeDrive(x, y)
         self.secondSet.arcadeDrive(x, y)
         self.thirdSet.arcadeDrive(x, y)
+        #Tenative.
         self.fourthSet.arcadeDrive(x, y)
