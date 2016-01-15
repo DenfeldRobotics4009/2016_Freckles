@@ -17,10 +17,7 @@ class Drivetrain(Subsystem):
         self.y = 0
         self.rotation = 0
 
-        self.zed = wpilib.Talon(0)
-        self.one = wpilib.Talon(1)
-
-        self.drive = wpilib.RobotDrive(self.zed, self.one)
+        self.drive = wpilib.RobotDrive(DriveMotor(0), DriveMotor(1))
 
     def initDefaultCommand(self):
         self.setDefaultCommand(DriveWithJoystick(self.robot))
