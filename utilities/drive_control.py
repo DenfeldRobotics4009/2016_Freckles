@@ -1,4 +1,4 @@
-__author__ = 'nikolojedison & auxchar'
+__author__ = "nikolojedison & auxchar"
 #Code copied from 2015_Lopez_Jr.
 import wpilib
 

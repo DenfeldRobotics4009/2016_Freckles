@@ -1,4 +1,4 @@
-__author__ = 'nikolojedison'
+__author__ = "nikolojedison"
 
 from wpilib.command import Command
 

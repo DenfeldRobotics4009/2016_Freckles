@@ -38,7 +38,7 @@ class Freckles(wpilib.SampleRobot):
         pass
 
     def log(self):
-        pass
+        self.drivetrain.log() #I know it doesn't log but if it does eventually it'll go here
 
 if __name__ == "__main__":
     wpilib.run(Freckles)
