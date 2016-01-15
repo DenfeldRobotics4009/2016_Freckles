@@ -3,8 +3,12 @@ __author__ = 'nikolojedison'
 import wpilib
 from networktables import NetworkTable
 from wpilib.buttons import JoystickButton, InternalButton
+
 from utilities.pov_button import POVButton
 from utilities.drive_control import *
+
+from commands.play_macro import PlayMacro
+from commands.record_macro import RecordMacro
 
 class OI:
     """Button mapping goes here."""
@@ -33,6 +37,8 @@ class OI:
         outer_base_three = JoystickButton(self.stick, 11)
         inner_base_three = JoystickButton(self.stick, 12)
 
+        thumb.whenPressed(RecordMacro(robot, "lol.csv"))
+        bottom_left.whenPressed(PlayMacro(robot, "lol.csv"))
     def getStick(self):
         """Drive joystick."""
         return self.stick

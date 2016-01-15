@@ -32,8 +32,7 @@ class PlayMacro(Command):
             if t_delta > 0:
                 Timer.delay(t_delta)
             self.robot.drivetrain.driveManual(float(line["Drive_X"]),
-                                            float(line["Drive_Y"]),
-                                            float(line["Drive_Rotation"]))
+                                            float(line["Drive_Y"]), 0)
             if self.isTimedOut() or self.done_yet:
                 break
 

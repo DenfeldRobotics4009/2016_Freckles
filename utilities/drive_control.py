@@ -35,8 +35,3 @@ def inverse_dead_zone(motor_output, dead_zone):
         return (motor_output*(1-dead_zone))+dead_zone
     else:
         return (-motor_output*(dead_zone-1))-dead_zone
-
-class DriveMotor(wpilib.Talon):
-    """A motor controller that overcomes static friction."""
-    def set(self, speed, syncGroup=0):
-        super().set(inverse_dead_zone(speed, .1),syncGroup=syncGroup)
