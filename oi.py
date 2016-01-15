@@ -37,8 +37,6 @@ class OI:
         outer_base_three = JoystickButton(self.stick, 11)
         inner_base_three = JoystickButton(self.stick, 12)
 
-        thumb.whenPressed(RecordMacro(robot, "lol.csv"))
-        bottom_left.whenPressed(PlayMacro(robot, "lol.csv"))
     def getStick(self):
         """Drive joystick."""
         return self.stick
