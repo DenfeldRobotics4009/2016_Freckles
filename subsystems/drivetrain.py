@@ -25,10 +25,10 @@ class Drivetrain(Subsystem):
         self.six = wpilib.CANTalon(6)
         self.seven = wpilib.CANTalon(7)
 
-        self.firstSet = wpilib.RobotDrive()
-        self.secondSet = wpilib.RobotDrive()
-        self.thirdSet = wpilib.RobotDrive()
-        self.fourthSet = wpilib.RobotDrive()
+        self.firstSet = wpilib.RobotDrive(self.zed, self.one)
+        self.secondSet = wpilib.RobotDrive(self.two, self.three)
+        self.thirdSet = wpilib.RobotDrive(self.four, self.five)
+        self.fourthSet = wpilib.RobotDrive(self.six, self.seven)
 
     def initDefaultCommand(self):
         self.setDefaultCommand(DriveWithJoystick(self.robot))
@@ -37,9 +37,8 @@ class Drivetrain(Subsystem):
         pass
 
     def driveJoystick(self, joystick):
-        precision = True
-        x = drive_control(-joystick.getX()*2, precision)
-        y = drive_control(-joystick.getY()*2, precision)
+        x = drive_control(-joystick.getX(), precision)
+        y = drive_control(-joystick.getY(), precision)
         z = precision_mode(dead_zone(joystick.getRawAxis(3), .1), precision)
         if x>1:
             x=1
@@ -49,4 +48,7 @@ class Drivetrain(Subsystem):
 
     def driveManual(self, x, y, rotation):
         self.x, self.y, self.rotation = x, y, rotation
-        self.firstSet
+        self.firstSet.arcadeDrive(x, y, z)
+        self.secondSet.arcadeDrive(x, y, z)
+        self.thirdSet.arcadeDrive(x, y, z)
+        self.fourthSet.arcadeDrive(x, y, z)
