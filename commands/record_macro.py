@@ -14,7 +14,7 @@ class RecordMacro(Command):
 
     def initialize(self):
         self.initTime = wpilib.Timer.getFPGATimestamp() #get the current time
-        self.f = open("/home/lvuser/py/"+self.name, "w")
+        self.f = open("/home/lvuser/py/macros/"+self.name, "w")
         fields = ["Drive_X",
                   "Drive_Y",]
         self.writer = csv.DictWriter(self.f, fieldnames=fields)
