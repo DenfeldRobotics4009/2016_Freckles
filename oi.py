@@ -1,6 +1,5 @@
 __author__ = 'nikolojedison'
 
-#May need more libraries in the future, esp. once everything else is properly implemented.
 import wpilib
 from networktables import NetworkTable
 from wpilib.buttons import JoystickButton, InternalButton
@@ -21,9 +20,11 @@ class OI:
         bottom_right = JoystickButton(self.stick, 4)
         top_left = JoystickButton(self.stick, 5)
         top_right = JoystickButton(self.stick, 6)
+
         #-----------------------------------------------------------------------
         #goes from front to back. outer_base is the outer ring of buttons on
         #the base, inner_base is the inner ring of buttons on the base.
+        #-----------------------------------------------------------------------
 
         outer_base_one = JoystickButton(self.stick, 7)
         inner_base_one = JoystickButton(self.stick, 8)
