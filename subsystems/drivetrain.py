@@ -37,6 +37,7 @@ class Drivetrain(Subsystem):
         pass
 
     def driveJoystick(self, joystick):
+        precision = False
         x = drive_control(-joystick.getX(), precision)
         y = drive_control(-joystick.getY(), precision)
         z = precision_mode(dead_zone(joystick.getRawAxis(3), .1), precision)
@@ -48,7 +49,7 @@ class Drivetrain(Subsystem):
 
     def driveManual(self, x, y, rotation):
         self.x, self.y, self.rotation = x, y, rotation
-        self.firstSet.arcadeDrive(x, y, z)
-        self.secondSet.arcadeDrive(x, y, z)
-        self.thirdSet.arcadeDrive(x, y, z)
-        self.fourthSet.arcadeDrive(x, y, z)
+        self.firstSet.arcadeDrive(x, y)
+        self.secondSet.arcadeDrive(x, y)
+        self.thirdSet.arcadeDrive(x, y)
+        self.fourthSet.arcadeDrive(x, y)
