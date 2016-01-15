@@ -25,7 +25,7 @@ def dead_zone(controller_input, dead_zone):
         return ((-controller_input-dead_zone)/(dead_zone-1))
 
 def drive_control(controller_input, button_state):
-    return precision_mode(exponential_scaling(dead_zone(controller_input, 0.1),0.5), button_state)
+    return precision_mode(exponential_scaling(dead_zone(controller_input, 0.1),0.75), button_state)
 
 def inverse_dead_zone(motor_output, dead_zone):
     """This is the inverted dead zone code which is important for Talons."""
