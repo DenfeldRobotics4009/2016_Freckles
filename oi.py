@@ -7,8 +7,8 @@ from wpilib.buttons import JoystickButton, InternalButton
 from utilities.pov_button import POVButton
 from utilities.drive_control import *
 
-from commands.play_macro import PlayMacro
-from commands.record_macro import RecordMacro
+from macros.play_macro import PlayMacro
+from macros.record_macro import RecordMacro
 
 class OI:
     """Button mapping goes here."""
@@ -16,7 +16,6 @@ class OI:
     def __init__(self, robot):
         """This is assuming that the joystick used is the Logitech Extreme 3D. Not sure yet, which is why POVButton is a thing"""
         self.stick = wpilib.Joystick(0)
-        self.smart_dashboard = NetworkTable.getTable("SmartDashboard")
 
         trigger = JoystickButton(self.stick, 1)
         thumb = JoystickButton(self.stick, 2)
