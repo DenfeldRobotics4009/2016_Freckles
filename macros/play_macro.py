@@ -25,7 +25,9 @@ class PlayMacro(Command):
         except FileNotFoundError:
             #This bit runs if the file isn't there
             self.reader_iterator = []
+        #length of time to play the macro.
         self.setTimeout(15)
+        #start time is important for making sure everything plays at the right time
         start_time = Timer.getFPGATimestamp()
         for line in self.reader_iterator:
             t_delta = float(line["Time"]) - (Timer.getFPGATimestamp()-start_time)
@@ -43,6 +45,7 @@ class PlayMacro(Command):
         return True
 
     def end(self):
+        #set the motors to 0 for safety's sake:
         self.robot.drivetrain.driveManual(0,0,0)
         if hasattr(self, "f"):
             self.f.close()

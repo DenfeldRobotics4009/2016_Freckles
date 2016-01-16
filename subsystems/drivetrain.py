@@ -16,6 +16,7 @@ class Drivetrain(Subsystem):
         self.y = 0
         self.rotation = 0
 
+        #CANTalon motor drivetrain
         self.zed = wpilib.CANTalon(0)
         self.one = wpilib.CANTalon(1)
         self.two = wpilib.CANTalon(2)
@@ -25,6 +26,7 @@ class Drivetrain(Subsystem):
         self.six = wpilib.CANTalon(6)
         self.seven = wpilib.CANTalon(7)
 
+        #Actual drivetrains. Basically fun.
         self.firstSet = wpilib.RobotDrive(self.zed, self.one)
         self.secondSet = wpilib.RobotDrive(self.two, self.three)
         self.thirdSet = wpilib.RobotDrive(self.four, self.five)

@@ -26,12 +26,3 @@ def dead_zone(controller_input, dead_zone):
 
 def drive_control(controller_input, button_state):
     return precision_mode(exponential_scaling(dead_zone(controller_input, 0.1),0.75), button_state) #the 0.75 was initially 2.3 (in case it needs to be changed)
-
-def inverse_dead_zone(motor_output, dead_zone):
-    """This is the inverted dead zone code which is important for Talons."""
-    if abs(motor_output) < .00001: #Floating point rounding error workaround.
-        return 0
-    elif motor_output > 0:
-        return (motor_output*(1-dead_zone))+dead_zone
-    else:
-        return (-motor_output*(dead_zone-1))-dead_zone

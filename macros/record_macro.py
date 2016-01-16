@@ -9,7 +9,10 @@ class RecordMacro(Command):
     def __init__(self, robot, name):
         super().__init__()
         self.robot = robot
+
+        #length of time to record the macro.
         self.setTimeout(15)
+
         self.name = name
 
     def initialize(self):
@@ -25,7 +28,7 @@ class RecordMacro(Command):
             "Drive_X": self.robot.drivetrain.x,
             "Drive_Y": self.robot.drivetrain.y,
 
-            #this is needed to make sure everything runs at the right time
+            #this is needed to make sure everything runs at the right time, v. important:
             "Time": wpilib.Timer.getFPGATimestamp() - self.initTime}) #get the time as the row is written
 
     def isFinished(self):
