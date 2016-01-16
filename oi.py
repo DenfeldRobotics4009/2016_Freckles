@@ -37,6 +37,15 @@ class OI:
         outer_base_three = JoystickButton(self.stick, 11)
         inner_base_three = JoystickButton(self.stick, 12)
 
+        pov_north = POVButton(self.stick, 0)
+        pov_northeast = POVButton(self.stick, 45)
+        pov_east = POVButton(self.stick, 90)
+        pov_southeast = POVButton(self.stick, 135)
+        pov_south = POVButton(self.stick, 180)
+        pov_southwest = POVButton(self.stick, 225)
+        pov_west = POVButton(self.stick, 270)
+        pov_northwest = POVButton(self.stick, 315)
+
     def getStick(self):
         """Drive joystick."""
         return self.stick
