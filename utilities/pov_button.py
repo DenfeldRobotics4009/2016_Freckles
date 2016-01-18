@@ -1,4 +1,5 @@
 __author__ = "auxiliary-character"
+
 from wpilib.buttons import Button
 
 class POVButton(Button):

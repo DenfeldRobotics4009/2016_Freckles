@@ -1,13 +1,16 @@
 __author__ = "auxiliary-character"
+
+import csv
+
 import wpilib
 from wpilib.timer import Timer
 from wpilib.command import Command
-import csv
 
 class PlayMacro(Command):
     """This plays macro movements from the .csv file."""
     def __init__(self, robot, name):
         """Initialize the command and get all the requirements."""
+
         super().__init__()
         self.robot = robot
         self.requires(robot.drivetrain)
@@ -15,6 +18,7 @@ class PlayMacro(Command):
         self.done_yet = False
 
     def initialize(self):
+
         try:
             #attempt to access the files required
             if self.robot.isReal():
@@ -25,10 +29,12 @@ class PlayMacro(Command):
         except FileNotFoundError:
             #This bit runs if the file isn't there
             self.reader_iterator = []
+
         #length of time to play the macro.
         self.setTimeout(15)
         #start time is important for making sure everything plays at the right time
         start_time = Timer.getFPGATimestamp()
+
         for line in self.reader_iterator:
             t_delta = float(line["Time"]) - (Timer.getFPGATimestamp()-start_time)
             if t_delta > 0:
@@ -46,6 +52,7 @@ class PlayMacro(Command):
 
     def end(self):
         #set the motors to 0 for safety's sake:
+
         self.robot.drivetrain.driveManual(0,0,0)
         if hasattr(self, "f"):
             self.f.close()
@@ -54,5 +61,6 @@ class PlayMacro(Command):
         self.end()
 
     def cancel(self):
+
         self.end()
         super().cancel()

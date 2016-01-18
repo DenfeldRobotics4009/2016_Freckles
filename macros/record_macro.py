@@ -1,12 +1,15 @@
 __author__ = "auxiliary-character"
+
+import csv
+
 from wpilib.command import Command
 from wpilib.timer import Timer
 import wpilib
-import csv
 
 class RecordMacro(Command):
     """This records robot movements and writes them to a .csv file."""
     def __init__(self, robot, name):
+
         super().__init__()
         self.robot = robot
 
@@ -16,6 +19,7 @@ class RecordMacro(Command):
         self.name = name
 
     def initialize(self):
+
         self.initTime = wpilib.Timer.getFPGATimestamp() #get the current time
         self.f = open("/home/lvuser/py/macros/"+self.name, "w")
         fields = ["Drive_X",
@@ -24,6 +28,7 @@ class RecordMacro(Command):
         self.writer.writeheader()
 
     def execute(self):
+
         self.writer.writerow({
             "Drive_X": self.robot.drivetrain.x,
             "Drive_Y": self.robot.drivetrain.y,
@@ -41,5 +46,6 @@ class RecordMacro(Command):
         self.end()
 
     def cancel(self):
+
         self.end()
         super().cancel()

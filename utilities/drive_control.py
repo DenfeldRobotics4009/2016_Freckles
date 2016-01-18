@@ -1,6 +1,8 @@
 __author__ = "nikolojedison & auxchar"
 #Code copied from 2015_Lopez_Jr.
+
 import wpilib
+
 from utilities.settings import Settings
 
 def precision_mode(controller_input, button_state):

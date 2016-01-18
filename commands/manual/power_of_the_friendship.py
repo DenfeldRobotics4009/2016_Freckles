@@ -5,8 +5,8 @@ from wpilib.command import Command
 class DriveWithJoystick(Command):
 
     def __init__(self, robot):
-        super().__init__()
 
+        super().__init__()
         self.robot = robot
         self.requires(self.robot.drivetrain)
 
@@ -18,7 +18,8 @@ class DriveWithJoystick(Command):
 
     def end(self):
         #Set the drivetrain values to 0 so the robot stops:
-        self.robot.drivetrain.driveManual(0,0,0)
+
+        self.robot.drivetrain.driveManual(0,0)
         pass
 
     def interrupted(self):
