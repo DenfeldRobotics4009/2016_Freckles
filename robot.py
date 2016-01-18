@@ -67,7 +67,8 @@ class Freckles(wpilib.SampleRobot):
                 Settings.num_drive = 4
 
         except KeyError:
-                pass
+                Settings.num_scaling = 0.75
+                Settings.num_drive = 4
 
         #Logging loop
         while self.isOperatorControl() and self.isEnabled():
