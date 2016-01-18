@@ -31,4 +31,4 @@ def dead_zone(controller_input, dead_zone):
         return ((-controller_input-dead_zone)/(dead_zone-1))
 
 def drive_control(controller_input, button_state):
-    return precision_mode(exponential_scaling(dead_zone(controller_input, 0.1), Settings.num_scaling), button_state) #the 0.75 was initially 2.3 (in case it needs to be changed)
+    return precision_mode(exponential_scaling(dead_zone(controller_input, 0.1), Settings.num_scaling), button_state)
