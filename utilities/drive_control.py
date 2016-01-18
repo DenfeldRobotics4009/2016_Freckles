@@ -1,5 +1,5 @@
 __author__ = "nikolojedison & auxchar"
-#Code copied from 2015_Lopez_Jr.
+#Code copied from 2015_Lopez_Jr. Some changes to fit with 2016 setup.
 
 import wpilib
 

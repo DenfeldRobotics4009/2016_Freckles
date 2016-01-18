@@ -20,7 +20,7 @@ class Drivetrain(Subsystem):
         self.y = 0
         self.rotation = 0
 
-        #CANTalon motor drivetrain
+        #CANTalon motors for the drivetrain.
         self.zed = wpilib.CANTalon(0)
         self.one = wpilib.CANTalon(1)
         self.two = wpilib.CANTalon(2)
@@ -57,6 +57,7 @@ class Drivetrain(Subsystem):
     def driveManual(self, x, y):
 
         self.x, self.y = x, y
+
         self.firstSet.arcadeDrive(x, y)
         self.secondSet.arcadeDrive(x, y)
         self.thirdSet.arcadeDrive(x, y)

@@ -22,6 +22,7 @@ class Freckles(wpilib.SampleRobot):
 
     def autonomous(self):
 
+        #Logging loop
         while self.isAutonomous() and self.isEnabled():
             Scheduler.getInstance().run()
             self.log()
@@ -31,8 +32,8 @@ class Freckles(wpilib.SampleRobot):
         joystick = self.oi.getStick()
 
         #Sensitivity settings structure. Gets the sensitivity value from the
-        #smart dashboard (returning 5 as the default), and adjust the corresponding
-        #values accordingly.
+        #smart dashboard (returning 5 as the default), and adjust the
+        #corresponding values accordingly.
         try:
             if self.sensitivity == 1:
                 Settings.num_scaling = 0.10
@@ -68,6 +69,7 @@ class Freckles(wpilib.SampleRobot):
         except KeyError:
                 pass
 
+        #Logging loop
         while self.isOperatorControl() and self.isEnabled():
             self.log()
             Scheduler.getInstance().run()
@@ -77,6 +79,8 @@ class Freckles(wpilib.SampleRobot):
 
         #Stop the drivetrain for safety's sake.
         self.drivetrain.driveManual(0,0)
+
+        #Logging loop
         while self.isDisabled():
             self.log()
             wpilib.Timer.delay(.005)
@@ -85,7 +89,8 @@ class Freckles(wpilib.SampleRobot):
         pass
 
     def log(self):
-        self.drivetrain.log() #I know it doesn't log but if it does eventually it'll go here
+        """I know it doesn't log but if it does eventually it'll go here"""
+        self.drivetrain.log()
 
 if __name__ == "__main__":
     wpilib.run(Freckles)
