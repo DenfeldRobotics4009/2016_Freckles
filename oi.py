@@ -21,6 +21,7 @@ class OI:
         self.smart_dashboard = NetworkTable.getTable("SmartDashboard")
 
         #Main stick buttons
+        #-----------------------------------------------------------------------
         trigger = JoystickButton(self.stick, 1)
         thumb = JoystickButton(self.stick, 2)
         bottom_left = JoystickButton(self.stick, 3)
@@ -28,11 +29,10 @@ class OI:
         top_left = JoystickButton(self.stick, 5)
         top_right = JoystickButton(self.stick, 6)
 
-        #-----------------------------------------------------------------------
+
         #goes from front to back. outer_base is the outer ring of buttons on
         #the base, inner_base is the inner ring of buttons on the base.
         #-----------------------------------------------------------------------
-
         outer_base_one = JoystickButton(self.stick, 7)
         inner_base_one = JoystickButton(self.stick, 8)
         outer_base_two = JoystickButton(self.stick, 9)
@@ -41,6 +41,7 @@ class OI:
         inner_base_three = JoystickButton(self.stick, 12)
 
         #Hat switch POV stuff.
+        #-----------------------------------------------------------------------
         pov_north = POVButton(self.stick, 0)
         pov_northeast = POVButton(self.stick, 45)
         pov_east = POVButton(self.stick, 90)

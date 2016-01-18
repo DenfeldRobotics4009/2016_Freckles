@@ -19,6 +19,8 @@ class Freckles(wpilib.SampleRobot):
         self.drivetrain = Drivetrain(self)
         self.oi = OI(self)
         self.sensitivity = self.oi.smart_dashboard.getInt("Sensitivity", 5)
+        self.macroTimeout = self.oi.smart_dashboard.getInt("Macro", 15)
+        Settings.num_macro_timeout = self.macroTimeout
 
     def autonomous(self):
 
