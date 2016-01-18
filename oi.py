@@ -20,6 +20,7 @@ class OI:
         self.stick = wpilib.Joystick(0)
         self.smart_dashboard = NetworkTable.getTable("SmartDashboard")
 
+        #Main stick buttons
         trigger = JoystickButton(self.stick, 1)
         thumb = JoystickButton(self.stick, 2)
         bottom_left = JoystickButton(self.stick, 3)
@@ -39,6 +40,7 @@ class OI:
         outer_base_three = JoystickButton(self.stick, 11)
         inner_base_three = JoystickButton(self.stick, 12)
 
+        #Hat switch POV stuff.
         pov_north = POVButton(self.stick, 0)
         pov_northeast = POVButton(self.stick, 45)
         pov_east = POVButton(self.stick, 90)

@@ -29,6 +29,9 @@ class Freckles(wpilib.SampleRobot):
     def operatorControl(self):
         joystick = self.oi.getStick()
 
+        #Sensitivity settings structure. Gets the sensitivity value from the
+        #smart dashboard (returning 5 as the default), and adjust the corresponding
+        #values accordingly.
         try:
             if self.sensitivity == 1:
                 Settings.num_scaling = 0.10
@@ -70,6 +73,8 @@ class Freckles(wpilib.SampleRobot):
             wpilib.Timer.delay(.005)
 
     def disabled(self):
+
+        #Stop the drivetrain for safety's sake.
         self.drivetrain.driveManual(0,0)
         while self.isDisabled():
             self.log()
