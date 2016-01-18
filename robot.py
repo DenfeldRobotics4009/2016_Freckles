@@ -70,7 +70,7 @@ class Freckles(wpilib.SampleRobot):
             wpilib.Timer.delay(.005)
 
     def disabled(self):
-
+        self.drivetrain.driveManual(0,0)
         while self.isDisabled():
             self.log()
             wpilib.Timer.delay(.005)
