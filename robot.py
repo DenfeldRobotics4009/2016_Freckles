@@ -17,7 +17,7 @@ class Freckles(wpilib.SampleRobot):
 
         self.drivetrain = Drivetrain(self)
         self.oi = OI(self)
-        self.sensitivity = self.oi.smart_dashboard.getInt("Sensitivity", 6)
+        self.sensitivity = self.oi.smart_dashboard.getInt("Sensitivity", 5)
 
     def autonomous(self):
 
