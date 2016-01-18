@@ -10,6 +10,7 @@ from utilities.settings import Settings
 class Drivetrain(Subsystem):
 
     def __init__(self, robot):
+
         super().__init__()
         self.robot = robot
         self.x = 0
@@ -40,6 +41,7 @@ class Drivetrain(Subsystem):
         pass
 
     def driveJoystick(self, joystick):
+
         precision = True
         x = drive_control(-joystick.getX()*Settings.num_drive, precision)
         y = drive_control(-joystick.getY()*Settings.num_drive, precision)
@@ -50,6 +52,7 @@ class Drivetrain(Subsystem):
         self.driveManual(x,y)
 
     def driveManual(self, x, y):
+
         self.x, self.y = x, y
         self.firstSet.arcadeDrive(x, y)
         self.secondSet.arcadeDrive(x, y)

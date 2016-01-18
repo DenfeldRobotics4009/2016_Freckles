@@ -14,11 +14,13 @@ class Freckles(wpilib.SampleRobot):
     """Fluffy ears to scratch, lost his tail, cute little paws, likes to play fetch."""
 
     def robotInit(self):
+
         self.drivetrain = Drivetrain(self)
         self.oi = OI(self)
         self.sensitivity = self.oi.smart_dashboard.getInt("Sensitivity", 6)
 
     def autonomous(self):
+
         while self.isAutonomous() and self.isEnabled():
             Scheduler.getInstance().run()
             self.log()
@@ -26,6 +28,7 @@ class Freckles(wpilib.SampleRobot):
 
     def operatorControl(self):
         joystick = self.oi.getStick()
+
         try:
             if self.sensitivity == 1:
                 Settings.num_scaling = 0.10
@@ -55,7 +58,9 @@ class Freckles(wpilib.SampleRobot):
                 Settings.num_scaling = 2.3
                 Settings.num_drive = 2
             else:
-                pass
+                Settings.num_scaling = 0.75
+                Settings.num_drive = 4
+
         except KeyError:
                 pass
 
@@ -65,6 +70,7 @@ class Freckles(wpilib.SampleRobot):
             wpilib.Timer.delay(.005)
 
     def disabled(self):
+
         while self.isDisabled():
             self.log()
             wpilib.Timer.delay(.005)

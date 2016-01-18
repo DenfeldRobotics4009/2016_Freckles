@@ -5,12 +5,14 @@ from utilities.settings import Settings
 
 def precision_mode(controller_input, button_state):
     """copied from CubertPy, b/c it worked"""
+
     if button_state:
         return controller_input * Settings.num_precision
     else:
         return controller_input
 
 def exponential_scaling(base, exponent):
+
     if base>0:
         return abs(base)**exponent
     else:
@@ -18,6 +20,7 @@ def exponential_scaling(base, exponent):
 
 def dead_zone(controller_input, dead_zone):
     """This is the dead zone code, essential for any 4009 'bot."""
+
     if controller_input <= dead_zone and controller_input >= -dead_zone:
         return 0
     elif controller_input > 0:
