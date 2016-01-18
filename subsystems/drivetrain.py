@@ -5,13 +5,13 @@ import wpilib
 from wpilib.command import Subsystem
 from commands.manual.power_of_the_friendship import DriveWithJoystick
 from utilities.drive_control import *
+from utilities.settings import Settings
 
 class Drivetrain(Subsystem):
 
     def __init__(self, robot):
         super().__init__()
         self.robot = robot
-
         self.x = 0
         self.y = 0
         self.rotation = 0
@@ -41,8 +41,8 @@ class Drivetrain(Subsystem):
 
     def driveJoystick(self, joystick):
         precision = True
-        x = drive_control(-joystick.getX()*4, precision)
-        y = drive_control(-joystick.getY()*4, precision)
+        x = drive_control(-joystick.getX()*Settings.num_drive, precision)
+        y = drive_control(-joystick.getY()*Settings.num_drive, precision)
         if x>1:
             x=1
         elif x<-1:
