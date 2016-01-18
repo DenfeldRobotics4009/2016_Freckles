@@ -3,8 +3,8 @@ __author__ = "auxiliary-character"
 import csv
 
 import wpilib
-from wpilib.timer import Timer
 from wpilib.command import Command
+from wpilib.timer import Timer
 
 from utilities.settings import Settings
 

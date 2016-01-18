@@ -2,9 +2,9 @@ __author__ = "auxiliary-character"
 
 import csv
 
+import wpilib
 from wpilib.command import Command
 from wpilib.timer import Timer
-import wpilib
 
 from utilities.settings import Settings
 

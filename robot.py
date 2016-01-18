@@ -2,13 +2,14 @@
 __author__ = "nikolojedison"
 
 import wpilib
-import networktables
 from wpilib.command import Scheduler
-from oi import OI
+import networktables
 
 from utilities.settings import Settings
 
 from subsystems.drivetrain import Drivetrain
+
+from oi import OI
 
 class Freckles(wpilib.SampleRobot):
     """Fluffy ears to scratch, lost his tail, cute little paws, likes to play fetch."""
