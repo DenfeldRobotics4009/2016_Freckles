@@ -6,6 +6,8 @@ import wpilib
 from wpilib.timer import Timer
 from wpilib.command import Command
 
+from utilities.settings import Settings
+
 class PlayMacro(Command):
     """This plays macro movements from the .csv file."""
     def __init__(self, robot, name):
@@ -31,7 +33,7 @@ class PlayMacro(Command):
             self.reader_iterator = []
 
         #length of time to play the macro.
-        self.setTimeout(15)
+        self.setTimeout(Settings.num_macro_timeout)
         #start time is important for making sure everything plays at the right time
         start_time = Timer.getFPGATimestamp()
 

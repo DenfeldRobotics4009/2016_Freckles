@@ -6,6 +6,8 @@ from wpilib.command import Command
 from wpilib.timer import Timer
 import wpilib
 
+from utilities.settings import Settings
+
 class RecordMacro(Command):
     """This records robot movements and writes them to a .csv file."""
     def __init__(self, robot, name):
@@ -14,7 +16,7 @@ class RecordMacro(Command):
         self.robot = robot
 
         #length of time to record the macro.
-        self.setTimeout(15)
+        self.setTimeout(Settings.num_macro_timeout)
 
         self.name = name
 
