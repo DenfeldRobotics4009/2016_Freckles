@@ -27,15 +27,11 @@ class Drivetrain(Subsystem):
         self.three = wpilib.CANTalon(3)
         self.four = wpilib.CANTalon(4)
         self.five = wpilib.CANTalon(5)
-        self.six = wpilib.CANTalon(6)
-        self.seven = wpilib.CANTalon(7)
 
         #Actual drivetrains. Basically fun.
         self.firstSet = wpilib.RobotDrive(self.zed, self.one)
         self.secondSet = wpilib.RobotDrive(self.two, self.three)
         self.thirdSet = wpilib.RobotDrive(self.four, self.five)
-        #Tenative.
-        self.fourthSet = wpilib.RobotDrive(self.six, self.seven)
 
     def initDefaultCommand(self):
         self.setDefaultCommand(DriveWithJoystick(self.robot))
@@ -61,5 +57,3 @@ class Drivetrain(Subsystem):
         self.firstSet.arcadeDrive(x, y)
         self.secondSet.arcadeDrive(x, y)
         self.thirdSet.arcadeDrive(x, y)
-        #Tenative.
-        self.fourthSet.arcadeDrive(x, y)
