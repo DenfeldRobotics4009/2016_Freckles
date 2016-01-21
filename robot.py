@@ -19,10 +19,10 @@ class Freckles(wpilib.SampleRobot):
         self.drivetrain = Drivetrain(self)
         self.oi = OI(self)
 
-        #Sensitivity thing from the dashboard
+        #Sensitivity thing from the dashboard (default setting 5)
         self.sensitivity = self.oi.smart_dashboard.getInt("Sensitivity", 5)
 
-        #Timeout value for the macros from the dashboard
+        #Timeout value for the macros from the dashboard (default 15 sec)
         self.macroTimeout = self.oi.smart_dashboard.getInt("Macro", 15)
         Settings.num_macro_timeout = self.macroTimeout
 
@@ -32,7 +32,7 @@ class Freckles(wpilib.SampleRobot):
         while self.isAutonomous() and self.isEnabled():
             Scheduler.getInstance().run()
             self.log()
-            wpilib.Timer.delay(.005)
+            wpilib.Timer.delay(.005) #don't burn up the cpu
 
     def operatorControl(self):
         joystick = self.oi.getStick()
@@ -69,10 +69,12 @@ class Freckles(wpilib.SampleRobot):
                 Settings.num_scaling = 2.3
                 Settings.num_drive = 2
             else:
+                #if the value is over 10, just set default sensitivity
                 Settings.num_scaling = 0.75
                 Settings.num_drive = 4
 
-        except KeyError:
+        except KeyError: #if the dashboard is being weird:
+                #just set the sensitivity to the defaults
                 Settings.num_scaling = 0.75
                 Settings.num_drive = 4
 
@@ -80,7 +82,7 @@ class Freckles(wpilib.SampleRobot):
         while self.isOperatorControl() and self.isEnabled():
             self.log()
             Scheduler.getInstance().run()
-            wpilib.Timer.delay(.005)
+            wpilib.Timer.delay(.005) #don't burn up the cpu
 
     def disabled(self):
 
@@ -90,7 +92,7 @@ class Freckles(wpilib.SampleRobot):
         #Logging loop
         while self.isDisabled():
             self.log()
-            wpilib.Timer.delay(.005)
+            wpilib.Timer.delay(.005) #don't burn up the cpu
 
     def test(self):
         pass

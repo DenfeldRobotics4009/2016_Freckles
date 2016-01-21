@@ -14,6 +14,7 @@ class DriveWithJoystick(Command):
         self.robot.drivetrain.driveJoystick(self.robot.oi.getStick())
 
     def isFinished(self):
+        #keep the robot from running the driveJoystick command once then dying:
         return False
 
     def end(self):
@@ -23,5 +24,5 @@ class DriveWithJoystick(Command):
         pass
 
     def interrupted(self):
-        #If interrupted:
+        #If interrupted (could do logs here):
         self.end()
