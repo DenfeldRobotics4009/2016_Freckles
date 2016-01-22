@@ -53,9 +53,28 @@ class Drivetrain(Subsystem):
         self.driveManual(x,y)
 
     def driveManual(self, x, y):
-
         self.x, self.y = x, y
 
-        self.firstSet.arcadeDrive(x, y)
-        self.secondSet.arcadeDrive(x, y)
-        self.thirdSet.arcadeDrive(x, y)
+        if x > 0.0625 or x < -0.0625 :
+            self.five.set(x)
+            self.one.set(x)
+            self.four.set(x)
+            self.three.set(x)
+            self.two.set(x)
+            self.zed.set(x)
+
+        elif y > 0.0625 or y < -0.0625:
+            self.four.set(y)
+            self.one.set(y)
+            self.five.set(y)
+            self.three.set(y)
+            self.two.set(y)
+            self.zed.set(y)
+
+        else:
+            self.zed.set(0)
+            self.one.set(0)
+            self.two.set(0)
+            self.three.set(0)
+            self.four.set(0)
+            self.five.set(0)

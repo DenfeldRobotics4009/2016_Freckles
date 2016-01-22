@@ -31,4 +31,4 @@ def dead_zone(controller_input, dead_zone):
         return ((-controller_input-dead_zone)/(dead_zone-1))
 
 def drive_control(controller_input):
-    return exponential_scaling(controller_input, 0.5)
+    return exponential_scaling(exponential_scaling(controller_input, 0.5)*0.5, 1.25)
