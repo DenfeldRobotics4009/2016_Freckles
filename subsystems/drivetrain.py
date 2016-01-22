@@ -68,7 +68,7 @@ class Drivetrain(Subsystem):
 
         elif y > 0.0625 or y < -0.0625:
             self.four.set(y)
-            self.one.set(-y)
+            self.one.set(y)
             self.five.set(y)
             self.three.set(y)
             self.two.set(y)
