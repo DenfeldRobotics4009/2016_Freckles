@@ -20,7 +20,7 @@ class Freckles(wpilib.SampleRobot):
         self.oi = OI(self)
 
         #Sensitivity thing from the dashboard (default setting 5)
-        self.sensitivity = self.oi.smart_dashboard.getInt("Sensitivity", 3)
+        self.sensitivity = self.oi.smart_dashboard.getInt("Sensitivity", 9)
 
         #Timeout value for the macros from the dashboard (default 15 sec)
         self.macroTimeout = self.oi.smart_dashboard.getInt("Macro", 15)
