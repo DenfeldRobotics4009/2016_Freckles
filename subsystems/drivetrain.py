@@ -42,8 +42,8 @@ class Drivetrain(Subsystem):
     def driveJoystick(self, joystick):
 
         precision = True
-        x = drive_control(-joystick.getX()*Settings.num_drive, precision)
-        y = drive_control(-joystick.getY()*Settings.num_drive, precision)
+        y = drive_control(-joystick.getRawAxis(2)*1.5, precision)
+        x = drive_control(-joystick.getY()*Settings.num_drive, precision)
         if x>1:
             x=1
         elif x<-1:
