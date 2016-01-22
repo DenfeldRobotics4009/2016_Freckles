@@ -29,6 +29,9 @@ class Drivetrain(Subsystem):
         self.five = wpilib.CANTalon(5)
 
         #Actual drivetrains. Basically fun.
+        self.firstSet = wpilib.RobotDrive(self.zed, self.one)
+        self.secondSet = wpilib.RobotDrive(self.two, self.three)
+        self.thirdSet = wpilib.RobotDrive(self.four, self.five)
 
     def initDefaultCommand(self):
         self.setDefaultCommand(DriveWithJoystick(self.robot))
@@ -40,8 +43,8 @@ class Drivetrain(Subsystem):
 
         precision = False
 
-        y = drive_control(joystick.getRawAxis(2))
-        x = drive_control(-joystick.getY())
+        y = drive_control(joystick.getRawAxis(2))*2
+        x = drive_control(-joystick.getY())*2
 
         if x>1:
             x=1
@@ -51,33 +54,7 @@ class Drivetrain(Subsystem):
 
     def driveManual(self, x, y):
         self.x, self.y = x, y
-        self.five.set(0)
-        self.one.set(0)
-        self.four.set(0)
-        self.three.set(0)
-        self.two.set(0)
-        self.zed.set(0)
 
-        if x > 0.0625 or x < -0.0625 :
-            self.five.set(x)
-            self.one.set(-x)
-            self.four.set(x)
-            self.three.set(x)
-            self.two.set(x)
-            self.zed.set(x)
-
-        elif y > 0.0625 or y < -0.0625:
-            self.four.set(y)
-            self.one.set(y)
-            self.five.set(y)
-            self.three.set(y)
-            self.two.set(y)
-            self.zed.set(y)
-
-        else:
-            self.zed.set(0)
-            self.one.set(0)
-            self.two.set(0)
-            self.three.set(0)
-            self.four.set(0)
-            self.five.set(0)
+        self.firstSet.arcadeDrive(x, y)
+        self.secondSet.arcadeDrive(x, y)
+        self.thirdSet.arcadeDrive(x, y)
