@@ -29,9 +29,6 @@ class Drivetrain(Subsystem):
         self.five = wpilib.CANTalon(5)
 
         #Actual drivetrains. Basically fun.
-        self.firstSet = wpilib.RobotDrive(self.zed, self.one)
-        self.secondSet = wpilib.RobotDrive(self.two, self.three)
-        self.thirdSet = wpilib.RobotDrive(self.four, self.five)
 
     def initDefaultCommand(self):
         self.setDefaultCommand(DriveWithJoystick(self.robot))
@@ -63,7 +60,7 @@ class Drivetrain(Subsystem):
 
         if x > 0.0625 or x < -0.0625 :
             self.five.set(x)
-            self.one.set(x)
+            self.one.set(-x)
             self.four.set(x)
             self.three.set(x)
             self.two.set(x)
@@ -71,7 +68,7 @@ class Drivetrain(Subsystem):
 
         elif y > 0.0625 or y < -0.0625:
             self.four.set(y)
-            self.one.set(y)
+            self.one.set(-y)
             self.five.set(y)
             self.three.set(y)
             self.two.set(y)
