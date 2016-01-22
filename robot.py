@@ -19,9 +19,6 @@ class Freckles(wpilib.SampleRobot):
         self.drivetrain = Drivetrain(self)
         self.oi = OI(self)
 
-        #Sensitivity thing from the dashboard (default setting 5)
-        self.sensitivity = self.oi.smart_dashboard.getInt("Sensitivity", 9)
-
         #Timeout value for the macros from the dashboard (default 15 sec)
         self.macroTimeout = self.oi.smart_dashboard.getInt("Macro", 15)
         Settings.num_macro_timeout = self.macroTimeout
@@ -36,47 +33,6 @@ class Freckles(wpilib.SampleRobot):
 
     def operatorControl(self):
         joystick = self.oi.getStick()
-
-        #Sensitivity settings structure. Gets the sensitivity value from the
-        #smart dashboard (returning 5 as the default), and adjust the
-        #corresponding values accordingly.
-        try:
-            if self.sensitivity == 1:
-                Settings.num_scaling = 0.10
-                Settings.num_drive = 5
-            elif self.sensitivity == 2:
-                Settings.num_scaling = 0.25
-                Settings.num_drive = 4
-            elif self.sensitivity == 3:
-                Settings.num_scaling = 0.45
-                Settings.num_drive = 4
-            elif self.sensitivity == 4:
-                Settings.num_scaling = 0.60
-                Settings.num_drive = 4
-            elif self.sensitivity == 5:
-                Settings.num_scaling = 0.75
-                Settings.num_drive = 4
-            elif self.sensitivity == 6:
-                Settings.num_scaling = 1.25
-                Settings.num_drive = 3
-            elif self.sensitivity == 7:
-                Settings.num_scaling = 1.5
-                Settings.num_drive = 3
-            elif self.sensitivity == 8:
-                Settings.num_scaling = 1.85
-                Settings.num_drive = 3
-            elif self.sensitivity == 9:
-                Settings.num_scaling = 2.3
-                Settings.num_drive = 2
-            else:
-                #if the value is over 10, just set default sensitivity
-                Settings.num_scaling = 0.75
-                Settings.num_drive = 4
-
-        except KeyError: #if the dashboard is being weird:
-                #just set the sensitivity to the defaults
-                Settings.num_scaling = 0.75
-                Settings.num_drive = 4
 
         #Logging loop
         while self.isOperatorControl() and self.isEnabled():

@@ -5,6 +5,5 @@ class Settings():
 
     #Numbers to be changed through drive station
     num_precision = 0.5
-    num_scaling = 0.75
-    num_drive = 4
+    num_scaling = 1.25
     num_macro_timeout = 15
