@@ -7,6 +7,7 @@ from wpilib.command import Subsystem
 
 from utilities.drive_control import *
 from utilities.settings import Settings
+from oi import OI
 
 from commands.manual.power_of_the_friendship import DriveWithJoystick
 
@@ -19,6 +20,7 @@ class Drivetrain(Subsystem):
         self.x = 0
         self.y = 0
         self.rotation = 0
+        self.joystick = wpilib.Joystick(0)
 
         #CANTalon motors for the drivetrain.
         self.zed = wpilib.CANTalon(0)
@@ -43,8 +45,8 @@ class Drivetrain(Subsystem):
 
         precision = False
 
-        y = drive_control(joystick.getRawAxis(2))*2
-        x = drive_control(-joystick.getY())*2
+        y = drive_control(-self.joystick.getRawAxis(2), self.joystick.getButton(0))*1.5
+        x = drive_control(-self.joystick.getY(), self.joystick.getButton(0))*2.5
 
         if x>1:
             x=1
