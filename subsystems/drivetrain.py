@@ -40,7 +40,7 @@ class Drivetrain(Subsystem):
 
         precision = False
 
-        y = drive_control(-joystick.getRawAxis(2))
+        y = drive_control(joystick.getRawAxis(2))
         x = drive_control(-joystick.getY())
 
         if x>1:
