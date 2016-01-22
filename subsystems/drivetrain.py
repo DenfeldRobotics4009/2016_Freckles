@@ -54,6 +54,12 @@ class Drivetrain(Subsystem):
 
     def driveManual(self, x, y):
         self.x, self.y = x, y
+        self.five.set(0)
+        self.one.set(0)
+        self.four.set(0)
+        self.three.set(0)
+        self.two.set(0)
+        self.zed.set(0)
 
         if x > 0.0625 or x < -0.0625 :
             self.five.set(x)
