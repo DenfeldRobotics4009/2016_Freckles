@@ -8,10 +8,12 @@ from utilities.settings import Settings
 def precision_mode(controller_input, trigger, button):
     """copied from CubertPy, b/c it worked"""
 
-    if trigger:
+    if trigger == True and not button == True:
         return controller_input * Settings.num_precision_one
-    elif button:
+    elif button == True and not trigger == True:
         return controller_input * Settings.num_precision_two
+    elif button == True and trigger == True:
+        return controller_input * Settings.num_precision_one * Settings.num_precision_two
     else:
         return controller_input
 
