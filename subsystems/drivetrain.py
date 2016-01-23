@@ -45,8 +45,8 @@ class Drivetrain(Subsystem):
 
         precision = False
 
-        y = drive_control(-self.joystick.getRawAxis(2), self.joystick.getButton(0))*1.5
-        x = drive_control(-self.joystick.getY(), self.joystick.getButton(0))*2.5
+        y = drive_control(-self.joystick.getRawAxis(2), self.joystick.getButton(0), self.joystick.getButton(1))*1.5
+        x = drive_control(-self.joystick.getY(), self.joystick.getButton(0), self.joystick.getButton(1))*2.5
 
         if x>1:
             x=1

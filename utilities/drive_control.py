@@ -5,11 +5,13 @@ import wpilib
 
 from utilities.settings import Settings
 
-def precision_mode(controller_input, button_state):
+def precision_mode(controller_input, trigger, button):
     """copied from CubertPy, b/c it worked"""
 
-    if button_state:
-        return controller_input * Settings.num_precision
+    if trigger:
+        return controller_input * Settings.num_precision_one
+    elif button:
+        return controller_input * Settings.num_precision_two
     else:
         return controller_input
 
@@ -30,5 +32,5 @@ def dead_zone(controller_input, dead_zone):
     else:
         return ((-controller_input-dead_zone)/(dead_zone-1))
 
-def drive_control(controller_input, button_state):
-    return precision_mode(exponential_scaling(exponential_scaling(controller_input, 0.5)*0.5, 1.1), button_state)
+def drive_control(controller_input, trigger, button):
+    return precision_mode(exponential_scaling(exponential_scaling(controller_input, 0.5)*0.5, 1.1), trigger, button)
