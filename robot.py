@@ -8,6 +8,7 @@ import networktables
 from utilities.settings import Settings
 
 from subsystems.drivetrain import Drivetrain
+from subsystems.camera import Camera
 
 from oi import OI
 
