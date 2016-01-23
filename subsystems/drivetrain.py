@@ -45,18 +45,18 @@ class Drivetrain(Subsystem):
 
         precision = False
 
-        y = drive_control(-self.joystick.getRawAxis(2), self.joystick.getButton(0), self.joystick.getButton(1))*1.5
-        x = drive_control(-self.joystick.getY(), self.joystick.getButton(0), self.joystick.getButton(1))*2.5
+        two = drive_control(-self.joystick.getRawAxis(2), self.joystick.getButton(0), self.joystick.getButton(1))*1.5
+        y = drive_control(-self.joystick.getY(), self.joystick.getButton(0), self.joystick.getButton(1))*2.5
 
-        if x>1:
-            x=1
-        elif x<-1:
-            x=-1
-        self.driveManual(x,y)
+        if two>1:
+            two=1
+        elif two<-1:
+            two=-1
+        self.driveManual(y,two)
 
-    def driveManual(self, x, y):
-        self.x, self.y = x, y
+    def driveManual(self, y, two):
+        self.y, self.two = y, two
 
-        self.firstSet.arcadeDrive(x, y)
-        self.secondSet.arcadeDrive(x, y)
-        self.thirdSet.arcadeDrive(x, y)
+        self.firstSet.arcadeDrive(y, two)
+        self.secondSet.arcadeDrive(y, two)
+        self.thirdSet.arcadeDrive(y, two)

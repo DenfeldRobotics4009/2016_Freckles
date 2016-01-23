@@ -11,6 +11,7 @@ class DriveWithJoystick(Command):
         self.requires(self.robot.drivetrain)
 
     def execute(self):
+        #pass the joystick values directly to the driveJoystick function
         self.robot.drivetrain.driveJoystick(self.robot.oi.getStick())
 
     def isFinished(self):
