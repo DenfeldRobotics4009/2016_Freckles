@@ -22,6 +22,7 @@ def precision_mode(controller_input, trigger, button):
         return controller_input
 
 def exponential_scaling(base, exponent):
+    """Behold, exponents that don't die with negative values."""
 
     if base>0:
         return abs(base)**exponent
@@ -40,4 +41,5 @@ def dead_zone(controller_input, dead_zone):
 
 def drive_control(controller_input, trigger, button):
     """Final thing that's used by the drivetrain class."""
+
     return precision_mode(exponential_scaling(exponential_scaling(controller_input, 0.5)*0.5, 1.1), trigger, button)
