@@ -12,7 +12,7 @@ from subsystems.camera import Camera
 
 from oi import OI
 
-class Freckles(wpilib.SampleRobot):
+class Mantis(wpilib.SampleRobot):
     """Fluffy ears to scratch, lost his tail, cute little paws, likes to play fetch."""
 
     def robotInit(self):
@@ -59,4 +59,4 @@ class Freckles(wpilib.SampleRobot):
         self.drivetrain.log()
 
 if __name__ == "__main__":
-    wpilib.run(Freckles)
+    wpilib.run(Mantis)
