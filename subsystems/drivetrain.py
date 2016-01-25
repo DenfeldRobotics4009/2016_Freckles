@@ -45,18 +45,23 @@ class Drivetrain(Subsystem):
 
         precision = False
 
-        two = drive_control(-self.joystick.getRawAxis(2), self.joystick.getButton(0), self.joystick.getButton(1))*1.5
+        #Theoretically, we could have separate button setups for activating
+        #precision mode on separate axes. Not sure if that's a good idea.
+
+        #                     /-twist joystick              /-1st precision button      /-2nd precision button      /-multiplier so it goes to 1
+        twist = drive_control(-self.joystick.getRawAxis(2), self.joystick.getButton(0), self.joystick.getButton(1))*1.5
         y = drive_control(-self.joystick.getY(), self.joystick.getButton(0), self.joystick.getButton(1))*2.5
+        #                  \-main forward joystick \-1st precision button    \-2nd precision button      \-steeper multiplier so it goes to 1
 
-        if two>1:
-            two=1
-        elif two<-1:
-            two=-1
-        self.driveManual(y,two)
+        if twist>1:
+            twist=1
+        elif twist<-1:
+            twist=-1
+        self.driveManual(y, twist)
 
-    def driveManual(self, y, two):
-        self.y, self.two = y, two
+    def driveManual(self, y, twist):
+        self.y, self.twist = y, twist
 
-        self.firstSet.arcadeDrive(y, two)
-        self.secondSet.arcadeDrive(y, two)
-        self.thirdSet.arcadeDrive(y, two)
+        self.firstSet.arcadeDrive(y, twist)
+        self.secondSet.arcadeDrive(y, twist)
+        self.thirdSet.arcadeDrive(y, twist)
