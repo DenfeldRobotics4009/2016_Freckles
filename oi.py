@@ -17,10 +17,11 @@ class OI:
     def __init__(self, robot):
         """This is assuming that the joystick used is the Logitech Extreme 3D."""
 
+        #initialise the stick and the smart dashboard (in case we need stuff for auton):
         self.stick = wpilib.Joystick(0)
         self.smart_dashboard = NetworkTable.getTable("SmartDashboard")
 
-        #Main stick buttons
+        #Main stick buttons.
         #-----------------------------------------------------------------------
         trigger = JoystickButton(self.stick, 1)
         thumb = JoystickButton(self.stick, 2)
@@ -30,7 +31,7 @@ class OI:
         top_right = JoystickButton(self.stick, 6)
 
 
-        #goes from front to back. outer_base is the outer ring of buttons on
+        #Goes from front to back. outer_base is the outer ring of buttons on
         #the base, inner_base is the inner ring of buttons on the base.
         #-----------------------------------------------------------------------
         outer_base_one = JoystickButton(self.stick, 7)
