@@ -9,16 +9,16 @@ def precision_mode(controller_input, trigger, button):
     """copied from CubertPy and tweaked for 2016 use."""
 
     if trigger == True and not button == True:
-        #if the trigger is pulled, use the first precision
+        #if the trigger is pulled, use the first precision:
         return controller_input * Settings.num_precision_one
     elif button == True and not trigger == True:
-        #if the thumb button is held, use the second precision
+        #if the thumb button is held, use the second precision:
         return controller_input * Settings.num_precision_two
     elif button == True and trigger == True:
-        #if both are held, use the combined precision (or a third, separate precision)
+        #if both are held, use the combined precision (or a third, separate precision):
         return controller_input * Settings.num_precision_one * Settings.num_precision_two
     else:
-        #if none are held, turn off precision
+        #if none are held, just return straight controller_input:
         return controller_input
 
 def exponential_scaling(base, exponent):
@@ -30,7 +30,7 @@ def exponential_scaling(base, exponent):
         return -(abs(base)**exponent)
 
 def dead_zone(controller_input, dead_zone):
-    """Old-style dead zone scaling. May be removed."""
+    """Old-style dead zone scaling. Will likely be removed."""
 
     if controller_input <= dead_zone and controller_input >= -dead_zone:
         return 0

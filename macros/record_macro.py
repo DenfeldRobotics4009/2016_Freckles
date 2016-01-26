@@ -33,7 +33,10 @@ class RecordMacro(Command):
     def execute(self):
         """Record the macro."""
 
+        #do the actual writing bit:
         self.writer.writerow({
+            #Add subsystems in the following manner:
+            #"Row_Name": self.robot.subsystem.getValue
             "Drive_X": self.robot.drivetrain.x,
             "Drive_Y": self.robot.drivetrain.y,
 

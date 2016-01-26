@@ -35,15 +35,21 @@ class PlayMacro(Command):
 
         #length of time to play the macro.
         self.setTimeout(Settings.num_macro_timeout)
+
         #start time is important for making sure everything plays at the right time
         start_time = Timer.getFPGATimestamp()
 
+        #do the actual playback bit
         for line in self.reader_iterator:
             t_delta = float(line["Time"]) - (Timer.getFPGATimestamp()-start_time)
             if t_delta > 0:
                 Timer.delay(t_delta)
+            #Add subsystems in the following manner:
+            #self.robot.subsystem.manualCommand(float(line["Row_Name"]))
+
             self.robot.drivetrain.driveManual(float(line["Drive_X"]),
-                                            float(line["Drive_Y"]), 0)
+                                            float(line["Drive_Y"]))
+
             if self.isTimedOut() or self.done_yet:
                 break
 
@@ -55,9 +61,10 @@ class PlayMacro(Command):
 
     def end(self):
         """Run when called, end the macro playing."""
-        #set the motors to 0 for safety's sake:
 
+        #set the motors to 0 for safety's sake:
         self.robot.drivetrain.driveManual(0,0,0)
+
         if hasattr(self, "f"):
             self.f.close()
 
