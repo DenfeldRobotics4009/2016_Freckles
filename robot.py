@@ -16,6 +16,7 @@ class Mantis(wpilib.SampleRobot):
     """Fluffy ears to scratch, lost his tail, cute little paws, likes to play fetch."""
 
     def robotInit(self):
+        """Initialise the robot."""
 
         self.drivetrain = Drivetrain(self)
         self.oi = OI(self)
@@ -25,6 +26,7 @@ class Mantis(wpilib.SampleRobot):
         Settings.num_macro_timeout = self.macroTimeout
 
     def autonomous(self):
+        """Auton code."""
 
         #Logging loop
         while self.isAutonomous() and self.isEnabled():
@@ -33,6 +35,7 @@ class Mantis(wpilib.SampleRobot):
             wpilib.Timer.delay(.005) #don't burn up the cpu
 
     def operatorControl(self):
+        """Teleop code."""
         joystick = self.oi.getStick()
 
         #Logging loop
@@ -42,6 +45,7 @@ class Mantis(wpilib.SampleRobot):
             wpilib.Timer.delay(.005) #don't burn up the cpu
 
     def disabled(self):
+        """Code to run when disabled."""
 
         #Stop the drivetrain for safety's sake.
         self.drivetrain.driveManual(0,0)
@@ -52,6 +56,7 @@ class Mantis(wpilib.SampleRobot):
             wpilib.Timer.delay(.005) #don't burn up the cpu
 
     def test(self):
+        """Code for testing."""
         pass
 
     def log(self):

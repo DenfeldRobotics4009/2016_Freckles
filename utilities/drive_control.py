@@ -15,7 +15,7 @@ def precision_mode(controller_input, trigger, button):
         #if the thumb button is held, use the second precision
         return controller_input * Settings.num_precision_two
     elif button == True and trigger == True:
-        #if both are held, use the combined precision (or a third)
+        #if both are held, use the combined precision (or a third, separate precision)
         return controller_input * Settings.num_precision_one * Settings.num_precision_two
     else:
         #if none are held, turn off precision
@@ -30,7 +30,7 @@ def exponential_scaling(base, exponent):
         return -(abs(base)**exponent)
 
 def dead_zone(controller_input, dead_zone):
-    """Old-style dead zone scaling."""
+    """Old-style dead zone scaling. May be removed."""
 
     if controller_input <= dead_zone and controller_input >= -dead_zone:
         return 0

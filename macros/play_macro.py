@@ -20,6 +20,7 @@ class PlayMacro(Command):
         self.done_yet = False
 
     def initialize(self):
+        """Figure out the file location and play it back."""
 
         try:
             #attempt to access the files required
@@ -53,6 +54,7 @@ class PlayMacro(Command):
         return True
 
     def end(self):
+        """Run when called, end the macro playing."""
         #set the motors to 0 for safety's sake:
 
         self.robot.drivetrain.driveManual(0,0,0)
@@ -60,9 +62,11 @@ class PlayMacro(Command):
             self.f.close()
 
     def interrupted(self):
+        """Runs when macro playback is interrupted."""
         self.end()
 
     def cancel(self):
+        """Runs when macro playback is canceled."""
 
         self.end()
         super().cancel()

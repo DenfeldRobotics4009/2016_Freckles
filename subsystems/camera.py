@@ -5,6 +5,7 @@ import wpilib
 class Camera(Subsystem):
 
     def __init__(self, robot):
+        """Initialise the camera and the camera server"""
 
         #these are all actually really self explanatory. Wonder if they work.
         self.camera.setExposureManual(50)
