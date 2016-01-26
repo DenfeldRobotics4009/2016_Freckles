@@ -14,7 +14,7 @@ from commands.manual.power_of_the_friendship import DriveWithJoystick
 class Drivetrain(Subsystem):
 
     def __init__(self, robot):
-        """Initialise the drivetrain"""
+        """Initialise the drivetrain."""
 
         super().__init__()
         #Set up everything
@@ -39,7 +39,7 @@ class Drivetrain(Subsystem):
         self.thirdSet = wpilib.RobotDrive(self.four, self.five)
 
     def initDefaultCommand(self):
-        """Set the DriveWithJoystick command to run so the drivetrain will move"""
+        """Set the DriveWithJoystick command to run so the drivetrain will move."""
         self.setDefaultCommand(DriveWithJoystick(self.robot))
 
     def log(self):

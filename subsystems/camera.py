@@ -5,7 +5,7 @@ import wpilib
 class Camera(Subsystem):
 
     def __init__(self, robot):
-        """Initialise the camera and the camera server"""
+        """Initialise the camera and the camera server."""
 
         #these are all actually really self explanatory. Wonder if they work.
         self.camera.setExposureManual(50)
@@ -20,6 +20,7 @@ class Camera(Subsystem):
         server.startAutomaticCapture(self.camera) #start the camera server
 
     def initDefaultCommand(self):
+        """Give the camera a default command (only there to keep wpilib happy)."""
         #Camera don't need nothin'
         pass
 

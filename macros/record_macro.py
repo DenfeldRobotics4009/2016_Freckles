@@ -31,7 +31,7 @@ class RecordMacro(Command):
         self.writer.writeheader()
 
     def execute(self):
-        """Record the macro"""
+        """Record the macro."""
 
         self.writer.writerow({
             "Drive_X": self.robot.drivetrain.x,
@@ -41,19 +41,19 @@ class RecordMacro(Command):
             "Time": wpilib.Timer.getFPGATimestamp() - self.initTime}) #get the time as the row is written
 
     def isFinished(self):
-        """Returns .isTimedOut() when called"""
+        """Returns .isTimedOut() when called."""
         return self.isTimedOut()
 
     def end(self):
-        """Close out & save the macro when called"""
+        """Close out & save the macro when called."""
         self.f.close()
 
     def interrupted(self):
-        """Run when macro recording is interrupted"""
+        """Run when macro recording is interrupted."""
         self.end()
 
     def cancel(self):
-        """Run when macro recording is canceled"""
+        """Run when macro recording is canceled."""
 
         self.end()
         super().cancel()

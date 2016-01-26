@@ -15,7 +15,7 @@ class OI:
     """Button mapping goes here."""
 
     def __init__(self, robot):
-        """This is assuming that the joystick used is the Logitech Extreme 3D"""
+        """This is assuming that the joystick used is the Logitech Extreme 3D."""
 
         self.stick = wpilib.Joystick(0)
         self.smart_dashboard = NetworkTable.getTable("SmartDashboard")

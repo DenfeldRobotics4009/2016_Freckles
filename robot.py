@@ -60,7 +60,7 @@ class Mantis(wpilib.SampleRobot):
         pass
 
     def log(self):
-        """I know it doesn't log but if it does eventually it'll go here"""
+        """I know it doesn't logm but if it does eventually it'll go here."""
         self.drivetrain.log()
 
 if __name__ == "__main__":
