@@ -43,7 +43,7 @@ class Drivetrain(Subsystem):
         self.setDefaultCommand(DriveWithJoystick(self.robot))
 
     def log(self):
-        #might want logging if something starts to break someday
+        #might want logging when something starts to break someday
         pass
 
     def driveJoystick(self, joystick):
@@ -69,7 +69,7 @@ class Drivetrain(Subsystem):
         #Call the driveManual function for the lulz
         self.driveManual(y, twist)
 
-    def driveManual(self, y, twist):
+    def driveManual(self, -y, twist):
         """Pass the values from driveJoystick to the actual drivetrain sets."""
 
         #Assign the proper values that we set up earlier
