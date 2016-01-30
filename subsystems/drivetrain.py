@@ -57,7 +57,7 @@ class Drivetrain(Subsystem):
 
         #                     /-twist joystick              /-1st precision button      /-2nd precision button      /-multiplier so it goes to 1
         twist = drive_control(-self.joystick.getRawAxis(2), self.joystick.getButton(0), self.joystick.getButton(1))*1.5
-        y = drive_control(-self.joystick.getY(), self.joystick.getButton(0), self.joystick.getButton(1))*2.5
+        y = drive_control(self.joystick.getY(), self.joystick.getButton(0), self.joystick.getButton(1))*2.5
         #                  \-main forward joystick \-1st precision button    \-2nd precision button      \-steeper multiplier so it goes to 1
 
         #what even is this
@@ -69,7 +69,7 @@ class Drivetrain(Subsystem):
         #Call the driveManual function for the lulz
         self.driveManual(y, twist)
 
-    def driveManual(self, -y, twist):
+    def driveManual(self, y, twist):
         """Pass the values from driveJoystick to the actual drivetrain sets."""
 
         #Assign the proper values that we set up earlier
