@@ -26,12 +26,12 @@ class Drivetrain(Subsystem):
         self.joystick = wpilib.Joystick(0)
 
         #CANTalon motors for the drivetrain.
-        self.zed = wpilib.CANTalon(0)
-        self.one = wpilib.CANTalon(1)
-        self.two = wpilib.CANTalon(2)
-        self.three = wpilib.CANTalon(3)
-        self.four = wpilib.CANTalon(4)
-        self.five = wpilib.CANTalon(5)
+        self.zed = wpilib.CANTalon(10)
+        self.one = wpilib.CANTalon(2)
+        self.two = wpilib.CANTalon(1)
+        self.three = wpilib.CANTalon(5)
+        self.four = wpilib.CANTalon(8)
+        self.five = wpilib.CANTalon(0)
 
         #Actual drivetrains. Basically fun.
         self.firstSet = wpilib.RobotDrive(self.zed, self.one)
@@ -82,3 +82,13 @@ class Drivetrain(Subsystem):
         self.firstSet.arcadeDrive(y, twist)
         self.secondSet.arcadeDrive(y, twist)
         self.thirdSet.arcadeDrive(y, twist)
+
+	if self.y > 0.01 or self.y < 0.01:
+		self.firstSet.setInvertedMotor(kRearLeft, True)
+		self.firstSet.setInvertedMotor(kRearRight, True)
+
+	elif self.twist > 0.01 or self.twist < 0.01:
+		self.firstSet.setInvertedMotor(kRearLeft, False)
+		self.firstSet.setInvertedMotor(kRearRight, False)
+	else:
+		pass
