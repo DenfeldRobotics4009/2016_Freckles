@@ -36,10 +36,7 @@ class Drivetrain(Subsystem):
         #Actual drivetrains. Basically fun.
         self.firstSet = wpilib.RobotDrive(self.zed, self.one)
         self.secondSet = wpilib.RobotDrive(self.two, self.three)
-        self.thirdSet = wpilib.RobotDrive(self.four, self.five)
-        self.firstSet.setInvertedMotor(self.firstSet.MotorType.kFrontLeft, True)
-        self.secondSet.setInvertedMotor(self.secondSet.MotorType.kFrontLeft, True)
-        self.secondSet.setInvertedMotor(self.secondSet.MotorType.kFrontRight, True)
+        self.thirdSet = wpilib.RobotDrive(self.four, self.five))
 
     def initDefaultCommand(self):
         """Set the DriveWithJoystick command to run so the drivetrain will move."""
@@ -82,14 +79,3 @@ class Drivetrain(Subsystem):
         self.firstSet.arcadeDrive(y, twist)
         self.secondSet.arcadeDrive(y, twist)
         self.thirdSet.arcadeDrive(y, twist)
-
-        if self.y > 0.01 or self.y < 0.01:
-            self.firstSet.setInvertedMotor(kRearLeft, True)
-            self.firstSet.setInvertedMotor(kRearRight, True)
-
-        elif self.twist > 0.01 or self.twist < 0.01:
-            self.firstSet.setInvertedMotor(kRearLeft, False)
-            self.firstSet.setInvertedMotor(kRearRight, False)
-
-        else:
-            pass
