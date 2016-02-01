@@ -83,12 +83,13 @@ class Drivetrain(Subsystem):
         self.secondSet.arcadeDrive(y, twist)
         self.thirdSet.arcadeDrive(y, twist)
 
-	if self.y > 0.01 or self.y < 0.01:
-		self.firstSet.setInvertedMotor(kRearLeft, True)
-		self.firstSet.setInvertedMotor(kRearRight, True)
+        if self.y > 0.01 or self.y < 0.01:
+            self.firstSet.setInvertedMotor(kRearLeft, True)
+            self.firstSet.setInvertedMotor(kRearRight, True)
 
-	elif self.twist > 0.01 or self.twist < 0.01:
-		self.firstSet.setInvertedMotor(kRearLeft, False)
-		self.firstSet.setInvertedMotor(kRearRight, False)
-	else:
-		pass
+        elif self.twist > 0.01 or self.twist < 0.01:
+            self.firstSet.setInvertedMotor(kRearLeft, False)
+            self.firstSet.setInvertedMotor(kRearRight, False)
+
+        else:
+            pass
