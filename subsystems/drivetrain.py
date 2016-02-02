@@ -26,15 +26,12 @@ class Drivetrain(Subsystem):
         self.joystick = wpilib.Joystick(0)
 
         #CANTalon motors for the drivetrain.
-        self.zed = wpilib.CANTalon(9)
-        self.one = wpilib.CANTalon(2)
         self.two = wpilib.CANTalon(3)
         self.three = wpilib.CANTalon(7)
         self.four = wpilib.CANTalon(5)
         self.five = wpilib.CANTalon(4)
 
         #Actual drivetrains. Basically fun.
-        self.firstSet = wpilib.RobotDrive(self.zed, self.one)
         self.secondSet = wpilib.RobotDrive(self.two, self.three)
         self.thirdSet = wpilib.RobotDrive(self.four, self.five)
 

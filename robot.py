@@ -11,6 +11,7 @@ from utilities.settings import Settings
 
 #Import our subsystems:
 from subsystems.drivetrain import Drivetrain
+from subsystems.toes import Toes
 from subsystems.camera import Camera
 
 #Import our button mapping:
@@ -24,6 +25,7 @@ class Mantis(wpilib.SampleRobot):
 
         #Initialise the subsystems and the button mapping:
         self.drivetrain = Drivetrain(self)
+        self.toes = Toes(self)
         self.oi = OI(self)
 
         #Timeout value for the macros from the dashboard (default 15 sec).
