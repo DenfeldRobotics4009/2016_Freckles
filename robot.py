@@ -11,7 +11,6 @@ from utilities.settings import Settings
 
 #Import our subsystems:
 from subsystems.drivetrain import Drivetrain
-from subsystems.toes import Toes
 from subsystems.camera import Camera
 
 #Import our button mapping:
@@ -25,7 +24,6 @@ class Mantis(wpilib.SampleRobot):
 
         #Initialise the subsystems and the button mapping:
         self.drivetrain = Drivetrain(self)
-        self.toes = Toes(self)
         self.oi = OI(self)
 
         #Timeout value for the macros from the dashboard (default 15 sec).
@@ -56,7 +54,7 @@ class Mantis(wpilib.SampleRobot):
         """Code to run when disabled."""
 
         #Stop the drivetrain for safety's sake:
-        self.drivetrain.driveManual(0,0)
+        self.drivetrain.driveManual(0,0, False, False)
 
         #Logging loop
         while self.isDisabled():
@@ -68,7 +66,7 @@ class Mantis(wpilib.SampleRobot):
         pass
 
     def log(self):
-        """I know it doesn't logm but if it does eventually it'll go here."""
+        """I know it doesn't log but if it does eventually it'll go here."""
         #Log the things:
         self.drivetrain.log()
 

@@ -10,7 +10,6 @@ from utilities.settings import Settings
 
 from macros.play_macro import PlayMacro
 from macros.record_macro import RecordMacro
-from commands.manual.wiggle_toes import WiggleToes
 
 class OI:
     """Button mapping goes here."""
@@ -52,9 +51,6 @@ class OI:
         pov_southwest = POVButton(self.stick, 225)
         pov_west = POVButton(self.stick, 270)
         pov_northwest = POVButton(self.stick, 315)
-
-        pov_north.whenPressed(WiggleToes(1))
-        pov_south.whenPressed(WiggleToes(-1))
 
     def getStick(self):
         """Drive joystick."""
