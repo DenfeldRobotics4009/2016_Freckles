@@ -26,17 +26,17 @@ class Drivetrain(Subsystem):
         self.joystick = wpilib.Joystick(0)
 
         #CANTalon motors for the drivetrain.
-        self.zed = wpilib.CANTalon(10)
+        self.zed = wpilib.CANTalon(9)
         self.one = wpilib.CANTalon(2)
-        self.two = wpilib.CANTalon(1)
-        self.three = wpilib.CANTalon(5)
-        self.four = wpilib.CANTalon(8)
-        self.five = wpilib.CANTalon(0)
+        self.two = wpilib.CANTalon(3)
+        self.three = wpilib.CANTalon(7)
+        self.four = wpilib.CANTalon(5)
+        self.five = wpilib.CANTalon(4)
 
         #Actual drivetrains. Basically fun.
         self.firstSet = wpilib.RobotDrive(self.zed, self.one)
         self.secondSet = wpilib.RobotDrive(self.two, self.three)
-        self.thirdSet = wpilib.RobotDrive(self.four, self.five))
+        self.thirdSet = wpilib.RobotDrive(self.four, self.five)
 
     def initDefaultCommand(self):
         """Set the DriveWithJoystick command to run so the drivetrain will move."""
@@ -57,7 +57,7 @@ class Drivetrain(Subsystem):
 
         #                     /-twist joystick              /-1st precision button      /-2nd precision button      /-multiplier so it goes to 1
         twist = drive_control(-self.joystick.getRawAxis(2), self.joystick.getButton(0), self.joystick.getButton(1))*1.5
-        y = drive_control(self.joystick.getY(), self.joystick.getButton(0), self.joystick.getButton(1))*2.5
+        y = drive_control(-self.joystick.getY(), self.joystick.getButton(0), self.joystick.getButton(1))*2.5
         #                  \-main forward joystick \-1st precision button    \-2nd precision button      \-steeper multiplier so it goes to 1
 
         #what even is this
