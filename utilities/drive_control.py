@@ -40,7 +40,7 @@ def dead_zone(controller_input, dead_zone):
         return ((-controller_input-dead_zone)/(dead_zone-1))
 
 def drive_control(controller_input, trigger, button):
-    """Final thing that's used by the drivetrain class."""
+    """Final y-axis thing that's used by the drivetrain class."""
 
     return precision_mode(exponential_scaling(exponential_scaling(controller_input, 0.5)*0.5, 1.1), trigger, button)
 
