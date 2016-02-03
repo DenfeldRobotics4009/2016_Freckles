@@ -61,7 +61,7 @@ class Drivetrain(Subsystem):
         #                     /-twist joystick              /-1st precision button      /-2nd precision button      /-multiplier so it goes to 1
         twist = twist_control(-self.joystick.getRawAxis(2), self.joystick.getRawButton(0), self.joystick.getRawButton(1))*5
         y = drive_control(-self.joystick.getY(), self.joystick.getRawButton(0), self.joystick.getRawButton(1))*2.5
-        #                  \-main forward joystick \-1st precision button    \-2nd precision button      \-steeper multiplier so it goes to 1
+        #                  \-main forward joystick \-1st precision button    \-2nd precision button      \-multiplier so it goes to 1
 
         #what even is this
         if twist>1:
@@ -86,3 +86,5 @@ class Drivetrain(Subsystem):
             self.firstSet.arcadeDrive(1, twist)
         elif backward == True:
             self.firstSet.arcadeDrive(-1, twist)
+        else:
+            self.firstSet.arcadeDrive(0, 0)
