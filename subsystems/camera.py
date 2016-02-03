@@ -8,6 +8,7 @@ class Camera(Subsystem):
         """Initialise the camera and the camera server."""
 
         #these are all actually really self explanatory. Wonder if they work.
+        self.camera = wpilib.USBCamera()
         self.camera.setExposureManual(50)
         self.camera.setBrightness(80)
         self.camera.setFPS(10)
