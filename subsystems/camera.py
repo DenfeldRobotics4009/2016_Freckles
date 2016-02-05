@@ -11,10 +11,10 @@ class Camera(Subsystem):
         self.camera = wpilib.USBCamera()
         self.camera.setExposureManual(50)
         self.camera.setBrightness(80)
-        self.camera.setFPS(10)
+        self.camera.setFPS(1)
         self.camera.setSize(320, 240)
         self.camera.setWhiteBalanceAuto()
-        self.camera.setQuality(30)
+        self.camera.setQuality(1)
         self.camera.updateSettings() #update with the new settings so it actually does what we want it to
 
         server = wpilib.CameraServer.getInstance() #set up the camera server
