@@ -11,7 +11,7 @@ from utilities.settings import Settings
 
 #Import our subsystems:
 from subsystems.drivetrain import Drivetrain
-from subsystems.camera import Camera
+from subsystems.trigger_wheel import TriggerWheel
 from subsystems.ears import Ears
 
 #Import our button mapping:
@@ -25,9 +25,9 @@ class Mantis(wpilib.SampleRobot):
 
         #Initialise the subsystems and the button mapping:
         self.drivetrain = Drivetrain(self)
-        self.oi = OI(self)
         self.ears = Ears(self)
-
+        self.trigger_wheel = TriggerWheel(self)
+        self.oi = OI(self)
         #Timeout value for the macros from the dashboard (default 15 sec).
         self.macroTimeout = self.oi.smart_dashboard.getInt("Macro", 15)
         Settings.num_macro_timeout = self.macroTimeout
@@ -43,6 +43,8 @@ class Mantis(wpilib.SampleRobot):
 
     #    server = wpilib.CameraServer.getInstance() #set up the camera server
     #    server.startAutomaticCapture(self.camera) #start the camera server
+
+
 
     def autonomous(self):
         """Auton code."""
@@ -83,6 +85,7 @@ class Mantis(wpilib.SampleRobot):
         """I know it doesn't log but if it does eventually it'll go here."""
         #Log the things:
         self.drivetrain.log()
+        self.ears.log()
 
 if __name__ == "__main__":
     wpilib.run(Mantis)

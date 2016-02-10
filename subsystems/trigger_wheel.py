@@ -3,24 +3,22 @@ __author__ = "nikolojedison"
 import wpilib
 from wpilib.command import Subsystem
 from utilities.settings import Settings
-from commands.manual.manual_ears import ManualEars
+from commands.manual.manual_trigger import ManualTrigger
 
-class Ears(Subsystem):
-    """Run the ear spools."""
+class TriggerWheel(Subsystem):
+    """Run the trigger wheel."""
 
     def __init__(self, robot):
         super().__init__()
 
         self.robot = robot
-        self.left = wpilib.CANTalon(6)
-        self.right = wpilib.CANTalon(8)
+        self.motor = wpilib.CANTalon(1)
 
     def initDefaultCommand(self):
         pass
 
     def manualSet(self, output):
-        self.left.set(output)
-        self.right.set(output)
+        self.motor.set(output)
 
     def log(self):
         pass
