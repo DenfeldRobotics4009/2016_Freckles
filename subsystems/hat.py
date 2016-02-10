@@ -3,9 +3,9 @@ __author__ = "nikolojedison"
 import wpilib
 from wpilib.command import Subsystem
 from utilities.settings import Settings
-from commands.manual.manual_trigger import ManualTrigger
+from commands.manual.manual_hat import ManualHat
 
-class TriggerWheel(Subsystem):
+class Hat(Subsystem):
     """Run the trigger wheel."""
 
     def __init__(self, robot):

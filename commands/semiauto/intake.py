@@ -2,7 +2,7 @@ __author__ = "nikolojedison"
 
 from wpilib.command import Command
 
-from commands.manual.manual_trigger import ManualTrigger
+from commands.manual.manual_hat import ManualHat
 from commands.manual.manual_ears import ManualEars
 
 class Intake(Command):
@@ -11,7 +11,7 @@ class Intake(Command):
     def __init__(self, robot):
         super().__init__()
         self.spool_command = ManualEars(robot, 1)
-        self.trigger_command = ManualTrigger(robot, 1)
+        self.trigger_command = ManualHat(robot, 1)
 
     def initialize(self):
         self.spool_command.start()
