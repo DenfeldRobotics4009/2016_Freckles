@@ -15,7 +15,7 @@ class Hat(Subsystem):
         self.motor = wpilib.CANTalon(1)
 
     def initDefaultCommand(self):
-        pass
+        self.setDefaultCommand
 
     def manualSet(self, output):
         self.motor.set(output)
