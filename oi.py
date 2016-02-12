@@ -11,8 +11,6 @@ from utilities.settings import Settings
 from macros.play_macro import PlayMacro
 from macros.record_macro import RecordMacro
 
-from commands.semiauto.intake import Intake
-
 class OI:
     """Button mapping goes here."""
 
@@ -26,22 +24,18 @@ class OI:
         #Main stick buttons.
         #-----------------------------------------------------------------------
         trigger = JoystickButton(self.stick, 1)
-        thumb = JoystickButton(self.stick, 2)
-        bottom_left = JoystickButton(self.stick, 3)
-        bottom_right = JoystickButton(self.stick, 4)
-        top_left = JoystickButton(self.stick, 5)
-        top_right = JoystickButton(self.stick, 6)
+        thumb_stripe = JoystickButton(self.stick, 2)
+        trigger_bumper = JoystickButton(self.stick, 3)
+        thumb_normal = JoystickButton(self.stick, 4)
 
-
-        #Goes from front to back. outer_base is the outer ring of buttons on
-        #the base, inner_base is the inner ring of buttons on the base.
+        #Throttle buttons.
         #-----------------------------------------------------------------------
-        outer_base_one = JoystickButton(self.stick, 7)
-        inner_base_one = JoystickButton(self.stick, 8)
-        outer_base_two = JoystickButton(self.stick, 9)
-        inner_base_two = JoystickButton(self.stick, 10)
-        outer_base_three = JoystickButton(self.stick, 11)
-        inner_base_three = JoystickButton(self.stick, 12)
+        throttle_five = JoystickButton(self.stick, 5)
+        throttle_six = JoystickButton(self.stick, 6)
+        throttle_seven = JoystickButton(self.stick, 7)
+        throttle_eight = JoystickButton(self.stick, 8)
+        throttle_nine = JoystickButton(self.stick, 9)
+        throttle_ten = JoystickButton(self.stick, 10)
 
         #Hat switch POV stuff.
         #-----------------------------------------------------------------------
@@ -53,8 +47,6 @@ class OI:
         pov_southwest = POVButton(self.stick, 225)
         pov_west = POVButton(self.stick, 270)
         pov_northwest = POVButton(self.stick, 315)
-
-        thumb.whileHeld(Intake(robot))
 
     def getStick(self):
         """Drive joystick."""
