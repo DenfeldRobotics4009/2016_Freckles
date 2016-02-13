@@ -11,7 +11,9 @@ class Tilt(PIDSubsystem):
     def  __init__(self, robot):
         super().__init__(20, 0, 0)
 
-        #We need 1 motor and 1 potentiometer.
+        self.robot = robot
+        self.tilt_motor = wpilib.CANTalon(10)
+        self.tilt_pot = wpilib.AnalogPotentiometer(0)
 
         self.setAbsoluteTolerance(.01)
 
@@ -19,14 +21,26 @@ class Tilt(PIDSubsystem):
         self.setDefaultCommand(ManualTilt(self.robot))
 
     def log(self):
-        #Send the value from the potentiometer you defined in __init__ to the
-        # drive station.
+        wpilib.SmartDashboard.putNumber("Tilt Pot", self.tilt_pot.get()) #publish the tilt value to the dash
 
     def manualSet(self, output):
-        #Set your motor to  "output"
+        position = self.tilt_pot.get()
+        if position < utilities.settings.kDown:
+            self.tilt_motor.set(0)
+        elif position > utilities.settings.kUp:
+            self.tilt_motor.set(0)
+        else:
+            self.tilt_motor.set(output)
+
 
     def returnPIDInput(self):
-        #Put the value from the potentiometer you defined in __init__.
+        return self.tilt_pot.get()
 
     def usePIDOutput(self, output):
         self.manualSet(output)
+
+    def isDown(self):
+        self.tilt_pot.get() < utilities.settings.kDown
+
+    def isUp(self):
+        return not self.isDown()
