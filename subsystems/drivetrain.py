@@ -33,6 +33,7 @@ class Drivetrain(Subsystem):
         self.three = wpilib.CANTalon(7)
         self.four = wpilib.CANTalon(5)
         self.five = wpilib.CANTalon(4)
+        self.powerBoard = wpilib.PowerDistributionPanel(0)
 
         #Actual drivetrains. Basically fun.
         self.firstSet = wpilib.RobotDrive(self.zed, self.one)
