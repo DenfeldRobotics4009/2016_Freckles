@@ -33,7 +33,6 @@ class Drivetrain(Subsystem):
         self.three = wpilib.CANTalon(7)
         self.four = wpilib.CANTalon(5)
         self.five = wpilib.CANTalon(4)
-        self.powerBoard = wpilib.PowerDistributionPanel(0)
 
         #Actual drivetrains. Basically fun.
         self.firstSet = wpilib.RobotDrive(self.zed, self.one)
@@ -53,15 +52,15 @@ class Drivetrain(Subsystem):
 
         #Set precision to be false so the drivetrain isn't auto-nerfed
         precision = False
-        forward = self.joystick.getRawButton(5)
-        backward = self.joystick.getRawButton(3)
+        forward = self.joystick.getRawButton(9)
+        backward = self.joystick.getRawButton(10)
 
         #Theoretically, we could have separate button setups for activating
         #precision mode on separate axes. Not sure if that's a good idea.
 
         #                     /-twist joystick              /-1st precision button      /-2nd precision button      /-multiplier so it goes to 1
-        twist = twist_control(-self.joystick.getRawAxis(3), self.joystick.getRawButton(0), self.joystick.getRawButton(1))*5
-        y = drive_control(-self.joystick.getRawAxis(1), self.joystick.getRawButton(0), self.joystick.getRawButton(1))*2.5
+        twist = twist_control(-self.joystick.getRawAxis(3), self.joystick.getRawButton(9), self.joystick.getRawButton(10))*5
+        y = drive_control(-self.joystick.getRawAxis(1), self.joystick.getRawButton(9), self.joystick.getRawButton(10))*2.5
         #                  \-main forward joystick \-1st precision button    \-2nd precision button      \-multiplier so it goes to 1
 
         #what even is this

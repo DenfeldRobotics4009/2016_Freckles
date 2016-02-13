@@ -12,6 +12,7 @@ from macros.play_macro import PlayMacro
 from macros.record_macro import RecordMacro
 
 from commands.setpoints.hat_button import HatButton
+from commands.setpoints.ears_button import EarsButton
 
 class OI:
     """Button mapping goes here."""
@@ -50,8 +51,11 @@ class OI:
         pov_west = POVButton(self.stick, 270)
         pov_northwest = POVButton(self.stick, 315)
 
-        thumb_stripe.whileHeld(HatButton(robot, -.5))
+        thumb_stripe.whileHeld(EarsButton(robot, .5))
         trigger.whileHeld(HatButton(robot, .5))
+        thumb_normal.whileHeld(EarsButton(robot, -.5))
+        trigger_bumper.whileHeld(HatButton(robot, -.5))
+
 
     def getStick(self):
         """Drive joystick."""

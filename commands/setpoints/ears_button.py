@@ -1,21 +1,23 @@
 __author__ = "nikolojedison"
-
 from wpilib.command import Command
+from subsystems.ears import Ears
 
-class ManualEars(Command):
-    """Manually run the ear spools."""
-
-    def __init__(self, robot):
+class EarsButton(Command):
+    def __init__(self, robot, speed):
         super().__init__()
         self.robot = robot
         self.requires(self.robot.ears)
+        self.speed = speed
 
     def execute(self):
-        pass
+        self.robot.ears.manualSet(self.speed)
 
     def isFinished(self):
         return False
 
-    def cancel(self):
+    def end(self):
         self.robot.ears.manualSet(0)
+
+    def cancel(self):
+        self.end()
         super().cancel()

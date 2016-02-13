@@ -16,7 +16,7 @@ class Ears(Subsystem):
         self.right = wpilib.CANTalon(8)
 
     def initDefaultCommand(self):
-        pass
+        self.setDefaultCommand
 
     def manualSet(self, output):
         self.left.set(output)
