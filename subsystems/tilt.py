@@ -12,7 +12,7 @@ class Tilt(PIDSubsystem):
         super().__init__(20, 0, 0)
 
         self.robot = robot
-        self.tilt_motor = wpilib.CANTalon(10)
+        self.tilt_motor = wpilib.CANTalon(11)
         self.tilt_pot = wpilib.AnalogPotentiometer(0)
 
         self.setAbsoluteTolerance(.01)
