@@ -81,9 +81,9 @@ class OI:
 
         #Mapping of buttons.
         #-----------------------------------------------------------------------
-        thumb_stripe.whileHeld(EarsButton(robot, .5))
-        good_trigger.whileHeld(HatButton(robot, .5))
-        thumb_normal.whileHeld(EarsButton(robot, -.5))
+        thumb_stripe.whileHeld(EarsButton(robot, 1))
+        good_trigger.whileHeld(HatButton(robot, 1))
+        thumb_normal.whileHeld(EarsButton(robot, -.25))
         trigger_bumper.whileHeld(HatButton(robot, -.5))
         outer_base_one.whileHeld(TiltTop(robot))
         outer_base_two.whileHeld(TiltShoot(robot))
