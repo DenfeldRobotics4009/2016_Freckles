@@ -52,15 +52,15 @@ class Drivetrain(Subsystem):
 
         #Set precision to be false so the drivetrain isn't auto-nerfed
         precision = False
-        forward = self.joystick.getRawButton(9)
+        forward = self.joystick.getRawButton(8)
         backward = self.joystick.getRawButton(10)
 
         #Theoretically, we could have separate button setups for activating
         #precision mode on separate axes. Not sure if that's a good idea.
 
         #                     /-twist joystick              /-1st precision button      /-2nd precision button      /-multiplier so it goes to 1
-        twist = twist_control(-self.joystick.getRawAxis(3), self.joystick.getRawButton(9), self.joystick.getRawButton(10))*5
-        y = drive_control(-self.joystick.getRawAxis(1), self.joystick.getRawButton(9), self.joystick.getRawButton(10))*2.5
+        twist = twist_control(-self.joystick.getRawAxis(3), self.joystick.getRawButton(8))*5
+        y = drive_control(-self.joystick.getRawAxis(1), self.joystick.getRawButton(8))*2.5
         #                  \-main forward joystick \-1st precision button    \-2nd precision button      \-multiplier so it goes to 1
 
         #what even is this

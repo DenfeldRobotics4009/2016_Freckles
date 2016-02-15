@@ -5,18 +5,12 @@ import wpilib
 
 from utilities.settings import Settings
 
-def precision_mode(controller_input, trigger, button):
+def precision_mode(controller_input, trigger):
     """copied from CubertPy and tweaked for 2016 use."""
 
-    if trigger == True and not button == True:
+    if trigger == True:
         #if the trigger is pulled, use the first precision:
         return controller_input * Settings.num_precision_one
-    elif button == True and not trigger == True:
-        #if the thumb button is held, use the second precision:
-        return controller_input * Settings.num_precision_two
-    elif button == True and trigger == True:
-        #if both are held, use the combined precision (or a third, separate precision):
-        return controller_input * Settings.num_precision_one * Settings.num_precision_two
     else:
         #if none are held, just return straight controller_input:
         return controller_input
@@ -39,12 +33,12 @@ def dead_zone(controller_input, dead_zone):
     else:
         return ((-controller_input-dead_zone)/(dead_zone-1))
 
-def drive_control(controller_input, trigger, button):
+def drive_control(controller_input, trigger):
     """Final y-axis thing that's used by the drivetrain class."""
 
-    return precision_mode(exponential_scaling(exponential_scaling(controller_input, 0.5)*0.5, 1.1), trigger, button)
+    return precision_mode(exponential_scaling(exponential_scaling(controller_input, 0.5)*0.5, 1.1), trigger)
 
-def twist_control(controller_input, trigger, button):
+def twist_control(controller_input, trigger):
     """Final spin thing that's used by the drivetrain class."""
 
-    return precision_mode(exponential_scaling(exponential_scaling(controller_input, 0.5)*0.5, 2.3), trigger, button)
+    return precision_mode(exponential_scaling(exponential_scaling(controller_input, 0.5)*0.5, 2.3), trigger)
