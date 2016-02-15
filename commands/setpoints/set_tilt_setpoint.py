@@ -9,6 +9,7 @@ class SetTiltSetpoint(Command):
         self.robot = robot
         self.setTimeout(5)
         self.requires(self.robot.tilt)
+        self.setpoint = setpoint
 
     def initialize(self):
         self.robot.tilt.enable()
