@@ -20,4 +20,4 @@ class ManualTilt(Command):
 
     def cancel(self):
         self.robot.tilt.manualSet(0)
-        super.cancel()
+        super().cancel()
