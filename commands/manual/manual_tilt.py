@@ -11,12 +11,12 @@ class ManualTilt(Command):
         self.robot = robot
         self.requires(self.robot.tilt)
 
-        def execute(self):
-            self.robot.tilt.manualSet(self.robot.oi.getStick().getRawAxis(2))
+    def execute(self):
+        self.robot.tilt.manualSet(self.robot.oi.getStick().getRawAxis(2))
 
-        def isFinished(self):
-            return False
+    def isFinished(self):
+        return False
 
-        def cancel(self):
-            self.robot.tilt.manualSet(0)
-            super.cancel()
+    def cancel(self):
+        self.robot.tilt.manualSet(0)
+        super.cancel()

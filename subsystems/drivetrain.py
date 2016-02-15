@@ -27,7 +27,7 @@ class Drivetrain(Subsystem):
         self.joystick = wpilib.Joystick(0)
 
         #CANTalon motors for the drivetrain.
-        self.zed = wpilib.CANTalon(12)
+        self.zed = wpilib.CANTalon(9) #12
         self.one = wpilib.CANTalon(2)
         self.two = wpilib.CANTalon(3)
         self.three = wpilib.CANTalon(7)

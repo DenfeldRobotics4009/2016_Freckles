@@ -8,3 +8,7 @@ class Settings():
     num_precision_two = 0.50
     num_scaling = 1.25
     num_macro_timeout = 15
+
+    #Tilt pot setpoints
+    kDown = 0
+    kUp = 10

@@ -13,6 +13,7 @@ from utilities.settings import Settings
 from subsystems.drivetrain import Drivetrain
 from subsystems.hat import Hat
 from subsystems.ears import Ears
+from subsystems.tilt import Tilt
 
 #Import our button mapping:
 from oi import OI
@@ -27,6 +28,7 @@ class Mantis(wpilib.SampleRobot):
         self.drivetrain = Drivetrain(self)
         self.ears = Ears(self)
         self.hat = Hat(self)
+        self.tilt = Tilt(self)
         self.oi = OI(self)
         #Timeout value for the macros from the dashboard (default 15 sec).
         self.macroTimeout = self.oi.smart_dashboard.getInt("Macro", 15)
