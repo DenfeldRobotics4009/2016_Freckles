@@ -74,6 +74,8 @@ class Mantis(wpilib.SampleRobot):
         #Log the things:
         self.drivetrain.log()
         self.ears.log()
+        self.hat.log()
+        self.tilt.log()
 
 if __name__ == "__main__":
     wpilib.run(Mantis)

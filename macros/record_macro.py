@@ -25,8 +25,12 @@ class RecordMacro(Command):
 
         self.initTime = wpilib.Timer.getFPGATimestamp() #get the current time
         self.f = open("/home/lvuser/py/macros/"+self.name, "w")
-        fields = ["Drive_X",
-                  "Drive_Y",]
+        fields = ["Drive_Y",
+                  "Drive_Twist",
+                  "Ears",
+                  "Hat",
+                  "Tilt",
+                  "Time"]
         self.writer = csv.DictWriter(self.f, fieldnames=fields)
         self.writer.writeheader()
 
@@ -37,8 +41,11 @@ class RecordMacro(Command):
         self.writer.writerow({
             #Add subsystems in the following manner:
             #"Row_Name": self.robot.subsystem.getValue
-            "Drive_X": self.robot.drivetrain.x,
             "Drive_Y": self.robot.drivetrain.y,
+            "Drive_Twist": self.robot.drivetrain.twist,
+            "Ears": self.robot.ears.motor.get(),
+            "Hat": self.robot.hat.motor.get(),
+            "Tilt": self.tilt.motor.get(),
 
             #this is needed to make sure everything runs at the right time, v. important:
             "Time": wpilib.Timer.getFPGATimestamp() - self.initTime}) #get the time as the row is written

@@ -16,6 +16,9 @@ class PlayMacro(Command):
         super().__init__()
         self.robot = robot
         self.requires(robot.drivetrain)
+        self.requires(robot.ears)
+        self.requires(robot.hat)
+        self.requires(robot.tilt)
         self.name = name
         self.done_yet = False
 
@@ -47,8 +50,11 @@ class PlayMacro(Command):
             #Add subsystems in the following manner:
             #self.robot.subsystem.manualCommand(float(line["Row_Name"]))
 
-            self.robot.drivetrain.driveManual(float(line["Drive_X"]),
-                                            float(line["Drive_Y"]))
+            self.robot.drivetrain.driveManual(float(line["Drive_Y"]),
+                                            float(line["Drive_Twist"]))
+            self.robot.ears.manualSet(float(line["Ears"]))
+            self.robot.hat.manualSet(float(line["Hat"]))
+            self.robot.tilt.manualSet(float(line["Tilt"]))
 
             if self.isTimedOut() or self.done_yet:
                 break
@@ -63,7 +69,10 @@ class PlayMacro(Command):
         """Run when called, end the macro playing."""
 
         #set the motors to 0 for safety's sake:
-        self.robot.drivetrain.driveManual(0,0,0)
+        self.robot.drivetrain.driveManual(0,0)
+        self.robot.ears.manualSet(0)
+        self.robot.hat.manualSet(0)
+        self.robot.tilt.manualSet(0)
 
         if hasattr(self, "f"):
             self.f.close()

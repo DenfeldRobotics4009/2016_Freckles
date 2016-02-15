@@ -1,5 +1,13 @@
 import math
 
+#Tilt pot setpoints
+kDown = 0
+kUp = 10
+kTop = 9
+kBottom = 1
+kShoot = 5
+kRamp = 7
+
 class Settings():
     """Robot mapping. Values that are changed often go here."""
 
@@ -8,7 +16,3 @@ class Settings():
     num_precision_two = 0.50
     num_scaling = 1.25
     num_macro_timeout = 15
-
-    #Tilt pot setpoints
-    kDown = 0
-    kUp = 10
