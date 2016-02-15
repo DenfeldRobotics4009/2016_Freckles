@@ -31,7 +31,7 @@ class OI:
 
         #Main stick buttons.
         #-----------------------------------------------------------------------
-        trigger = JoystickButton(self.stick, 1)
+        good_trigger = JoystickButton(self.stick, 1)
         thumb_stripe = JoystickButton(self.stick, 2)
         trigger_bumper = JoystickButton(self.stick, 3)
         thumb_normal = JoystickButton(self.stick, 4)
@@ -59,7 +59,7 @@ class OI:
 
         #Setpoint stick button mapping.
         #-----------------------------------------------------------------------
-        trigger = JoystickButton(self.setpointStick, 1)
+        bad_trigger = JoystickButton(self.setpointStick, 1)
         thumb = JoystickButton(self.setpointStick, 2)
         bottom_left = JoystickButton(self.setpointStick, 3)
         bottom_right = JoystickButton(self.setpointStick, 4)
@@ -82,7 +82,7 @@ class OI:
         #Mapping of buttons.
         #-----------------------------------------------------------------------
         thumb_stripe.whileHeld(EarsButton(robot, .5))
-        trigger.whileHeld(HatButton(robot, .5))
+        good_trigger.whileHeld(HatButton(robot, .5))
         thumb_normal.whileHeld(EarsButton(robot, -.5))
         trigger_bumper.whileHeld(HatButton(robot, -.5))
         outer_base_one.whileHeld(TiltTop(robot))
