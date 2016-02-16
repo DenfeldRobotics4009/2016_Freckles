@@ -52,8 +52,8 @@ class Drivetrain(Subsystem):
 
         #Set precision to be false so the drivetrain isn't auto-nerfed
         precision = False
-        forward = self.joystick.getRawButton(9)
-        backward = self.joystick.getRawButton(10)
+        forward = self.joystick.getRawButton(10)
+        backward = self.joystick.getRawButton(9)
 
         #Theoretically, we could have separate button setups for activating
         #precision mode on separate axes. Not sure if that's a good idea.
