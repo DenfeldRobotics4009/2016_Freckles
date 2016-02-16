@@ -24,7 +24,7 @@ def exponential_scaling(base, exponent):
         return -(abs(base)**exponent)
 
 def dead_zone(controller_input, dead_zone):
-    """Old-style dead zone scaling. Will likely be removed."""
+    """Old-style dead zone scaling, used on the tilt."""
 
     if controller_input <= dead_zone and controller_input >= -dead_zone:
         return 0

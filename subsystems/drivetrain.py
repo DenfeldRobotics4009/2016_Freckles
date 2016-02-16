@@ -55,9 +55,6 @@ class Drivetrain(Subsystem):
         forward = self.joystick.getRawButton(10)
         backward = self.joystick.getRawButton(9)
 
-        #Theoretically, we could have separate button setups for activating
-        #precision mode on separate axes. Not sure if that's a good idea.
-
         #                      /-twist joystick              /-1st precision button        /-multiplier so it goes to 1
         twist = twist_control(-self.joystick.getRawAxis(3), self.joystick.getRawButton(8))*5
         y = drive_control(-self.joystick.getRawAxis(1), self.joystick.getRawButton(8))*2.5
