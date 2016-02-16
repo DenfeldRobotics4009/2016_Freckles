@@ -27,7 +27,7 @@ class Drivetrain(Subsystem):
         self.joystick = wpilib.Joystick(0)
 
         #CANTalon motors for the drivetrain.
-        self.zed = wpilib.CANTalon(9) #12
+        self.zed = wpilib.CANTalon(9)
         self.one = wpilib.CANTalon(2)
         self.two = wpilib.CANTalon(3)
         self.three = wpilib.CANTalon(7)
@@ -69,7 +69,7 @@ class Drivetrain(Subsystem):
         elif twist<-1:
             twist=-1
 
-        #Call the driveManual function for the lulz
+        #Pass the values we established to the driveManual function
         self.driveManual(y, twist, forward, backward)
 
     def driveManual(self, y, twist, forward, backward):
