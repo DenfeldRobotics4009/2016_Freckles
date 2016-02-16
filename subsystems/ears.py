@@ -20,7 +20,7 @@ class Ears(Subsystem):
 
     def manualSet(self, output):
         self.left.set(output)
-        self.right.set(output)
+        self.right.set(-output)
 
     def log(self):
         pass
