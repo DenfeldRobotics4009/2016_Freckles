@@ -56,8 +56,8 @@ class Drivetrain(Subsystem):
         backward = self.joystick.getRawButton(9)
 
         #                      /-twist joystick              /-1st precision button        /-multiplier so it goes to 1
-        twist = twist_control(-self.joystick.getRawAxis(3), self.joystick.getRawButton(8))*5
-        y = drive_control(-self.joystick.getRawAxis(1), self.joystick.getRawButton(8))*2.5
+        twist = twist_control(-self.joystick.getRawAxis(3), self.joystick.getRawButton(3))*5
+        y = drive_control(-self.joystick.getRawAxis(1), self.joystick.getRawButton(3))*2.5
         #                  \-main forward joystick \-1st precision button               \-multiplier so it goes to 1
 
         #what even is this

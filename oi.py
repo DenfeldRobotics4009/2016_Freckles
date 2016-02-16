@@ -13,6 +13,7 @@ from macros.record_macro import RecordMacro
 
 from commands.setpoints.hat_button import HatButton
 from commands.setpoints.ears_button import EarsButton
+from commands.setpoints.intake import Intake
 from commands.setpoints.tilt_bottom import TiltBottom
 from commands.setpoints.tilt_ramp import TiltRamp
 from commands.setpoints.tilt_shoot import TiltShoot
@@ -83,8 +84,7 @@ class OI:
         #-----------------------------------------------------------------------
         thumb_stripe.whileHeld(EarsButton(robot, 1))
         good_trigger.whileHeld(HatButton(robot, 1))
-        thumb_normal.whileHeld(EarsButton(robot, -.5))
-        trigger_bumper.whileHeld(HatButton(robot, -.5))
+        thumb_normal.whileHeld(Intake(robot, -.5, -.5))
         outer_base_one.whileHeld(TiltTop(robot))
         outer_base_two.whileHeld(TiltShoot(robot))
         outer_base_three.whileHeld(TiltTop(robot))
