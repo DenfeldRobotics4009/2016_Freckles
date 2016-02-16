@@ -23,4 +23,5 @@ class Ears(Subsystem):
         self.right.set(-output)
 
     def log(self):
-        pass
+        wpilib.SmartDashboard.putNumber("Left Spool", self.left.get())
+        wpilib.SmartDashboard.putNumber("Right Spool", self.right.get())
