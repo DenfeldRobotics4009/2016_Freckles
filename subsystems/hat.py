@@ -21,4 +21,4 @@ class Hat(Subsystem):
         self.motor.set(output)
 
     def log(self):
-        wpilib.SmartDashboard.putNumber("Trigger Wheel", self.motor.get())
+        pass
