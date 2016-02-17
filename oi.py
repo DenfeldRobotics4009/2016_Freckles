@@ -13,7 +13,7 @@ from macros.record_macro import RecordMacro
 
 from commands.setpoints.hat_button import HatButton
 from commands.setpoints.ears_button import EarsButton
-from commands.setpoints.intake import Intake
+from commands.semiauto.intake import Intake
 from commands.setpoints.tilt_bottom import TiltBottom
 from commands.setpoints.tilt_ramp import TiltRamp
 from commands.setpoints.tilt_shoot import TiltShoot

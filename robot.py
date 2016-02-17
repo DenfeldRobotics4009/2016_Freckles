@@ -30,7 +30,7 @@ class Mantis(wpilib.SampleRobot):
         self.hat = Hat(self)
         self.tilt = Tilt(self)
         self.oi = OI(self)
-        #Timeout value for the macros from the dashboard (default 15 sec).
+
         self.macroTimeout = self.oi.smart_dashboard.getInt("Macro", 15)
         Settings.num_macro_timeout = self.macroTimeout
 

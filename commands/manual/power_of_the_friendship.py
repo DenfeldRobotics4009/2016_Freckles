@@ -25,9 +25,7 @@ class DriveWithJoystick(Command):
 
         #Set the drivetrain values to 0 so the robot stops:
         self.robot.drivetrain.driveManual(0,0, False, False)
-        pass
 
     def interrupted(self):
         """Code that runs when the command is interrupted."""
-        #If interrupted (could do logs here):
         self.end()
