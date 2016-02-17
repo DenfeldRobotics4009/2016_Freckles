@@ -19,8 +19,8 @@ class Ears(Subsystem):
         self.setDefaultCommand
 
     def manualSet(self, output):
-        self.left.set(output)
-        self.right.set(-output)
+        self.left.set(-output)
+        self.right.set(output)
 
     def log(self):
         wpilib.SmartDashboard.putNumber("Left Spool", self.left.get())

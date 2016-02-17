@@ -63,7 +63,7 @@ class Drivetrain(Subsystem):
         #what even is this
         if twist>1:
             twist=1
-        elif twist<-1:
+        elif twist<-1: 
             twist=-1
 
         #Pass the values we established to the driveManual function

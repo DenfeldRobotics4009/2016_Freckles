@@ -7,7 +7,7 @@ class TiltShoot(SetTiltSetpoint):
     """Tilt the shooter to the shooting position."""
 
     def __init__(self, robot):
-        super().__init__(robot, utilities.settings.kShoot)
+        super().__init__(robot, utilities.settings.kShootLevel)
 
     def isFinished(self):
         return super().isFinished()
