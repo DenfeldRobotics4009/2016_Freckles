@@ -3,9 +3,11 @@ import math
 #Tilt pot setpoints
 kMaxDown = .795
 kMaxUp = kMaxDown - .590
-kTop = kMaxUp - .030
+kTopShot = .292
+kTopShotAtBase = .281
 kBottom = kMaxDown - .030
 kShootLevel = kMaxDown - .131
+kShootAtBase = .528
 kShootRamp = .400
 
 class Settings():

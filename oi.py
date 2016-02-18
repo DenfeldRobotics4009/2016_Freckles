@@ -7,6 +7,7 @@ from networktables import NetworkTable
 from utilities.pov_button import POVButton
 from utilities.drive_control import *
 from utilities.settings import Settings
+import utilities.settings
 
 from macros.play_macro import PlayMacro
 from macros.record_macro import RecordMacro
@@ -14,10 +15,7 @@ from macros.record_macro import RecordMacro
 from commands.setpoints.hat_button import HatButton
 from commands.setpoints.ears_button import EarsButton
 from commands.semiauto.intake import Intake
-from commands.setpoints.tilt_bottom import TiltBottom
-from commands.setpoints.tilt_ramp import TiltRamp
-from commands.setpoints.tilt_shoot import TiltShoot
-from commands.setpoints.tilt_top import TiltTop
+from commands.setpoints.set_tilt_setpoint import SetTiltSetpoint
 
 class OI:
     """Button mapping goes here."""
@@ -29,6 +27,17 @@ class OI:
         self.stick = wpilib.Joystick(0)
         self.setpointStick = wpilib.Joystick(1)
         self.smart_dashboard = NetworkTable.getTable("SmartDashboard")
+
+        #Main stick POV.
+        #-----------------------------------------------------------------------
+        north = POVButton(self.stick, 0)
+        northeast = POVButton(self.stick, 45)
+        east = POVButton(self.stick, 90)
+        southeast = POVButton(self.stick, 135)
+        south = POVButton(self.stick, 180)
+        southwest = POVButton(self.stick, 225)
+        west = POVButton(self.stick, 270)
+        northwest = POVButton(self.stick, 315)
 
         #Main stick buttons.
         #-----------------------------------------------------------------------
@@ -90,10 +99,14 @@ class OI:
         bad_trigger.whileHeld(HatButton(robot, 1))
         pov_north.whileHeld(Intake(robot, .45, .3))
         pov_south.whileHeld(Intake(robot, -.5, -.5))
-        outer_base_one.whileHeld(TiltTop(robot))
-        outer_base_two.whileHeld(TiltShoot(robot))
-        outer_base_three.whileHeld(TiltTop(robot))
-        inner_base_two.whileHeld(TiltRamp(robot))
+        north.whileHeld(Intake(robot, .45, .3))
+        south.whileHeld(Intake(robot, -.5, -.5))
+        outer_base_one.whileHeld(SetTiltSetpoint(robot, utilities.settings.kTopShot))
+        outer_base_two.whileHeld(SetTiltSetpoint(robot, utilities.settings.kShootLevel))
+        outer_base_three.whileHeld(SetTiltSetpoint(robot, utilities.settings.kTopShot))
+        inner_base_one.whileHeld(SetTiltSetpoint(rbot, utilities.settings.kShootAtBase))
+        inner_base_two.whileHeld(SetTiltSetpoint(robot, utilities.settings.kShootRamp))
+        inner_base_three.whileHeld(SetTiltSetpoint(robot, utilities.settings.kTopShotAtBase))
 
 
     def getStick(self):
