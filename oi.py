@@ -48,14 +48,14 @@ class OI:
 
         #Hat switch POV stuff.
         #-----------------------------------------------------------------------
-        pov_north = POVButton(self.stick, 0)
-        pov_northeast = POVButton(self.stick, 45)
-        pov_east = POVButton(self.stick, 90)
-        pov_southeast = POVButton(self.stick, 135)
-        pov_south = POVButton(self.stick, 180)
-        pov_southwest = POVButton(self.stick, 225)
-        pov_west = POVButton(self.stick, 270)
-        pov_northwest = POVButton(self.stick, 315)
+        pov_north = POVButton(self.setpointStick, 0)
+        pov_northeast = POVButton(self.setpointStick, 45)
+        pov_east = POVButton(self.setpointStick, 90)
+        pov_southeast = POVButton(self.setpointStick, 135)
+        pov_south = POVButton(self.setpointStick, 180)
+        pov_southwest = POVButton(self.setpointStick, 225)
+        pov_west = POVButton(self.setpointStick, 270)
+        pov_northwest = POVButton(self.setpointStick, 315)
 
 
         #Setpoint stick button mapping.
@@ -86,8 +86,10 @@ class OI:
         good_trigger.whileHeld(HatButton(robot, 1))
         thumb_normal.whileHeld(Intake(robot, -.5, -.5))
 
-        thumb.whileHeld(Intake(robot, -.5, -.5))
+        thumb.whileHeld(EarsButton(robot, 1))
         bad_trigger.whileHeld(HatButton(robot, 1))
+        pov_north.whileHeld(Intake(robot, .1, .1))
+        pov_south.whileHeld(Intake(robot, -.5, -.5)
         outer_base_one.whileHeld(TiltTop(robot))
         outer_base_two.whileHeld(TiltShoot(robot))
         outer_base_three.whileHeld(TiltTop(robot))
