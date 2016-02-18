@@ -2,11 +2,11 @@ import math
 
 #Tilt pot setpoints
 kMaxDown = .865
-kMaxUp = .249
-kTop = .30
-kBottom = .7
-kShootLevel = .5
-kShootRamp = .4
+kMaxUp = .253
+kTop = .300
+kBottom = .700
+kShootLevel = .500
+kShootRamp = .400
 
 class Settings():
     """Robot mapping. Values that are changed often go here."""
