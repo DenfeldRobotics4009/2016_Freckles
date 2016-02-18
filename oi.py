@@ -85,6 +85,9 @@ class OI:
         thumb_stripe.whileHeld(EarsButton(robot, 1))
         good_trigger.whileHeld(HatButton(robot, 1))
         thumb_normal.whileHeld(Intake(robot, -.5, -.5))
+
+        thumb.whileHeld(Intake(robot, -.5, -.5))
+        bad_trigger.whileHeld(HatButton(robot, 1))
         outer_base_one.whileHeld(TiltTop(robot))
         outer_base_two.whileHeld(TiltShoot(robot))
         outer_base_three.whileHeld(TiltTop(robot))
