@@ -16,6 +16,7 @@ from commands.setpoints.hat_button import HatButton
 from commands.setpoints.ears_button import EarsButton
 from commands.semiauto.intake import Intake
 from commands.setpoints.set_tilt_setpoint import SetTiltSetpoint
+from commands.semiauto.shoot import Shoot
 
 class OI:
     """Button mapping goes here."""
@@ -92,7 +93,7 @@ class OI:
         #Mapping of buttons.
         #-----------------------------------------------------------------------
         thumb_stripe.whileHeld(EarsButton(robot, 1))
-        good_trigger.whileHeld(HatButton(robot, 1))
+        good_trigger.whenPressed(Shoot(robot))
         thumb_normal.whileHeld(Intake(robot, -.5, -.5))
 
         thumb.whileHeld(EarsButton(robot, 1))
@@ -104,7 +105,7 @@ class OI:
         outer_base_one.whileHeld(SetTiltSetpoint(robot, utilities.settings.kTopShot))
         outer_base_two.whileHeld(SetTiltSetpoint(robot, utilities.settings.kShootLevel))
         outer_base_three.whileHeld(SetTiltSetpoint(robot, utilities.settings.kBottom))
-        inner_base_one.whileHeld(SetTiltSetpoint(rbot, utilities.settings.kShootAtBase))
+        inner_base_one.whileHeld(SetTiltSetpoint(robot, utilities.settings.kShootAtBase))
         inner_base_two.whileHeld(SetTiltSetpoint(robot, utilities.settings.kShootRamp))
         inner_base_three.whileHeld(SetTiltSetpoint(robot, utilities.settings.kTopShotAtBase))
 

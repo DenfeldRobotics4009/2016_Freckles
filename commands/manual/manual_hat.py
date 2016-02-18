@@ -14,7 +14,7 @@ class ManualHat(Command):
         pass
 
     def isFinished(self):
-        return False
+        return self.isTimedOut()
 
     def cancel(self):
         self.robot.hat.manualSet(0)
