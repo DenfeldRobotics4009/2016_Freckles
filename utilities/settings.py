@@ -1,7 +1,7 @@
 import math
 
 #Tilt pot setpoints
-kMaxDown = .865
+kMaxDown = .848
 kMaxUp = .253
 kTop = .300
 kBottom = .700
