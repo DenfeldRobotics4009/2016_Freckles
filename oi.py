@@ -30,30 +30,35 @@ class OI:
 
         #Main stick POV.
         #-----------------------------------------------------------------------
-        north = POVButton(self.stick, 0)
-        northeast = POVButton(self.stick, 45)
-        east = POVButton(self.stick, 90)
-        southeast = POVButton(self.stick, 135)
-        south = POVButton(self.stick, 180)
-        southwest = POVButton(self.stick, 225)
-        west = POVButton(self.stick, 270)
-        northwest = POVButton(self.stick, 315)
+        drive_north = POVButton(self.stick, 0)
+        drive_northeast = POVButton(self.stick, 45)
+        drive_east = POVButton(self.stick, 90)
+        drive_southeast = POVButton(self.stick, 135)
+        drive_south = POVButton(self.stick, 180)
+        drive_southwest = POVButton(self.stick, 225)
+        drive_west = POVButton(self.stick, 270)
+        drive_northwest = POVButton(self.stick, 315)
 
-        #Main stick buttons.
+        #Setpoint stick button mapping.
         #-----------------------------------------------------------------------
-        good_trigger = JoystickButton(self.stick, 1)
-        thumb_stripe = JoystickButton(self.stick, 2)
-        trigger_bumper = JoystickButton(self.stick, 3)
-        thumb_normal = JoystickButton(self.stick, 4)
+        drive_trigger = JoystickButton(self.stick, 1)
+        drive_thumb = JoystickButton(self.setpointStick, 2)
+        drive_bottom_left = JoystickButton(self.setpointStick, 3)
+        drive_bottom_right = JoystickButton(self.setpointStick, 4)
+        drive_top_left = JoystickButton(self.setpointStick, 5)
+        drive_top_right = JoystickButton(self.setpointStick, 6)
 
-        #Throttle buttons.
+
+        #Goes from front to back. outer_base is the outer ring of buttons on
+        #the base, inner_base is the inner ring of buttons on the base.
         #-----------------------------------------------------------------------
-        throttle_five = JoystickButton(self.stick, 5)
-        throttle_six = JoystickButton(self.stick, 6)
-        throttle_seven = JoystickButton(self.stick, 7)
-        throttle_eight = JoystickButton(self.stick, 8)
-        throttle_nine = JoystickButton(self.stick, 9)
-        throttle_ten = JoystickButton(self.stick, 10)
+        drive_outer_base_one = JoystickButton(self.setpointStick, 7)
+        drive_inner_base_one = JoystickButton(self.setpointStick, 8)
+        drive_outer_base_two = JoystickButton(self.setpointStick, 9)
+        drive_inner_base_two = JoystickButton(self.setpointStick, 10)
+        drive_outer_base_three = JoystickButton(self.setpointStick, 11)
+        drive_inner_base_three = JoystickButton(self.setpointStick, 12)
+
 
         #Hat switch POV stuff.
         #-----------------------------------------------------------------------
@@ -90,21 +95,16 @@ class OI:
         #-----------------------------------------------------------------------
 
         #Mapping of buttons.
-        #-----------------------------------------------------------------------
-        thumb_stripe.whileHeld(EarsButton(robot, 1))
-        good_trigger.whileHeld(HatButton(robot, 1))
-        thumb_normal.whileHeld(Intake(robot, -.5, -.5))
-
         thumb.whileHeld(EarsButton(robot, 1))
         bad_trigger.whileHeld(HatButton(robot, 1))
         pov_north.whileHeld(Intake(robot, .45, .3))
         pov_south.whileHeld(Intake(robot, -.5, -.5))
-        north.whileHeld(Intake(robot, .45, .3))
-        south.whileHeld(Intake(robot, -.5, -.5))
+        drive_north.whileHeld(Intake(robot, .45, .3))
+        drive_south.whileHeld(Intake(robot, -.5, -.5))
         outer_base_one.whileHeld(SetTiltSetpoint(robot, utilities.settings.kTopShot))
         outer_base_two.whileHeld(SetTiltSetpoint(robot, utilities.settings.kShootLevel))
-        outer_base_three.whileHeld(SetTiltSetpoint(robot, utilities.settings.kTopShot))
-        inner_base_one.whileHeld(SetTiltSetpoint(rbot, utilities.settings.kShootAtBase))
+        outer_base_three.whileHeld(SetTiltSetpoint(robot, utilities.settings.kBottom))
+        inner_base_one.whileHeld(SetTiltSetpoint(robot, utilities.settings.kShootAtBase))
         inner_base_two.whileHeld(SetTiltSetpoint(robot, utilities.settings.kShootRamp))
         inner_base_three.whileHeld(SetTiltSetpoint(robot, utilities.settings.kTopShotAtBase))
 
