@@ -73,12 +73,6 @@ class Drivetrain(Subsystem):
         #Assign the proper values that we set up earlier
         self.y, self.twist, self.forward, self.backward = y, twist, forward, backward
 
+        self.firstSet.arcadeDrive(y, twist)
         self.secondSet.arcadeDrive(y, twist)
         self.thirdSet.arcadeDrive(y, twist)
-
-        if forward == True:
-            self.firstSet.arcadeDrive(1, twist)
-        elif backward == True:
-            self.firstSet.arcadeDrive(-1, twist)
-        else:
-            self.firstSet.arcadeDrive(0, 0)
