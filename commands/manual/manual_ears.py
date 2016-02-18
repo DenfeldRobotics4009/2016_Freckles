@@ -5,12 +5,12 @@ from wpilib.command import Command
 class ManualEars(Command):
     """Manually run the ear spools."""
 
-    def __init__(self, robot):
+    def __init__(self, robot, output):
         super().__init__()
         self.robot = robot
         self.requires(self.robot.ears)
 
-    def execute(self):
+    def execute(self, output):
         pass
 
     def isFinished(self):

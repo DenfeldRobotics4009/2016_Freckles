@@ -25,7 +25,7 @@ class OI:
     def __init__(self, robot):
         """Double joysticks WOOT"""
 
-        #initialise the stick and the smart dashboard (in case we need stuff for auton):
+        #Initialise the stick and the smart dashboard (in case we need stuff for auton):
         self.stick = wpilib.Joystick(0)
         self.setpointStick = wpilib.Joystick(1)
         self.smart_dashboard = NetworkTable.getTable("SmartDashboard")
@@ -68,7 +68,7 @@ class OI:
         top_right = JoystickButton(self.setpointStick, 6)
 
 
-        #goes from front to back. outer_base is the outer ring of buttons on
+        #Goes from front to back. outer_base is the outer ring of buttons on
         #the base, inner_base is the inner ring of buttons on the base.
         #-----------------------------------------------------------------------
         outer_base_one = JoystickButton(self.setpointStick, 7)

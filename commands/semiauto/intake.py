@@ -1,4 +1,5 @@
 __author__ = "nikolojedison"
+
 from wpilib.command import Command
 from subsystems.ears import Ears
 from subsystems.hat import Hat

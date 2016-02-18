@@ -44,7 +44,6 @@ class Drivetrain(Subsystem):
         self.setDefaultCommand(DriveWithJoystick(self.robot))
 
     def log(self):
-        #might want logging when something starts to break someday
         pass
 
     def driveJoystick(self, joystick):
@@ -63,10 +62,9 @@ class Drivetrain(Subsystem):
         #what even is this
         if twist>1:
             twist=1
-        elif twist<-1: 
+        elif twist<-1:
             twist=-1
 
-        #Pass the values we established to the driveManual function
         self.driveManual(y, twist, forward, backward)
 
     def driveManual(self, y, twist, forward, backward):
@@ -75,7 +73,6 @@ class Drivetrain(Subsystem):
         #Assign the proper values that we set up earlier
         self.y, self.twist, self.forward, self.backward = y, twist, forward, backward
 
-        #Pass said values to the drivetrain after assigning them to be arcade
         self.secondSet.arcadeDrive(y, twist)
         self.thirdSet.arcadeDrive(y, twist)
 
