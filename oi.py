@@ -88,8 +88,8 @@ class OI:
 
         thumb.whileHeld(EarsButton(robot, 1))
         bad_trigger.whileHeld(HatButton(robot, 1))
-        pov_north.whileHeld(Intake(robot, .1, .1))
-        pov_south.whileHeld(Intake(robot, -.5, -.5)
+        pov_north.whileHeld(Intake(robot, .45, .3))
+        pov_south.whileHeld(Intake(robot, -.5, -.5))
         outer_base_one.whileHeld(TiltTop(robot))
         outer_base_two.whileHeld(TiltShoot(robot))
         outer_base_three.whileHeld(TiltTop(robot))
