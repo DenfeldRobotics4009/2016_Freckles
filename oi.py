@@ -95,11 +95,6 @@ class OI:
         #-----------------------------------------------------------------------
 
         #Mapping of buttons.
-        #-----------------------------------------------------------------------
-        thumb_stripe.whileHeld(EarsButton(robot, 1))
-        good_trigger.whileHeld(HatButton(robot, 1))
-        thumb_normal.whileHeld(Intake(robot, -.5, -.5))
-
         thumb.whileHeld(EarsButton(robot, 1))
         bad_trigger.whileHeld(HatButton(robot, 1))
         pov_north.whileHeld(Intake(robot, .45, .3))
@@ -109,7 +104,7 @@ class OI:
         outer_base_one.whileHeld(SetTiltSetpoint(robot, utilities.settings.kTopShot))
         outer_base_two.whileHeld(SetTiltSetpoint(robot, utilities.settings.kShootLevel))
         outer_base_three.whileHeld(SetTiltSetpoint(robot, utilities.settings.kTopShot))
-        inner_base_one.whileHeld(SetTiltSetpoint(rbot, utilities.settings.kShootAtBase))
+        inner_base_one.whileHeld(SetTiltSetpoint(robot, utilities.settings.kShootAtBase))
         inner_base_two.whileHeld(SetTiltSetpoint(robot, utilities.settings.kShootRamp))
         inner_base_three.whileHeld(SetTiltSetpoint(robot, utilities.settings.kTopShotAtBase))
 
