@@ -13,7 +13,7 @@ class ManualTilt(Command):
         self.requires(self.robot.tilt)
 
     def execute(self):
-        self.robot.tilt.manualSet(dead_zone(self.robot.oi.getStick().getRawAxis(2), .25))
+        self.robot.tilt.manualSet(dead_zone(self.robot.oi.getStick().getRawAxis(3), .25))
 
     def isFinished(self):
         return False
