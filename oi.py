@@ -103,7 +103,7 @@ class OI:
         drive_south.whileHeld(Intake(robot, -.5, -.5))
         outer_base_one.whileHeld(SetTiltSetpoint(robot, utilities.settings.kTopShot))
         outer_base_two.whileHeld(SetTiltSetpoint(robot, utilities.settings.kShootLevel))
-        outer_base_three.whileHeld(SetTiltSetpoint(robot, utilities.settings.kTopShot))
+        outer_base_three.whileHeld(SetTiltSetpoint(robot, utilities.settings.kBottom))
         inner_base_one.whileHeld(SetTiltSetpoint(robot, utilities.settings.kShootAtBase))
         inner_base_two.whileHeld(SetTiltSetpoint(robot, utilities.settings.kShootRamp))
         inner_base_three.whileHeld(SetTiltSetpoint(robot, utilities.settings.kTopShotAtBase))
