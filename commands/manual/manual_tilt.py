@@ -14,7 +14,7 @@ class ManualTilt(Command):
         self.requires(self.robot.tilt)
 
     def execute(self):
-        self.robot.tilt.manualSet(twist_control(dead_zone(self.robot.oi.getStick().getRawAxis(3), .25), self.joystick.getRawButton(2))*5))
+        self.robot.tilt.manualSet(twist_control(dead_zone(self.robot.oi.getSetpointStick().getRawAxis(3), .25), self.joystick.getRawButton(2))*5))
 
     def isFinished(self):
         return False
