@@ -17,6 +17,7 @@ from commands.setpoints.ears_button import EarsButton
 from commands.semiauto.intake import Intake
 from commands.semiauto.shoot import Shoot
 
+from commands.setpoints.tilt_button import TiltButton
 from commands.setpoints.tilt.setpoint_bottom import SetpointBottom
 from commands.setpoints.tilt.setpoint_long_shot import SetpointLongShot
 from commands.setpoints.tilt.setpoint_shoot_base import SetpointShootBase
@@ -105,6 +106,7 @@ class OI:
 
         #Mapping of buttons.
         bad_trigger.whenPressed(Shoot(robot))
+        thumb.whileHeld(TiltButton(robot))
         pov_north.whileHeld(Intake(robot, .45, .3))
         pov_south.whileHeld(Intake(robot, -.5, -.5))
         bottom_left.whileHeld(EarsButton(robot, 1))
