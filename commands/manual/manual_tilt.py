@@ -14,7 +14,8 @@ class ManualTilt(Command):
         self.requires(self.robot.tilt)
 
     def execute(self):
-        self.robot.tilt.manualSet(dead_zone(tilt_control(self.robot.oi.getSetpointStick().getRawAxis(1), self.robot.oi.getSetpointStick().getRawButton(2)), .25))
+        precision = False
+        self.robot.tilt.manualSet(dead_zone(tilt_control(self.robot.oi.getSetpointStick().getRawAxis(1), self.robot.oi.getSetpointStick().getRawButton(2)), .40))
 
     def isFinished(self):
         return False

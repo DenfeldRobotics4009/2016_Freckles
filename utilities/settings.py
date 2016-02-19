@@ -10,7 +10,7 @@ kBottom = .730
 kShootLevel = .646
 kShootAtBase = .528
 kShootRamp = .400
-kLongShot = .400
+kLongShot = .600
 
 class Settings():
     """Robot mapping. Values that are changed often go here."""

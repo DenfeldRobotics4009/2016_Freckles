@@ -18,8 +18,8 @@ class Shoot(CommandGroup):
         Spool(robot, 1, 2),
         WaitCommand(1),
         Roll(robot, -1, .5),
+        Spool(robot, 0, .5),
         WaitCommand(.5),
         Roll(robot, 0, .5),
-        Spool(robot, 0, .5),
         ]
         for i in shoot_generator: self.addSequential(i)
