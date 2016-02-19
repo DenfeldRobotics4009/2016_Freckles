@@ -46,4 +46,4 @@ def twist_control(controller_input, trigger):
 def tilt_control(controller_input, trigger):
     """Final tilt thing that's used by manualTilt."""
 
-    return precision_mode(exponential_scaling(exponential_scaling(controller_input, 0.5)*0.5, 1.1), trigger)
+    return precision_mode(controller_input, trigger)

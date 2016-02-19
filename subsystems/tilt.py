@@ -9,7 +9,7 @@ class Tilt(PIDSubsystem):
     """The tilting mechanism for the shooter."""
 
     def  __init__(self, robot):
-        super().__init__(15, 0, 0)
+        super().__init__(-20, 0, 0) #420
 
         self.robot = robot
         self.tilt_motor = wpilib.CANTalon(10)
@@ -30,14 +30,14 @@ class Tilt(PIDSubsystem):
         elif position < utilities.settings.kMaxUp and output > 0.0625:
             self.tilt_motor.set(0)
         else:
-            self.tilt_motor.set(output)
+            self.tilt_motor.set(output*.25)
 
 
     def returnPIDInput(self):
         return self.tilt_pot.get()
 
     def usePIDOutput(self, output):
-        self.manualSet(output)
+        self.manualSet(output*1.75)
 
     def isDown(self):
         self.tilt_pot.get() < utilities.settings.kMaxDown

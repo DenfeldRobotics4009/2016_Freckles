@@ -15,8 +15,16 @@ from macros.record_macro import RecordMacro
 from commands.setpoints.hat_button import HatButton
 from commands.setpoints.ears_button import EarsButton
 from commands.semiauto.intake import Intake
-from commands.setpoints.set_tilt_setpoint import SetTiltSetpoint
 from commands.semiauto.shoot import Shoot
+
+from commands.setpoints.tilt.setpoint_bottom import SetpointBottom
+from commands.setpoints.tilt.setpoint_long_shot import SetpointLongShot
+from commands.setpoints.tilt.setpoint_shoot_base import SetpointShootBase
+from commands.setpoints.tilt.setpoint_shoot_level import SetpointShootLevel
+from commands.setpoints.tilt.setpoint_shoot_ramp import SetpointShootRamp
+from commands.setpoints.tilt.setpoint_top_shot import SetpointTopShot
+from commands.setpoints.tilt.setpoint_top_shot_at_base import SetpointTopShotAtBase
+from commands.setpoints.tilt.setpoint_top import SetpointTop
 
 class OI:
     """Button mapping goes here."""
@@ -101,12 +109,12 @@ class OI:
         pov_south.whileHeld(Intake(robot, -.5, -.5))
         bottom_left.whileHeld(EarsButton(robot, 1))
         bottom_right.whileHeld(EarsButton(robot, .5))
-        seven.whileHeld(SetTiltSetpoint(robot, utilities.settings.kShootAtBase))
-        eight.whileHeld(SetTiltSetpoint(robot, utilities.settings.kTopShotAtBase))
-        nine.whileHeld(SetTiltSetpoint(robot, utilities.settings.kShootLevel))
-        ten.whileHeld(SetTiltSetpoint(robot, utilities.settings.kBottom))
-        eleven.whileHeld(SetTiltSetpoint(robot, utilities.settings.kLongShot))
-        twelve.whileHeld(SetTiltSetpoint(robot, utilities.settings.kTop))
+        drive_trigger.whenPressed(SetpointShootBase(robot))
+        eight.whenPressed(SetpointTopShotAtBase(robot))
+        nine.whenPressed(SetpointShootLevel(robot))
+        ten.whenPressed(SetpointBottom(robot))
+        eleven.whenPressed(SetpointLongShot(robot))
+        twelve.whenPressed(SetpointTop(robot))
 
     def getStick(self):
         """Drive joystick."""

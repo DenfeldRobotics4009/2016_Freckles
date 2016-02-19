@@ -7,16 +7,13 @@ class SetTiltSetpoint(Command):
     def __init__(self, robot, setpoint):
         super().__init__()
         self.robot = robot
-        self.setTimeout(5)
-        self.requires(self.robot.tilt)
+        self.setTimeout(3)
         self.setpoint = setpoint
+        self.requires(self.robot.tilt)
 
     def initialize(self):
         self.robot.tilt.enable()
         self.robot.tilt.setSetpoint(self.setpoint)
-
-    def execute(self):
-        pass
 
     def isFinished(self):
         return self.robot.tilt.onTarget() or self.isTimedOut()
