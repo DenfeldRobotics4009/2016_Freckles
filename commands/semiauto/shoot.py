@@ -13,11 +13,11 @@ class Shoot(CommandGroup):
         super().__init__()
         self.robot = robot
         shoot_generator = [
-        Roll(robot, 1, .5),
+        Roll(robot, 1, 1),
         WaitCommand(1),
-        Spool(robot, 1, 1),
-        WaitCommand(2),
-        Roll(robot, -1, .25),
+        Spool(robot, 1, 2),
+        WaitCommand(1),
+        Roll(robot, -1, .5),
         WaitCommand(.5),
         Roll(robot, 0, .5),
         Spool(robot, 0, .5),

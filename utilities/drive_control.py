@@ -42,3 +42,8 @@ def twist_control(controller_input, trigger):
     """Final spin thing that's used by the drivetrain class."""
 
     return precision_mode(exponential_scaling(exponential_scaling(controller_input, 0.5)*0.5, 2.3), trigger)
+
+def tilt_control(controller_input, trigger):
+    """Final tilt thing that's used by manualTilt."""
+
+    return precision_mode(exponential_scaling(exponential_scaling(controller_input, 0.5)*0.5, 1.1), trigger)

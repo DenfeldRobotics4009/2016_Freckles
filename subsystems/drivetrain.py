@@ -51,12 +51,10 @@ class Drivetrain(Subsystem):
 
         #Set precision to be false so the drivetrain isn't auto-nerfed
         precision = False
-        forward = self.joystick.getRawButton(10)
-        backward = self.joystick.getRawButton(9)
 
         #                      /-twist joystick              /-1st precision button        /-multiplier so it goes to 1
-        twist = twist_control(-self.joystick.getRawAxis(3), self.joystick.getRawButton(3))*5
-        y = drive_control(-self.joystick.getRawAxis(1), self.joystick.getRawButton(3))*2.5
+        twist = twist_control(-self.joystick.getRawAxis(2), self.joystick.getRawButton(1))*5
+        y = drive_control(-self.joystick.getRawAxis(1), self.joystick.getRawButton(1))*2.5
         #                  \-main forward joystick \-1st precision button               \-multiplier so it goes to 1
 
         #what even is this
@@ -65,13 +63,13 @@ class Drivetrain(Subsystem):
         elif twist<-1:
             twist=-1
 
-        self.driveManual(y, twist, forward, backward)
+        self.driveManual(y, twist)
 
-    def driveManual(self, y, twist, forward, backward):
+    def driveManual(self, y, twist):
         """Pass the values from driveJoystick to the actual drivetrain sets."""
 
         #Assign the proper values that we set up earlier
-        self.y, self.twist, self.forward, self.backward = y, twist, forward, backward
+        self.y, self.twist = y, twist
 
         self.firstSet.arcadeDrive(y, twist)
         self.secondSet.arcadeDrive(y, twist)

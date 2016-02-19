@@ -58,7 +58,7 @@ class Mantis(wpilib.SampleRobot):
         """Code to run when disabled."""
 
         #Stop the drivetrain for safety's sake:
-        self.drivetrain.driveManual(0,0, False, False)
+        self.drivetrain.driveManual(0,0)
 
         #Logging loop
         while self.isDisabled():

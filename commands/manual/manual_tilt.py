@@ -2,6 +2,7 @@ __author__ = "nikolojedison"
 
 from wpilib.command import Command
 import utilities.settings
+from utilities.drive_control import *
 from utilities.drive_control import dead_zone
 
 class ManualTilt(Command):
@@ -13,7 +14,7 @@ class ManualTilt(Command):
         self.requires(self.robot.tilt)
 
     def execute(self):
-        self.robot.tilt.manualSet(dead_zone(self.robot.oi.getStick().getRawAxis(2), .25))
+        self.robot.tilt.manualSet(dead_zone(tilt_control(self.robot.oi.getSetpointStick().getRawAxis(1), self.robot.oi.getSetpointStick().getRawButton(2)), .25))
 
     def isFinished(self):
         return False
