@@ -105,7 +105,7 @@ class OI:
         #-----------------------------------------------------------------------
 
         #Mapping of buttons.
-        bad_trigger.whenPressed(Shoot(robot))
+        bad_trigger.whenPressed(HatButton(robot, 1))
         thumb.whileHeld(TiltButton(robot))
         pov_north.whileHeld(Intake(robot, .45, .3))
         pov_south.whileHeld(Intake(robot, -.5, -.5))
