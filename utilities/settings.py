@@ -2,6 +2,7 @@ import math
 
 #Tilt pot setpoints .158
 kMaxDown = .790
+#Works so far ^
 kMaxUp = kMaxDown - .590
 kTop = kMaxUp + .050
 kTopShot = .292
@@ -9,12 +10,14 @@ kTopShotAtBase = .281
 kBottom = kMaxDown - .050
 kShootLevel = .646
 #Test and modify ^
-kShootAtBase = .560
+kShootAtBase = .483
 #Test and modify ^
+#2nd set of wheels is touching batter
 kShootRamp = .400
 #Test and modify ^
 kLongShot = .632
-#Test and modify
+#Works so far ^
+#14 feet from tower
 
 class Settings():
     """Robot mapping. Values that are changed often go here."""
