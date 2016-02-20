@@ -13,7 +13,8 @@ kShootAtBase = .560
 #Test and modify ^
 kShootRamp = .400
 #Test and modify ^
-kLongShot = .635
+kLongShot = .632
+#Test and modify
 
 class Settings():
     """Robot mapping. Values that are changed often go here."""
