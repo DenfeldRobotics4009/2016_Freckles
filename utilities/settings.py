@@ -1,7 +1,7 @@
 import math
 
 #Tilt pot setpoints .158
-kMaxDown = .79
+kMaxDown = .800
 kMaxUp = kMaxDown - .590
 kTop = kMaxUp + .050
 kTopShot = .292
