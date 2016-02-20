@@ -9,7 +9,7 @@ kTopShotAtBase = .281
 kBottom = kMaxDown - .050
 kShootLevel = .646
 #Test and modify ^
-kShootAtBase = .528
+kShootAtBase = .560
 #Test and modify ^
 kShootRamp = .400
 #Test and modify ^
