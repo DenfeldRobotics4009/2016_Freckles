@@ -14,6 +14,7 @@ class Ears(Subsystem):
         self.robot = robot
         self.left = wpilib.CANTalon(6)
         self.right = wpilib.CANTalon(8)
+        self.loaded = wpilib.AnalogInput(1)
 
     def initDefaultCommand(self):
         self.setDefaultCommand
@@ -23,4 +24,4 @@ class Ears(Subsystem):
         self.right.set(output)
 
     def log(self):
-        pass
+        wpilib.SmartDashboard.putBoolean("Ball Limit", self.loaded.get())
