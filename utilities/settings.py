@@ -13,8 +13,9 @@ kShootLevel = .646
 kShootAtBase = .474
 #Test and modify ^
 #2nd set of wheels is touching batter
-kShootRamp = .400
+kShootRamp = .326
 #Test and modify ^
+#Backed into tower
 kLongShot = .632
 #Works so far ^
 #14 feet from tower
