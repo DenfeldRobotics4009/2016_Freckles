@@ -10,7 +10,7 @@ kTopShotAtBase = .281
 kBottom = kMaxDown - .050
 kShootLevel = .646
 #Test and modify ^
-kShootAtBase = .483
+kShootAtBase = .479
 #Test and modify ^
 #2nd set of wheels is touching batter
 kShootRamp = .400
