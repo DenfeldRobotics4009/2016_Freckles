@@ -8,9 +8,12 @@ kTopShot = .292
 kTopShotAtBase = .281
 kBottom = kMaxDown - .050
 kShootLevel = .646
+#Test and modify ^
 kShootAtBase = .528
+#Test and modify ^
 kShootRamp = .400
-kLongShot = .600
+#Test and modify ^
+kLongShot = .655
 
 class Settings():
     """Robot mapping. Values that are changed often go here."""
