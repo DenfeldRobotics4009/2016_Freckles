@@ -111,6 +111,7 @@ class OI:
         pov_south.whileHeld(Intake(robot, -.5, -.5))
         bottom_left.whileHeld(EarsButton(robot, 1))
         bottom_right.whileHeld(EarsButton(robot, .4))
+        top_left.whileHeld(Intake(robot, -.5, -.5)) #Mini Matt wanted this
         seven.whenPressed(SetpointShootBase(robot))
         eight.whenPressed(SetpointTopShotAtBase(robot))
         nine.whenPressed(SetpointShootLevel(robot))
