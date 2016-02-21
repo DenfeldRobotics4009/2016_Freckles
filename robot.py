@@ -41,6 +41,7 @@ class Mantis(wpilib.SampleRobot):
     def autonomous(self):
         """Auton code."""
 
+        #Change when we get to something useful.
         self.ICCMacro.start()
         print("ICC Macro started")
 
