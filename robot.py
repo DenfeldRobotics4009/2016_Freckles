@@ -35,7 +35,7 @@ class Mantis(wpilib.SampleRobot):
         self.oi = OI(self)
 
         self.macroTimeout = self.oi.smart_dashboard.getInt("Macro", 15)
-        Settings.num_macro_timeout = self.macroTimeout
+        Settings.num_macro_timeout = 15
         self.ICCMacro = PlayMacro(self, "icc_macro.csv")
 
     def autonomous(self):
