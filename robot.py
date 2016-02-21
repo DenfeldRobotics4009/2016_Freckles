@@ -18,6 +18,9 @@ from subsystems.tilt import Tilt
 #Import our button mapping:
 from oi import OI
 
+#Import our commands:
+from macros.play_macro import PlayMacro
+
 class Mantis(wpilib.SampleRobot):
     """Fluffy ears to scratch, lost his tail, cute little paws, likes to play fetch."""
 
@@ -33,9 +36,13 @@ class Mantis(wpilib.SampleRobot):
 
         self.macroTimeout = self.oi.smart_dashboard.getInt("Macro", 15)
         Settings.num_macro_timeout = self.macroTimeout
+        self.ICCMacro = PlayMacro(self, "icc_macro.csv")
 
     def autonomous(self):
         """Auton code."""
+
+        self.ICCMacro.start()
+        print("ICC Macro started")
 
         #Logging loop
         while self.isAutonomous() and self.isEnabled():
