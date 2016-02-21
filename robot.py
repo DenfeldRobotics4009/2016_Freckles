@@ -55,6 +55,7 @@ class Mantis(wpilib.SampleRobot):
         """Teleop code."""
         #Make the joystick work for driving:
         joystick = self.oi.getStick()
+        self.ICCMacro.cancel()
 
         #Logging loop
         while self.isOperatorControl() and self.isEnabled():
@@ -67,6 +68,7 @@ class Mantis(wpilib.SampleRobot):
 
         #Stop the drivetrain for safety's sake:
         self.drivetrain.driveManual(0,0)
+        self.ICCMacro.cancel()
 
         #Logging loop
         while self.isDisabled():
