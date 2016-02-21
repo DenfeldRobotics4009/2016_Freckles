@@ -14,7 +14,7 @@ class Ears(Subsystem):
         self.robot = robot
         self.left = wpilib.CANTalon(6)
         self.right = wpilib.CANTalon(8)
-        self.loaded = wpilib.DigitalInput(0)
+        self.loaded = wpilib.DigitalInput(2)
 
     def initDefaultCommand(self):
         self.setDefaultCommand
