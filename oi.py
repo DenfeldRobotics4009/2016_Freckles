@@ -118,7 +118,6 @@ class OI:
         ten.whenPressed(SetpointBottom(robot))
         eleven.whenPressed(SetpointLongShot(robot))
         twelve.whenPressed(SetpointTop(robot))
-        drive_inner_base_three.whenPressed(RecordMacro(robot, "icc_macro.csv"))
 
     def getStick(self):
         """Drive joystick."""

@@ -36,14 +36,11 @@ class Mantis(wpilib.SampleRobot):
 
         self.macroTimeout = self.oi.smart_dashboard.getInt("Macro", 15)
         Settings.num_macro_timeout = 15
-        self.ICCMacro = PlayMacro(self, "icc_macro.csv")
 
     def autonomous(self):
         """Auton code."""
 
         #Change when we get to something useful.
-        self.ICCMacro.start()
-        print("ICC Macro started")
 
         #Logging loop
         while self.isAutonomous() and self.isEnabled():
@@ -55,7 +52,6 @@ class Mantis(wpilib.SampleRobot):
         """Teleop code."""
         #Make the joystick work for driving:
         joystick = self.oi.getStick()
-        self.ICCMacro.cancel()
 
         #Logging loop
         while self.isOperatorControl() and self.isEnabled():
@@ -68,7 +64,9 @@ class Mantis(wpilib.SampleRobot):
 
         #Stop the drivetrain for safety's sake:
         self.drivetrain.driveManual(0,0)
-        self.ICCMacro.cancel()
+        self.hat.manualSet(0)
+        self.ears.manualSet(0)
+        self.tilt.manualSet(0)
 
         #Logging loop
         while self.isDisabled():
