@@ -13,6 +13,7 @@ class Shoot(CommandGroup):
         super().__init__()
         self.robot = robot
         shoot_generator = [
+        print("Running shoot command..."),
         Roll(robot, 1, 1),
         WaitCommand(1),
         Spool(robot, 1, 2),
@@ -21,5 +22,6 @@ class Shoot(CommandGroup):
         Spool(robot, 0, .5),
         WaitCommand(.5),
         Roll(robot, 0, .5),
+        print("Shoot command completed"),
         ]
         for i in shoot_generator: self.addSequential(i)

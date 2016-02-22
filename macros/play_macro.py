@@ -24,6 +24,7 @@ class PlayMacro(Command):
 
     def initialize(self):
         """Figure out the file location and play it back."""
+        print("Initializing macro...")
 
         try:
             #attempt to access the files required
@@ -41,7 +42,7 @@ class PlayMacro(Command):
 
         #start time is important for making sure everything plays at the right time
         start_time = Timer.getFPGATimestamp()
-
+        print("Playing macro...")
         #do the actual playback bit
         for line in self.reader_iterator:
             t_delta = float(line["Time"]) - (Timer.getFPGATimestamp()-start_time)
@@ -73,6 +74,7 @@ class PlayMacro(Command):
         self.robot.ears.manualSet(0)
         self.robot.hat.manualSet(0)
         self.robot.tilt.manualSet(0)
+        print("Macro playback complete")
 
         if hasattr(self, "f"):
             self.f.close()

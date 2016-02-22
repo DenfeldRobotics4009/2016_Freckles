@@ -36,6 +36,8 @@ class Mantis(wpilib.SampleRobot):
 
         self.macroTimeout = self.oi.smart_dashboard.getInt("Macro", 15)
         Settings.num_macro_timeout = 15
+        macro_string = str(Settings.num_macro_timeout)
+        print("Robot initialized with a macro timeout of " + macro_string)
 
     def autonomous(self):
         """Auton code."""
@@ -50,6 +52,7 @@ class Mantis(wpilib.SampleRobot):
 
     def operatorControl(self):
         """Teleop code."""
+        print("Teleop activated")
         #Make the joystick work for driving:
         joystick = self.oi.getStick()
 
@@ -61,6 +64,7 @@ class Mantis(wpilib.SampleRobot):
 
     def disabled(self):
         """Code to run when disabled."""
+        print("Robot disabled")
 
         #Stop the drivetrain for safety's sake:
         self.drivetrain.driveManual(0,0)
@@ -75,7 +79,7 @@ class Mantis(wpilib.SampleRobot):
 
     def test(self):
         """Code for testing."""
-        pass
+        print("Test mode activated")
 
     def log(self):
         """I know it doesn't log but if it does eventually it'll go here."""
