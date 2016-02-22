@@ -31,7 +31,7 @@ class Tilt(PIDSubsystem):
         elif position < utilities.settings.kMaxUp and output > 0.0625:
             self.tilt_motor.set(0)
         else:
-            self.tilt_motor.set(output*.40)
+            self.tilt_motor.set(output*.50)
 
 
     def returnPIDInput(self):
