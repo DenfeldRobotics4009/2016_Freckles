@@ -36,7 +36,6 @@ class Mantis(wpilib.SampleRobot):
 
         self.macroTimeout = self.oi.smart_dashboard.getInt("Macro", 15)
         self.macroName = self.oi.smart_dashboard.getString("Macro Name", "macro_default.csv")
-        Settings.kMaxDown = self.tiltBottom
         Settings.str_macro_name = self.macroName
         Settings.num_macro_timeout = self.macroTimeout
         macro_string = str(Settings.num_macro_timeout)
