@@ -22,6 +22,7 @@ class RecordMacro(Command):
 
     def initialize(self):
         """Set up the macro file and prepare for recording."""
+        print("Initializing macro...")
 
         self.initTime = wpilib.Timer.getFPGATimestamp() #get the current time
         self.f = open("/home/lvuser/py/macros/"+self.name, "w")
@@ -37,6 +38,7 @@ class RecordMacro(Command):
     def execute(self):
         """Record the macro."""
 
+        print("Recording macro...")
         #do the actual writing bit:
         self.writer.writerow({
             #Add subsystems in the following manner:
@@ -57,6 +59,7 @@ class RecordMacro(Command):
     def end(self):
         """Close out & save the macro when called."""
         self.f.close()
+        print("Macro recorded")
 
     def interrupted(self):
         """Run when macro recording is interrupted."""

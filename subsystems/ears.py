@@ -15,6 +15,7 @@ class Ears(Subsystem):
         self.left = wpilib.CANTalon(6)
         self.right = wpilib.CANTalon(8)
         self.loaded = wpilib.DigitalInput(2)
+        print("Ear spools initialized")
 
     def initDefaultCommand(self):
         self.setDefaultCommand

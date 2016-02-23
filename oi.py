@@ -32,6 +32,7 @@ class OI:
 
     def __init__(self, robot):
         """Double joysticks WOOT"""
+        print("Initializing joysticks...")
 
         #Initialise the stick and the smart dashboard (in case we need stuff for auton):
         self.stick = wpilib.Joystick(0)
@@ -118,8 +119,8 @@ class OI:
         ten.whenPressed(SetpointBottom(robot))
         eleven.whenPressed(SetpointLongShot(robot))
         twelve.whenPressed(SetpointTop(robot))
-        drive_inner_base_three.whenPressed(RecordMacro(robot, "icc_macro.csv"))
 
+        print("Joysticks initialized")
     def getStick(self):
         """Drive joystick."""
         return self.stick

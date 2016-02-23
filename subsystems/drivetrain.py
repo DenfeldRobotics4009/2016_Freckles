@@ -38,6 +38,7 @@ class Drivetrain(Subsystem):
         self.firstSet = wpilib.RobotDrive(self.zed, self.one)
         self.secondSet = wpilib.RobotDrive(self.two, self.three)
         self.thirdSet = wpilib.RobotDrive(self.four, self.five)
+        print("Drivetrain initialized")
 
     def initDefaultCommand(self):
         """Set the DriveWithJoystick command to run so the drivetrain will move."""
@@ -53,8 +54,8 @@ class Drivetrain(Subsystem):
         precision = False
 
         #                      /-twist joystick              /-1st precision button        /-multiplier so it goes to 1
-        twist = twist_control(-self.joystick.getRawAxis(2), self.joystick.getRawButton(1))*5
-        y = drive_control(-self.joystick.getRawAxis(1), self.joystick.getRawButton(1))*2.5
+        twist = dead_zone(twist_control(-self.joystick.getRawAxis(2), self.joystick.getRawButton(1))*5, .25)
+        y = dead_zone(drive_control(-self.joystick.getRawAxis(1), self.joystick.getRawButton(1))*2.5, .25)
         #                  \-main forward joystick \-1st precision button               \-multiplier so it goes to 1
 
         #what even is this
