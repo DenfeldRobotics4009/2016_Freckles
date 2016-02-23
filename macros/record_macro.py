@@ -18,11 +18,13 @@ class RecordMacro(Command):
         #length of time to record the macro.
         self.setTimeout(Settings.num_macro_timeout)
 
-        self.name = name
+        self.supplied_name = name
+
+        self.name = Settings.str_macro_name
 
     def initialize(self):
         """Set up the macro file and prepare for recording."""
-        print("Initializing macro...")
+        print("Initializing macro " + self.name + "...")
 
         self.initTime = wpilib.Timer.getFPGATimestamp() #get the current time
         self.f = open("/home/lvuser/py/macros/"+self.name, "w")

@@ -19,12 +19,13 @@ class PlayMacro(Command):
         self.requires(robot.ears)
         self.requires(robot.hat)
         self.requires(robot.tilt)
-        self.name = name
+        self.name = Settings.str_macro_name
+        self.supplied_name = name
         self.done_yet = False
 
     def initialize(self):
         """Figure out the file location and play it back."""
-        print("Initializing macro...")
+        print("Initializing macro " + self.name + "...")
 
         try:
             #attempt to access the files required
