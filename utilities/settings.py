@@ -10,10 +10,10 @@ class Settings():
     num_macro_timeout = 15
 
     #Tilt pot setpoints .158
-    kMaxDown = .69 #derp, was .790
+    kMaxDown = 0.69 #derp, was .790
     #Works so far ^
-    kMaxUp = kMaxDown - .590
-    kTop = kMaxUp + .050
+    kMaxUp = kMaxDown - 0.570
+    kTop = kMaxUp + 0.050
     kTopShot = kMaxDown - 0.498
     kTopShotAtBase = kMaxDown - 0.509
     kBottom = kMaxDown - 0.050
