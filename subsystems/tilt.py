@@ -3,7 +3,7 @@ __author__ = "nikolojedison"
 import wpilib
 from wpilib.command import PIDSubsystem
 from commands.manual.manual_tilt import ManualTilt
-import utilities.settings
+from utilities.settings import Settings
 
 class Tilt(PIDSubsystem):
     """The tilting mechanism for the shooter."""
@@ -26,9 +26,9 @@ class Tilt(PIDSubsystem):
 
     def manualSet(self, output):
         position = self.tilt_pot.get()
-        if position > utilities.settings.kMaxDown and output < -0.0625:
+        if position > Settings.kMaxDown and output < -0.0625:
             self.tilt_motor.set(0)
-        elif position < utilities.settings.kMaxUp and output > 0.0625:
+        elif position < Settings.kMaxUp and output > 0.0625:
             self.tilt_motor.set(0)
         else:
             self.tilt_motor.set(output*.50)
@@ -41,7 +41,7 @@ class Tilt(PIDSubsystem):
         self.manualSet(output*1.60)
 
     def isDown(self):
-        self.tilt_pot.get() < utilities.settings.kMaxDown
+        self.tilt_pot.get() < Settings.kMaxDown
 
     def isUp(self):
         return not self.isDown()

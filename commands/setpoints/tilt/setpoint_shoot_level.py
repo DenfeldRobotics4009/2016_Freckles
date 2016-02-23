@@ -1,12 +1,11 @@
 __author__ = "nikolojedison"
 from commands.setpoints.set_tilt_setpoint import SetTiltSetpoint
-import utilities.settings
+from utilities.settings import Settings
 
 class SetpointShootLevel(SetTiltSetpoint):
     """Fire at the setpoint."""
-    kShootLevel = .646
     def __init__(self, robot):
-        super().__init__(robot, self.kShootLevel)
+        super().__init__(robot, Settings.kShootLevel)
 
     def isFinished(self):
         return super().isFinished()

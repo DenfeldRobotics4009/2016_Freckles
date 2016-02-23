@@ -36,10 +36,13 @@ class Mantis(wpilib.SampleRobot):
 
         self.macroTimeout = self.oi.smart_dashboard.getInt("Macro", 15)
         self.macroName = self.oi.smart_dashboard.getString("Macro Name", "macro_default.csv")
+        self.tiltBottom = self.oi.smart_dashboard.getInt("Tilt Pot Bottom", 0.790)
+        Settings.kMaxDown = self.tiltBottom
         Settings.str_macro_name = self.macroName
         Settings.num_macro_timeout = self.macroTimeout
         macro_string = str(Settings.num_macro_timeout)
-        print("Robot initialized with a macro timeout of " + macro_string)
+        bottom_string = str(Settings.kMaxDown)
+        print("Robot initialized with a macro timeout of " + macro_string + " and a maximum tilt of " + bottom_string)
 
     def autonomous(self):
         """Auton code."""
