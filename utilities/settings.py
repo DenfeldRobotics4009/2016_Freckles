@@ -10,23 +10,21 @@ class Settings():
     num_macro_timeout = 15
 
     #Tilt pot setpoints .158
-    kMaxDown = .790 #derp
+    kMaxDown = .69 #derp, was .790
     #Works so far ^
     kMaxUp = kMaxDown - .590
     kTop = kMaxUp + .050
-    kTopShot = .292
-    kTopShotAtBase = .281
-    kBottom = kMaxDown - .050
-    kShootLevel = .646
+    kTopShot = kMaxDown - 0.498
+    kTopShotAtBase = kMaxDown - 0.509
+    kBottom = kMaxDown - 0.050
+    kShootLevel = kMaxDown - 0.144
     #Test and modify ^
-    kShootAtBase = .474
+    kShootAtBase = kMaxDown - 0.316
     #Test and modify ^
     #2nd set of wheels is touching batter
-    kShootRamp = .326
+    kShootRamp = kMaxDown - 0.464
     #Test and modify ^
     #Backed into tower
-    kLongShot = .632
+    kLongShot = kMaxDown - 0.158
     #Works so far ^
     #14 feet from tower
-
-    str_macro_name = "macro_default.csv"
