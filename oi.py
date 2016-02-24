@@ -63,12 +63,12 @@ class OI:
         #Goes from front to back. outer_base is the outer ring of buttons on
         #the base, inner_base is the inner ring of buttons on the base.
         #-----------------------------------------------------------------------
-        drive_outer_base_one = JoystickButton(self.setpointStick, 7)
-        drive_inner_base_one = JoystickButton(self.setpointStick, 8)
-        drive_outer_base_two = JoystickButton(self.setpointStick, 9)
-        drive_inner_base_two = JoystickButton(self.setpointStick, 10)
-        drive_outer_base_three = JoystickButton(self.setpointStick, 11)
-        drive_inner_base_three = JoystickButton(self.setpointStick, 12)
+        drive_outer_base_one = JoystickButton(self.stick, 7)
+        drive_inner_base_one = JoystickButton(self.stick, 8)
+        drive_outer_base_two = JoystickButton(self.stick, 9)
+        drive_inner_base_two = JoystickButton(self.stick, 10)
+        drive_outer_base_three = JoystickButton(self.stick, 11)
+        drive_inner_base_three = JoystickButton(self.stick, 12)
 
 
         #Hat switch POV stuff.
@@ -119,8 +119,8 @@ class OI:
         ten.whenPressed(SetpointBottom(robot))
         eleven.whenPressed(SetpointLongShot(robot))
         twelve.whenPressed(SetpointTop(robot))
-        drive_outer_base_three.whenPressed(RecordMacro(robot))
-        drive_inner_base_three.whenPressed(PlayMacro(robot))
+        drive_outer_base_three.whenPressed(RecordMacro(robot, "macro.csv"))
+        drive_inner_base_three.whenPressed(PlayMacro(robot, "macro.csv"))
 
         print("Joysticks initialized")
     def getStick(self):

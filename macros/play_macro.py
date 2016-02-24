@@ -10,7 +10,7 @@ from utilities.settings import Settings
 
 class PlayMacro(Command):
     """This plays macro movements from the .csv file."""
-    def __init__(self, robot):
+    def __init__(self, robot, name):
         """Initialize the command and get all the requirements."""
 
         super().__init__()
@@ -19,7 +19,7 @@ class PlayMacro(Command):
         self.requires(robot.ears)
         self.requires(robot.hat)
         self.requires(robot.tilt)
-        self.name = Settings.str_macro_name
+        self.name = name
         self.done_yet = False
 
     def initialize(self):

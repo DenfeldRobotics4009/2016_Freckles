@@ -10,14 +10,14 @@ from utilities.settings import Settings
 
 class RecordMacro(Command):
     """This records robot movements and writes them to a .csv file."""
-    def __init__(self, robot):
+    def __init__(self, robot, name):
 
         super().__init__()
         self.robot = robot
 
         #length of time to record the macro.
         self.setTimeout(Settings.num_macro_timeout)
-        self.name = Settings.str_macro_name
+        self.name = name
 
     def initialize(self):
         """Set up the macro file and prepare for recording."""
@@ -44,9 +44,9 @@ class RecordMacro(Command):
             #"Row_Name": self.robot.subsystem.getValue
             "Drive_Y": self.robot.drivetrain.y,
             "Drive_Twist": self.robot.drivetrain.twist,
-            "Ears": self.robot.ears.motor.get(),
+            "Ears": self.robot.ears.right.get(),
             "Hat": self.robot.hat.motor.get(),
-            "Tilt": self.tilt.motor.get(),
+            "Tilt": self.robot.tilt.tilt_motor.get(),
 
             #this is needed to make sure everything runs at the right time, v. important:
             "Time": wpilib.Timer.getFPGATimestamp() - self.initTime}) #get the time as the row is written
