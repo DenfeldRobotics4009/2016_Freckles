@@ -38,7 +38,6 @@ class Drivetrain(Subsystem):
         self.firstSet = wpilib.RobotDrive(self.zed, self.one)
         self.secondSet = wpilib.RobotDrive(self.two, self.three)
         self.thirdSet = wpilib.RobotDrive(self.four, self.five)
-        print("Drivetrain initialized")
 
     def initDefaultCommand(self):
         """Set the DriveWithJoystick command to run so the drivetrain will move."""

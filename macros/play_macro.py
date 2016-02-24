@@ -42,7 +42,6 @@ class PlayMacro(Command):
 
         #start time is important for making sure everything plays at the right time
         start_time = Timer.getFPGATimestamp()
-        print("Playing macro...")
         #do the actual playback bit
         for line in self.reader_iterator:
             t_delta = float(line["Time"]) - (Timer.getFPGATimestamp()-start_time)

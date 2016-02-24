@@ -13,7 +13,6 @@ class Hat(Subsystem):
 
         self.robot = robot
         self.motor = wpilib.CANTalon(1)
-        print("Hat trigger initialized")
 
     def initDefaultCommand(self):
         self.setDefaultCommand

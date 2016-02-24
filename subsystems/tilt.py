@@ -16,7 +16,6 @@ class Tilt(PIDSubsystem):
         self.tilt_pot = wpilib.AnalogPotentiometer(1)
 
         self.setAbsoluteTolerance(.01)
-        print("Launcher tilt initialized")
 
     def initDefaultCommand(self):
         self.setDefaultCommand(ManualTilt(self.robot))

@@ -37,7 +37,6 @@ class RecordMacro(Command):
     def execute(self):
         """Record the macro."""
 
-        print("Recording macro...")
         #do the actual writing bit:
         self.writer.writerow({
             #Add subsystems in the following manner:

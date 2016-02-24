@@ -50,7 +50,7 @@ class Mantis(wpilib.SampleRobot):
         while self.isAutonomous() and self.isEnabled():
             Scheduler.getInstance().run()
             self.log()
-            wpilib.Timer.delay(.005) #don't burn up the cpu
+            wpilib.Timer.delay(.05) #don't burn up the cpu
 
     def operatorControl(self):
         """Teleop code."""
@@ -62,7 +62,7 @@ class Mantis(wpilib.SampleRobot):
         while self.isOperatorControl() and self.isEnabled():
             self.log()
             Scheduler.getInstance().run()
-            wpilib.Timer.delay(.005) #don't burn up the cpu
+            wpilib.Timer.delay(.05) #don't burn up the cpu
 
     def disabled(self):
         """Code to run when disabled."""
@@ -77,7 +77,7 @@ class Mantis(wpilib.SampleRobot):
         #Logging loop
         while self.isDisabled():
             self.log()
-            wpilib.Timer.delay(.005) #don't burn up the cpu
+            wpilib.Timer.delay(.05) #don't burn up the cpu
 
     def test(self):
         """Code for testing."""
