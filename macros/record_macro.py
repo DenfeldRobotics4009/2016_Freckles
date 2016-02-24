@@ -10,16 +10,13 @@ from utilities.settings import Settings
 
 class RecordMacro(Command):
     """This records robot movements and writes them to a .csv file."""
-    def __init__(self, robot, name):
+    def __init__(self, robot):
 
         super().__init__()
         self.robot = robot
 
         #length of time to record the macro.
         self.setTimeout(Settings.num_macro_timeout)
-
-        self.supplied_name = name
-
         self.name = Settings.str_macro_name
 
     def initialize(self):

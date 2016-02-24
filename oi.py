@@ -119,6 +119,8 @@ class OI:
         ten.whenPressed(SetpointBottom(robot))
         eleven.whenPressed(SetpointLongShot(robot))
         twelve.whenPressed(SetpointTop(robot))
+        drive_outer_base_three.whenPressed(RecordMacro(robot))
+        drive_inner_base_three.whenPressed(PlayMacro(robot))
 
         print("Joysticks initialized")
     def getStick(self):
