@@ -35,12 +35,12 @@ class Mantis(wpilib.SampleRobot):
         self.oi = OI(self)
 
         self.macroTimeout = self.oi.smart_dashboard.getInt("Macro", 15)
-        self.macroName = self.oi.smart_dashboard.getString("Macro Name", "macro_default.csv")
+        self.macroName = self.oi.smart_dashboard.getString("Macro Name", "macro.csv")
         Settings.str_macro_name = self.macroName
         Settings.num_macro_timeout = self.macroTimeout
         macro_string = str(Settings.num_macro_timeout)
         print("Robot initialized with a macro timeout of " + macro_string)
-        self.simpleAutonCommand = PlayMacro(self, "macro_rock_wall.csv")
+        self.simpleAutonCommand = PlayMacro(self, "macro.csv")
 
     def autonomous(self):
         """Auton code."""
