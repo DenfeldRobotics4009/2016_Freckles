@@ -47,7 +47,7 @@ class Mantis(wpilib.SampleRobot):
 
         try:
             if self.oi.smart_dashboard.getBoolean("Play Macro"):
-                self.simpleAuton.start()
+                self.simpleAutonCommand.start()
             else:
                 pass
 
