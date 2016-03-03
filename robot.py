@@ -40,11 +40,19 @@ class Mantis(wpilib.SampleRobot):
         Settings.num_macro_timeout = self.macroTimeout
         macro_string = str(Settings.num_macro_timeout)
         print("Robot initialized with a macro timeout of " + macro_string)
+        self.simpleAutonCommand = PlayMacro(self, "macro_rock_wall.csv")
 
     def autonomous(self):
         """Auton code."""
 
-        #Change when we get to something useful.
+        try:
+            if self.oi.smart_dashboard.getBoolean("Play Macro"):
+                self.simpleAuton.start()
+            else:
+                pass
+
+        except KeyError:
+                pass
 
         #Logging loop
         while self.isAutonomous() and self.isEnabled():
