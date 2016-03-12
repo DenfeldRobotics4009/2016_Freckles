@@ -85,5 +85,9 @@ class PlayMacro(Command):
     def cancel(self):
         """Runs when macro playback is canceled."""
 
-        self.end()
+        self.robot.drivetrain.driveManual(0,0)
+        self.robot.ears.manualSet(0)
+        self.robot.hat.manualSet(0)
+        self.robot.tilt.manualSet(0)
+        print("Macro playback canceled")
         super().cancel()
