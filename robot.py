@@ -41,6 +41,7 @@ class Mantis(wpilib.SampleRobot):
         macro_string = str(Settings.num_macro_timeout)
         print("Robot initialized with a macro timeout of " + macro_string)
         self.simpleAutonCommand = PlayMacro(self, "macro.csv")
+        self.shooterAutonCommand = PlayMacro(self, "macro_launch.csv")
 
     def autonomous(self):
         """Auton code."""
@@ -48,6 +49,8 @@ class Mantis(wpilib.SampleRobot):
         try:
             if self.oi.smart_dashboard.getBoolean("Play Macro"):
                 self.simpleAutonCommand.start()
+            elif self.oi.smart_dashboard.getBoolean("Shoot"):
+                self.shooterAutonCommand.start()
             else:
                 pass
 
@@ -63,6 +66,8 @@ class Mantis(wpilib.SampleRobot):
     def operatorControl(self):
         """Teleop code."""
         print("Teleop activated")
+        self.simpleAutonCommand.cancel()
+        self.shooterAutonCommand.cancel()
         #Make the joystick work for driving:
         joystick = self.oi.getStick()
 
