@@ -89,5 +89,5 @@ class PlayMacro(Command):
         self.robot.ears.manualSet(0)
         self.robot.hat.manualSet(0)
         self.robot.tilt.manualSet(0)
-        print("Macro playback canceled")
+        print("Macro playback canceled for the macro " + self.name)
         super().cancel()
