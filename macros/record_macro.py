@@ -57,11 +57,11 @@ class RecordMacro(Command):
     def end(self):
         """Close out & save the macro when called."""
         self.f.close()
-        print("Macro recorded")
+        print("Macro recorded, filename " + self.name)
 
     def interrupted(self):
         """Run when macro recording is interrupted."""
-        self.end()
+        print("Macro interrupted!")
 
     def cancel(self):
         """Run when macro recording is canceled."""

@@ -45,7 +45,7 @@ class Mantis(wpilib.SampleRobot):
 
     def autonomous(self):
         """Auton code."""
-
+        print("Autonomous mode activated")
         try:
             if self.oi.smart_dashboard.getBoolean("Play Macro"):
                 self.simpleAutonCommand.start()
