@@ -15,6 +15,7 @@ class Intake(Command):
     def execute(self):
         self.robot.ears.manualSet(self.ear_speed)
         self.robot.hat.manualSet(self.hat_speed)
+        print("Executing intake command...")
 
     def isFinished(self):
         return False

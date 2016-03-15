@@ -14,6 +14,7 @@ class Spool(Command):
 
     def execute(self):
         self.robot.ears.manualSet(self.output)
+        print("Executing spool commmand...")
 
     def isFinished(self):
         return self.isTimedOut

@@ -14,6 +14,7 @@ class Roll(Command):
 
     def execute(self):
         self.robot.hat.manualSet(self.output)
+        print("Executing roll command...")
 
     def isFinished(self):
         return self.isTimedOut
