@@ -21,8 +21,8 @@ class Tilt(PIDSubsystem):
         self.setDefaultCommand(ManualTilt(self.robot))
 
     def log(self):
-        wpilib.SmartDashboard.putNumber("Tilt Pot", self.tilt_pot.getValue())
-	print(self.tilt_pot.getOffset())
+	wpilib.SmartDashboard.putNumber("Tilt Pot", self.tilt_pot.getValue())
+        print(self.tilt_pot.getOffset())
 
     def manualSet(self, output):
         position = self.tilt_pot.getValue()
