@@ -1,1 +1,1 @@
-scp root@10.40.9.24 :/home/lvuser/py/macros /home/student/2016_Freckles/macros
+scp root@172.22.11.2:/home/lvuser/py/macros /home/student/2016_Freckles/macros

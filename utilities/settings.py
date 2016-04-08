@@ -11,8 +11,8 @@ class Settings():
     str_macro_name = "macro.csv"
 
     #Tilt pot setpoints .158
-    kMaxDown = 0.69 #derp, was .790
-    kMaxUp = kMaxDown - 0.570
+    kMaxDown = 0.70 #derp, was .790
+    kMaxUp = kMaxDown - 0.580
     kTop = kMaxUp + 0.050
     kTopShot = kMaxDown - 0.498
     kTopShotAtBase = kMaxDown - 0.509
