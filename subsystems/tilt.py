@@ -21,7 +21,7 @@ class Tilt(PIDSubsystem):
         self.setDefaultCommand(ManualTilt(self.robot))
 
     def log(self):
-	wpilib.SmartDashboard.putNumber("Tilt Pot", self.tilt_pot.getValue())
+        wpilib.SmartDashboard.putNumber("Tilt Pot", self.tilt_pot.getValue())
     def manualSet(self, output):
         position = self.tilt_pot.getValue()
         if position > Settings.kMaxDown and output < -0.0625:
