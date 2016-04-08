@@ -13,7 +13,7 @@ class Tilt(PIDSubsystem):
 
         self.robot = robot
         self.tilt_motor = wpilib.CANTalon(10)
-        self.tilt_pot = wpilib.DigitalInput(0)
+        self.tilt_pot = wpilib.AnalogInput(0)
 
         self.setAbsoluteTolerance(.01)
 
