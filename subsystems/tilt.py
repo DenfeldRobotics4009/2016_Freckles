@@ -22,6 +22,7 @@ class Tilt(PIDSubsystem):
 
     def log(self):
         wpilib.SmartDashboard.putNumber("Tilt Pot", self.tilt_pot.getValue())
+	print(self.tilt_pot.getOffset())
 
     def manualSet(self, output):
         position = self.tilt_pot.getValue()
