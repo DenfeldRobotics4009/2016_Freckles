@@ -11,16 +11,26 @@ class Settings():
     str_macro_name = "macro.csv"
 
     #Tilt pot setpoints .158
-    kMaxDown = 0.70 #derp, was .790
-    kMaxUp = kMaxDown - 0.580
-    kTop = kMaxUp + 0.050
-    kTopShot = kMaxDown - 0.498
-    kTopShotAtBase = kMaxDown - 0.509
-    kBottom = kMaxDown - 0.050
-    kShootLevel = kMaxDown - 0.144
-    kShootAtBase = kMaxDown - 0.316
+#    kMaxDown = 0.70 #derp, was .790
+ #   kMaxUp = kMaxDown - 0.580
+  #  kTop = kMaxUp + 0.050
+#    kTopShot = kMaxDown - 0.498
+ #   kTopShotAtBase = kMaxDown - 0.509
+  #  kBottom = kMaxDown - 0.050
+ #   kShootLevel = kMaxDown - 0.144
+ #   kShootAtBase = kMaxDown - 0.316
     #2nd set of wheels is touching batter
-    kShootRamp = kMaxDown - 0.464
+  #  kShootRamp = kMaxDown - 0.464
     #Backed into tower
-    kLongShot = kMaxDown - 0.158
+   # kLongShot = kMaxDown - 0.158
     #14 feet from tower
+    kMaxDown = 0
+    kMaxUp = 270
+    kTop = 260
+    kTopShot = 250
+    kTopShotAtBase = 255 
+    kBottom = 1
+    kShootLevel = 100
+    kShootAtBase = 180
+    kShootRamp = 165
+    kLongShot = 125
