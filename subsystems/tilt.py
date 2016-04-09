@@ -24,9 +24,9 @@ class Tilt(PIDSubsystem):
         wpilib.SmartDashboard.putNumber("Tilt Pot", self.tilt_pot.getValue())
     def manualSet(self, output):
         position = self.tilt_pot.getValue()
-        if position < Settings.kMaxDown and output < -0.0625:
+        if position > Settings.kMaxDown and output < -0.0625:
             self.tilt_motor.set(0)
-        elif position > Settings.kMaxUp and output > 0.0625:
+        elif position < Settings.kMaxUp and output > 0.0625:
             self.tilt_motor.set(0)
         else:
             self.tilt_motor.set(output*.65)
