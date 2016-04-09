@@ -39,7 +39,7 @@ class Tilt(PIDSubsystem):
         self.manualSet(output*1.60)
 
     def isDown(self):
-        self.tilt_pot.get() > Settings.kMaxDown
+        self.tilt_pot.getValue() > Settings.kMaxDown
 
     def isUp(self):
         return not self.isDown()
