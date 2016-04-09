@@ -24,13 +24,15 @@ class Settings():
     #Backed into tower
    # kLongShot = kMaxDown - 0.158
     #14 feet from tower
-    kMaxDown = 0
-    kMaxUp = 270
-    kTop = 260
-    kTopShot = 250
-    kTopShotAtBase = 255 
-    kBottom = 1
-    kShootLevel = 100
-    kShootAtBase = 180
-    kShootRamp = 165
-    kLongShot = 125
+
+    #Encoder shenanigans
+    kMaxDown = 3600
+    kMaxUp = 1500
+    kTop = 2000
+    kTopShot = 2300
+    kTopShotAtBase = 2500 
+    kBottom = 3300
+    kShootLevel = 3000
+    kShootAtBase = 2900
+    kShootRamp = 2800
+    kLongShot = 2700
