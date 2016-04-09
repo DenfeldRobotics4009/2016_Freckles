@@ -31,8 +31,8 @@ class Settings():
     kTop = 2000
     kTopShot = 2300
     kTopShotAtBase = 2500 
-    kBottom = 3300
-    kShootLevel = 3000
-    kShootAtBase = 2900
-    kShootRamp = 2800
-    kLongShot = 2700
+    kBottom = 2900
+    kShootLevel = 2700
+    kShootAtBase = 2600
+    kShootRamp = 2500
+    kLongShot = 2400
