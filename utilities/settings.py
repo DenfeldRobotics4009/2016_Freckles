@@ -27,7 +27,7 @@ class Settings():
 
     #Encoder shenanigans
     kMaxDown = 3600
-    kMaxUp = 1500
+    kMaxUp = 1180
     kTop = 2000
     kTopShot = 2300
     kTopShotAtBase = 2500 
