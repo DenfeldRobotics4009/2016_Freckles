@@ -26,12 +26,12 @@ class Settings():
     #14 feet from tower
 
     #Encoder shenanigans
-    kMaxDown = 3600
+    kMaxDown = 2900
     kMaxUp = 1300
     kTop = 2000
     kTopShot = 2300
     kTopShotAtBase = 2500 
-    kBottom = 2900
+    kBottom = 2800
     kShootLevel = 2700
     kShootAtBase = 2600
     kShootRamp = 2500
