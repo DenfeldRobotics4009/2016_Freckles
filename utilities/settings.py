@@ -12,21 +12,21 @@ class Settings():
 
     #Tilt pot setpoints .158
 #    kMaxDown = 0.70 #derp, was .790
- #   kMaxUp = kMaxDown - 0.580
-  #  kTop = kMaxUp + 0.050
+#    kMaxUp = kMaxDown - 0.580
+#    kTop = kMaxUp + 0.050
 #    kTopShot = kMaxDown - 0.498
- #   kTopShotAtBase = kMaxDown - 0.509
-  #  kBottom = kMaxDown - 0.050
- #   kShootLevel = kMaxDown - 0.144
- #   kShootAtBase = kMaxDown - 0.316
+#    kTopShotAtBase = kMaxDown - 0.509
+#    kBottom = kMaxDown - 0.050
+#    kShootLevel = kMaxDown - 0.144
+#    kShootAtBase = kMaxDown - 0.316
     #2nd set of wheels is touching batter
-  #  kShootRamp = kMaxDown - 0.464
+#    kShootRamp = kMaxDown - 0.464
     #Backed into tower
-   # kLongShot = kMaxDown - 0.158
+ #   kLongShot = kMaxDown - 0.158
     #14 feet from tower
 
     #Encoder shenanigans
-    kMaxDown = 2900
+    kMaxDown = 2930
     kMaxUp = 1300
     kTop = 2000
     kTopShot = 2300
@@ -35,4 +35,4 @@ class Settings():
     kShootLevel = 2700
     kShootAtBase = 2600
     kShootRamp = 2500
-    kLongShot = 2400
+    kLongShot = 2454 #on the ramp
