@@ -28,10 +28,10 @@ class Settings():
     #Encoder shenanigans
     kMaxDown = 2930
     kMaxUp = 1300
-    kTop = 2000
-    kTopShot = 2300
-    kTopShotAtBase = 2500 
-    kBottom = 2800
+    kTop = 1260
+    kTopShot = 1486
+    kTopShotAtBase = 1506 
+    kBottom = 2860
     kShootLevel = 2700
     kShootAtBase = 2600
     kShootRamp = 2500
