@@ -34,5 +34,5 @@ class Settings():
     kBottom = 2860 #done
     kShootLevel = 2447 #about midfield
     kShootAtBase = 2600
-    kShootRamp = 2500
-    kLongShot = 2454 #on the ramp
+    kShootRamp = 2454 #on the ramp
+    kLongShot = 2454 
