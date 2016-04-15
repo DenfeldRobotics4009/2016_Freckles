@@ -122,7 +122,7 @@ class OI:
         drive_outer_base_three.whenPressed(RecordMacro(robot, "macro.csv"))
         drive_inner_base_three.whenPressed(PlayMacro(robot, "macro.csv"))
         drive_outer_base_two.whenPressed(RecordMacro(robot, "macro_launch.csv"))
-        drive_inner_base_two.whenPressed(RecordMacro(robot, "macro_launch.csv"))
+        drive_inner_base_two.whenPressed(PlayMacro(robot, "macro_launch.csv"))
 
         print("Joysticks initialized")
     def getStick(self):
