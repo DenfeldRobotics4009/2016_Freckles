@@ -12,9 +12,9 @@ class TiltButton(Command):
         self.tilt_pot = self.robot.tilt.tilt_pot
 
     def execute(self):
-        if self.tilt_pot.get() > .411:
+        if self.tilt_pot.getValue() > .411:
             self.robot.tilt.manualSet(.2)
-        if self.tilt_pot.get() <= .411:
+        if self.tilt_pot.getValue() <= .411:
             self.robot.tilt.manualSet(-.2)
 
     def isFinished(self):
