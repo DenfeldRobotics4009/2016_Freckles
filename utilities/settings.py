@@ -26,8 +26,8 @@ class Settings():
     #14 feet from tower
 
     #Encoder shenanigans
-    kMaxDown = 2810 #done
-    kMaxUp = 1210 #done
+    kMaxDown = 2660 #done
+    kMaxUp = 1090 #done
     kTop = 1260 #done
     kTopShot = 1486 #over the back about midfield
     kTopShotAtBase = 1506 #over the back, touching the batter
