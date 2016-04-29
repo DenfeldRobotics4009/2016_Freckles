@@ -34,6 +34,7 @@ class Mantis(wpilib.SampleRobot):
         self.tilt = Tilt(self)
         self.oi = OI(self)
 
+        #Initialise the macro shenanigans (should probably clean this up once I get the dashboard sorted)
         self.macroTimeout = self.oi.smart_dashboard.getInt("Macro", 15)
         self.macroName = self.oi.smart_dashboard.getString("Macro Name", "macro.csv")
         Settings.str_macro_name = self.macroName
@@ -45,6 +46,7 @@ class Mantis(wpilib.SampleRobot):
 
     def autonomous(self):
         """Auton code."""
+
         print("Autonomous mode activated")
         try:
             if self.oi.smart_dashboard.getBoolean("Play Macro"):
@@ -52,10 +54,10 @@ class Mantis(wpilib.SampleRobot):
             elif self.oi.smart_dashboard.getBoolean("Shoot"):
                 self.shooterAutonCommand.start()
             else:
-                pass
+                print("No macro selected, waiting for teleop...")
 
         except KeyError:
-                pass
+                print("Key error!")
 
         #Logging loop
         while self.isAutonomous() and self.isEnabled():

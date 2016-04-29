@@ -12,6 +12,7 @@ import utilities.settings
 from macros.play_macro import PlayMacro
 from macros.record_macro import RecordMacro
 
+#Import our commands:
 from commands.setpoints.hat_button import HatButton
 from commands.setpoints.ears_button import EarsButton
 from commands.semiauto.intake import Intake
@@ -125,7 +126,9 @@ class OI:
         drive_inner_base_two.whenPressed(PlayMacro(robot, "macro_launch.csv"))
         drive_thumb.whileHeld(Intake(robot, -.5, -.5))
 
+        #Give the message to confirm initialisation
         print("Joysticks initialized")
+
     def getStick(self):
         """Drive joystick."""
         return self.stick
