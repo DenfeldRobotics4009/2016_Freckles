@@ -57,6 +57,7 @@ target/
 
 #Vim specific stuff:
 *.swp
+*.swo
 
 # Robot-specific stuff:
 .deploy_cfg
