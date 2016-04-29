@@ -3,7 +3,7 @@ __author__ = "nikolojedison"
 from wpilib.command import Command
 
 class ManualHat(Command):
-    """Manually run the trigger spool."""
+    """Manually run the trigger wheel."""
 
     def __init__(self, robot, output):
         super().__init__()

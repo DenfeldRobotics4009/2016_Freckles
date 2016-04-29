@@ -25,3 +25,7 @@ class Ears(Subsystem):
 
     def log(self):
         wpilib.SmartDashboard.putBoolean("Ball Limit", self.loaded.get())
+        if self.loaded.get() == True:
+            print("Ball loaded!")
+        else:
+            pass
