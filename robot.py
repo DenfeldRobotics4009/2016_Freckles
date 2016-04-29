@@ -100,7 +100,6 @@ class Mantis(wpilib.SampleRobot):
 
     def log(self):
         """Log our subsystems."""
-        #Log the things:
         self.drivetrain.log()
         self.ears.log()
         self.hat.log()

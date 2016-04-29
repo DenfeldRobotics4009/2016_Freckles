@@ -9,7 +9,7 @@ def precision_mode(controller_input, trigger):
     """copied from CubertPy and tweaked for 2016 use."""
 
     if trigger == True:
-        #if the trigger is pulled, use the first precision:
+        #if the trigger is pulled, start precision mode (with a slight holdover from dual-precision days):
         return controller_input * Settings.num_precision_one
     else:
         #if none are held, just return straight controller_input:
@@ -44,6 +44,6 @@ def twist_control(controller_input, trigger):
     return precision_mode(exponential_scaling(exponential_scaling(controller_input, 0.5)*0.5, 2.3), trigger)
 
 def tilt_control(controller_input, trigger):
-    """Final tilt thing that's used by manualTilt."""
+    """Final tilt thing that's used by manualTilt. Probably could be cleaned up, but oh well."""
 
     return precision_mode(controller_input, trigger)

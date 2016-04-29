@@ -3,7 +3,7 @@ import math
 class Settings():
     """Robot mapping. Values that are changed often go here."""
 
-    #Values to be changed through drive station
+    #Values that would ideally be changed through drive station
     num_precision_one = 0.60
     num_precision_two = 0.50
     num_scaling = 1.25
@@ -26,14 +26,12 @@ class Settings():
     #14 feet from tower
 
     #Encoder shenanigans
-    kMaxDown = 2850 #done (was 2660)
-    kOGDown = 2850
-    kOGUp = 1189
-    kMaxUp = 1189 #done (was 1121)
-    kTop = 1133 #done
+    kMaxDown = 2850 #(was 2660)
+    kMaxUp = 1189 #(was 1121)
+    kTop = 1133
     kTopShot = 1486 #over the back about midfield
     kTopShotAtBase = 1506 #over the back, touching the batter
-    kBottom = 2860 #done
+    kBottom = 2860
     kShootLevel = 2447 #about midfield
     kShootAtBase = 2600
     kShootRamp = 2454 #on the ramp
