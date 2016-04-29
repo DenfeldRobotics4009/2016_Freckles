@@ -57,7 +57,7 @@ class Mantis(wpilib.SampleRobot):
                 print("No macro selected, waiting for teleop...")
 
         except KeyError:
-                print("Key error!")
+                pass
 
         #Logging loop
         while self.isAutonomous() and self.isEnabled():
@@ -99,7 +99,7 @@ class Mantis(wpilib.SampleRobot):
         print("Test mode activated")
 
     def log(self):
-        """I know it doesn't log but if it does eventually it'll go here."""
+        """Log our subsystems."""
         #Log the things:
         self.drivetrain.log()
         self.ears.log()

@@ -130,9 +130,9 @@ class OI:
         print("Joysticks initialized")
 
     def getStick(self):
-        """Drive joystick."""
+        """Return the drive joystick."""
         return self.stick
 
     def getSetpointStick(self):
-        """Button joystick."""
+        """Return the button joystick."""
         return self.setpointStick

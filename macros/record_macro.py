@@ -47,7 +47,6 @@ class RecordMacro(Command):
             "Hat": self.robot.hat.motor.get(),
             "Tilt": self.robot.tilt.tilt_motor.get(),
 
-            #this is needed to make sure everything runs at the right time, v. important:
             "Time": wpilib.Timer.getFPGATimestamp() - self.initTime}) #get the time as the row is written
 
     def isFinished(self):
