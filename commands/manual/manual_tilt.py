@@ -12,8 +12,10 @@ class ManualTilt(Command):
         super().__init__()
         self.robot = robot
         self.requires(self.robot.tilt)
+        self.joystick = wpilib.Joystick(0)
 
     def execute(self):
+        joystick = self.joystick
         precision = False
         self.robot.tilt.manualSet(dead_zone(tilt_control(self.robot.oi.getSetpointStick().getRawAxis(1), self.robot.oi.getSetpointStick().getRawButton(2)), .40))
 

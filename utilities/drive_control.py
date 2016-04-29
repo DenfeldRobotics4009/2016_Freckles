@@ -47,3 +47,11 @@ def tilt_control(controller_input, trigger):
     """Final tilt thing that's used by manualTilt."""
 
     return precision_mode(controller_input, trigger)
+
+def unsafe(controller_input, trigger):
+    if trigger == True:
+        Settings.kMaxDown = 3590
+        Settings.kMaxUp = 0
+    else:
+        Settings.kMaxDown = Settings.kOGDown
+        Settings.kMaxUp = Settings.kOGUp
