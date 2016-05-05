@@ -120,9 +120,9 @@ class OI:
         ten.whenPressed(SetpointBottom(robot))
         eleven.whenPressed(SetpointLongShot(robot))
         twelve.whenPressed(SetpointTop(robot))
-        drive_outer_base_three.whenPressed(RecordMacro(robot, "macro.csv"))
+	#drive_outer_base_three.whenPressed(RecordMacro(robot, "macro.csv"))
         drive_inner_base_three.whenPressed(PlayMacro(robot, "macro.csv"))
-        drive_outer_base_two.whenPressed(RecordMacro(robot, "macro_launch.csv"))
+	#drive_outer_base_two.whenPressed(RecordMacro(robot, "macro_launch.csv"))
         drive_inner_base_two.whenPressed(PlayMacro(robot, "macro_launch.csv"))
         drive_thumb.whileHeld(Intake(robot, -.5, -.5))
 
