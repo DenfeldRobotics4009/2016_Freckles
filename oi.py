@@ -115,12 +115,12 @@ class OI:
         bottom_right.whileHeld(EarsButton(robot, .4))
         top_left.whileHeld(Intake(robot, -.5, -.5))
         top_right.whenPressed(RecordMacro(robot, "low_bar.csv"))
-        seven.whenPressed(RecordMacro(robot, "rock_wall.csv"))
-        eight.whenPressed(RecordMacro(robot, "rough_terrain.csv"))
-        nine.whenPressed(RecordMacro(robot, "cheval.csv"))
-        ten.whenPressed(RecordMacro(robot, "portcullis.csv"))
-        eleven.whenPressed(RecordMacro(robot, "moat.csv"))
-        twelve.whenPressed(RecordMacro(robot, "ramparts.csv"))
+        seven.whenPressed(RecordMacro(robot, "rock_wall_1.csv"))
+        eight.whenPressed(PlayMacro(robot, "rock_wall_1.csv"))
+        nine.whenPressed(RecordMacro(robot, "rock_wall_2.csv"))
+        ten.whenPressed(PlayMacro(robot, "rock_wall_2.csv"))
+        eleven.whenPressed(RecordMacro(robot, "rock_wall_3.csv"))
+        twelve.whenPressed(PlayMacro(robot, "rock_wall_3.csv")) 
 
         #Give the message to confirm initialisation
         print("Joysticks initialized")
