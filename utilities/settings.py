@@ -10,29 +10,6 @@ class Settings():
     num_macro_timeout = 15
     str_macro_name = "macro.csv"
 
-    #Tilt pot setpoints .158
-#    kMaxDown = 0.70 #derp, was .790
-#    kMaxUp = kMaxDown - 0.580
-#    kTop = kMaxUp + 0.050
-#    kTopShot = kMaxDown - 0.498
-#    kTopShotAtBase = kMaxDown - 0.509
-#    kBottom = kMaxDown - 0.050
-#    kShootLevel = kMaxDown - 0.144
-#    kShootAtBase = kMaxDown - 0.316
-    #2nd set of wheels is touching batter
-#    kShootRamp = kMaxDown - 0.464
-    #Backed into tower
- #   kLongShot = kMaxDown - 0.158
-    #14 feet from tower
-
     #Encoder shenanigans
     kMaxDown = 2850 #(was 2660)
     kMaxUp = 1189 #(was 1121)
-    kTop = 1133
-    kTopShot = 1486 #over the back about midfield
-    kTopShotAtBase = 1506 #over the back, touching the batter
-    kBottom = 2860
-    kShootLevel = 2447 #about midfield
-    kShootAtBase = 2600
-    kShootRamp = 2454 #on the ramp
-    kLongShot = 2454 
